@@ -1,6 +1,8 @@
 # if downloading things via apt-get fail, check http://stackoverflow.com/a/24991137
 # or just add --dns 8.8.8.8
 
+# TODO merge all the apt-gets
+
 FROM ubuntu:16.04
 
 # Configure basic utilities for apt-get
@@ -9,7 +11,7 @@ RUN apt-get update && \
 	autoconf make gcc mercurial g++ git cmake libgmp-dev 
 	
 RUN apt-get update && \
-	apt-get -y install wget zlib1g-dev
+	apt-get -y install wget zlib1g-dev csh perl
 
 # Define working directory.
 WORKDIR /tools
@@ -25,73 +27,84 @@ RUN wget http://minisat.se/downloads/minisat-2.2.0.tar.gz && \
 	cp minisat_static /bin/minisat && \
 	make libr 
 
-# install sharpSat (with projection)
+# install dsharp (with projection)
+# Had to clone the dsharp-p repo to change the makefile to use minisat (faster)
 RUN hg clone https://MateusAraujoBorges@bitbucket.org/MateusAraujoBorges/dsharp && \
 	cd dsharp && \
 	make
 
+# install sharpSAT (with projection)
+RUN git clone https://github.com/MateusAraujoBorges/sharpSAT.git && \
+	cd sharpSAT/Release && \
+	make 
 
+# install samplecount (plus approxcount and cachet)
+RUN wget http://www.cs.cornell.edu/~sabhar/software/samplecount/samplecount-1.0-04092007.tgz && \
+	tar -xf samplecount-1.0-04092007.tgz && \
+	mv samplecount-1.0-04092007 samplecount && \
+	cd samplecount && \
+	make
 
-# # Install cvc4
-# RUN echo "deb http://cvc4.cs.nyu.edu/debian/ unstable/" >> /etc/apt/sources.list
-# RUN echo "deb-src http://cvc4.cs.nyu.edu/debian/ unstable/" >> /etc/apt/sources.list
-# RUN apt-get update && \
-# 	apt-get -y install cvc4 --force-yes
+# install mbound (just a bunch of scripts to add xor constraints)
+RUN wget http://www.cs.cornell.edu/~sabhar/software/xor-scripts/xor-scripts.tgz && \
+	tar -xf xor-scripts.tgz
 
+# install ApproxMC
+RUN wget http://www.cs.rice.edu/CS/Verification/Projects/ApproxMC/SourceCode/ApproxMC/ApproxMC.tgz && \
+	tar -xf ApproxMC.tgz && \
+	cd ApproxMC && \
+	rm cryptominisat doalarm && \
+	cd doalarm-0.1.7 && \
+    make && \
+    cd ..  && \
+    tar -xf cryptominisat-2.9.4.tar.gz  && \
+    cd cryptominisat-2.9.4  && \
+    ./configure  && \
+    make  && \
+    cd .. && \
+	cp cryptominisat-2.9.4/cryptominisat . && \
+	cp doalarm-0.1.7/doalarm .
 
-# # Install maven, gradle, git, python, pip, nano, vim
-# # use gradle ppa (ubuntu repo is too old)
-# RUN echo 'deb http://ppa.launchpad.net/cwchien/gradle/ubuntu vivid main' >> /etc/apt/sources.list
-# RUN echo 'deb-src http://ppa.launchpad.net/cwchien/gradle/ubuntu vivid main' >> /etc/apt/sources.list
+# install CryptoMinisat (approxMC-p dep.)
+RUN git clone --depth 1 https://github.com/msoos/cryptominisat.git && \
+	cd cryptominisat && \
+	apt-get update && \
+	apt-get install -y libm4ri-dev vim-common && \
+	mkdir build && \
+	cd build && \
+	cmake .. && \
+	make -j4 && \
+	make install && \
+	ldconfig && \
+	mv /usr/local/bin/cryptominisat4_simple /usr/local/bin/cryptominisat4
 
-# RUN	apt-get update && apt-get install -y --force-yes maven git gradle python python-pip python-dev build-essential autoconf autotools-dev m4 libtool nano vim
+# install approxMC-p[y]
+RUN wget http://formal.iti.kit.edu/weigl/software/approxmc-py/approxmc-py-3-QAPL2016.tar.gz && \
+	tar -xf approxmc-py-3-QAPL2016.tar.gz && \
+	cd approxmc-py && \
+	apt-get update && \
+	apt-get install -y python3-pip python-pip && \
+	pip3 install scipy && \
+	python3 setup.py build
 
-# # Install python modules
-# RUN pip install --upgrade pip numpy ghalton shutilwhich
+# install samplesearch
+RUN wget http://www.hlt.utdallas.edu/~vgogate/satss
 
-# # Install barvinok
-# RUN apt-get -y install build-essential libgmp-dev libntl-dev libglpk-dev --force-yes
-# RUN git clone http://repo.or.cz/barvinok.git
-# RUN cd barvinok && \
-# 	autoreconf --install && \
-# 	./get_submodules.sh && \
-# 	sh autogen.sh && \
-# 	./configure && \
-# 	make && \
-# 	make install
-# #RUN wget http://barvinok.gforge.inria.fr/barvinok-0.39.tar.xz && \
-# #	tar -xf barvinok-0.39.tar.xz && \
-# #	mv barvinok-0.39 barvinok
-# #RUN cd barvinok && \
-# #	./configure && \
-# #	make && \
-# #	make install
+# install searchtreesampler
+RUN wget https://cs.stanford.edu/~ermon/code/STS.zip && \
+	apt-get update && \
+	apt-get install -y unzip && \
+	unzip STS.zip && \
+	cd STS && \
+	export MROOT="$PWD" && \
+	cd core && \
+	make -j4
 
-# #add github deploy keys, pull repositories
-# RUN mkdir /root/.ssh
-# ADD repo* /root/.ssh/
-# ADD githubKey /root/.ssh/
-# RUN chmod 600 /root/.ssh/repo*
-
-# RUN cat /root/.ssh/githubKey >> /root/.ssh/known_hosts
-
-# RUN ssh-agent bash -c 'ssh-add /root/.ssh/repo-key; git clone git@github.com:RSSRuntimeGroup/PathConditionsProbability.git'
-# RUN ssh-agent bash -c  'ssh-add /root/.ssh/repo-key-qjanala; git clone git@github.com:RSSRuntimeGroup/Quantolic-janala2.git; cd Quantolic-janala2; git checkout janala-update'
-# RUN git clone https://github.com/brettwooldridge/NuProcess.git
-
-
-
-# # compile, set up local variables, install
-
-# RUN cd NuProcess && \
-# 	mvn install -DskipTests=true
-# RUN cd PathConditionsProbability/PathConditionsProbability && \
-# 	mvn dependency:build-classpath -Dmdep.outputFile=classpath && \
-# 	mvn clean antlr4:antlr4 generate-sources compile dependency:copy-dependencies package assembly:single install
-# RUN cd Quantolic-janala2 && \
-# 	gradle assemble jar integrationTest copyDependencies && \
-# 	mkdir results
-
-# ENV LD_LIBRARY_PATH=/usr/local/lib/
+# install smtapprox
+RUN git clone https://MateusAraujoBorges@bitbucket.org/kuldeepmeel/smtapproxmc.git && \
+	cd smtapproxmc && \
+	cd boolector-mc && \
+	make && \
+	cp /tools/ApproxMC/doalarm-0.1.7/doalarm /bin/
 
 CMD ["bash"]
