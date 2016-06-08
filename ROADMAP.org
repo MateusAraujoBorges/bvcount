@@ -1,0 +1,178 @@
+* GOAL
+ - Efficient (approximate) model counting of nonlinear bitvector constraints
+
+
+* Plan
+** DONE setup environment
+** TODO convert bitvector constraints to SAT
+** TODO evaluate tools 
+** TODO figure out how to convert BV constraints to BDDs
+*** RESOURCES
+ - BDD Library for python/web visualizer: http://formal.cs.utah.edu:8080/pbl/BDD.php
+ - How to translate SAT to BDD: http://dx.doi.org/10.1109/DAC.1990.114826
+ - Compiling OBDDs with DPLL: http://www.satisfiability.org/SAT04/programme/61.pdf
+ - Library for BDDs: CUDD http://vlsi.colorado.edu/~fabio/CUDD/html/index.html
+* Tools
+** SAT/SMT
+*** Boolector
+ - Sang patched it to dump CNF formulas
+ - used by lots of other tools
+** #(SAT/SMT)
+*** Categories:
+**** Exact
+***** sharpSat
+ - Well known #SAT solver
+ - Source: https://sites.google.com/site/marcthurley/sharpsat
+   (lots of papers)
+ - Note: We will be using the augmented version with projection found at
+   https://github.com/vladrich/sharpSAT. This version returns an upper
+   bound of the number of models for a given projection. See DSharp-p (below)
+   input format for more info on how to use the projection.
+***** c2d
+ - Converts CNF to d-DNNF(Deterministic, Decomposable Negation Normal
+   Form), which allows counting in polynomial time. sharpSat's webpage
+   says that it is slower, but it may handle troublesome problems (for
+   sharpSat) easily.
+ - Source: New Advances in Compiling CNF to Decomposable Negation Normal Form
+ - Skipping this one for DSharp
+***** relsat
+ - Source: https://code.google.com/archive/p/relsat/
+ - Old (and last updated in 2007), so I'll skip this one.
+***** DSharp
+ - Improves upon c2d by using fancy features from sharpSAT
+ - Source: DSHARP: Fast d-DNNF Compilation with sharpSAT
+ - Note: We will be using the version found at https://bitbucket.org/vladimirkl/dsharp
+   because it supports projection.
+   
+**** Probabilistic 
+ - (ε,δ). These counters were originally introduced by Karp and Luby
+   to count the models of DNF formulas. They guarantee with a
+   probability of at least 1 − δ that the result will be between 1 − ε
+   and 1 + ε times the actual number of models. An instantiation of
+   this class for CNF formulas is APPROX-MC.
+ - lower/upper bounding counters. These counters drop the tolerance
+   guarantee and compute an upper/lower bound for the number of models
+   that is correct with a probability of at least 1 − δ (for a
+   user-specified δ ). Examples are BPCOUNT, MINICOUNT,
+   MBOUND and HYBRID-MBOUND.
+ - guarantee-less counters. These counters provide no formal
+   guarantees but can be very good in practice. Examples are
+   APPROXCOUNT, SEARCHTREESAMPLER, SE and SAMPLESEARCH.
+
+   - First approach, [Jerrum et al., 1986] (from "From Sampling to
+     Model Counting"):
+	 
+     Consider a Boolean formula F with M satisfying
+     assignments. Assuming we could sample these satisfying
+     assignments uniformly at random, we can measure the fraction of
+     all models that have x1 set to True, M+, by taking the ratio of
+     the number of assignments in the sample that have x1 set to True
+     over the sample size. This fraction will converge with increasing
+     sample size to the true fraction of models with x1 set
+     positively, γ = M+/M. (For now, assume that γ > 0.)  It follows
+     immediately that M = (1/γ)M+. We will call 1/γ the “multiplier”
+     (> 0). We have thus reduced the problem of counting the models of
+     F to counting the models of a simpler formula, F+. We can
+     recursively repeat the process, leading to a series of
+     multipliers, until all variables are assigned or until we can
+     count the number of models of the remaining formulas with an
+     exact counter. For robustness, one usually sets selected variable
+     to the truth value that occurs more often in the sample. This
+     also avoids the problem of having γ = 0 and therefore an infinite
+     multiplier. (Note that the more frequently occurring truth value
+     gives a multiplier of at most 2.)
+
+***** ApproxCount
+ - [X]
+ - Source: A new approach to model counting
+ - Type: guarantee-less
+ - Code: https://www.cs.cornell.edu/~weiwei/approxcount.html
+
+***** ApproxMC
+ - [X]
+ - Source: A Scalable Approximate Model Counter
+ - Type: (ε,δ)
+ - Code: http://www.cs.rice.edu/CS/Verification/Projects/ApproxMC/
+
+***** ApproxMC-P 
+ - [X]
+ - Source: Sound Probabilistic #SAT with Projection
+ - Type: (ε,δ)
+ - Code: http://formal.iti.kit.edu/weigl/software/approxmc-py/
+ - Notes:
+   - I have no idea how to run this thing. The README is useless. Looks 
+	 like they use some kind of build tool/structure from python (setup.py).
+	 Also, looks like they use python3.
+
+   - Email from Alexander (one of the authors)
+		 Hello Mateus,
+
+		 thank for your interrest into ApproxMC-py.
+		 I needed the following steps to reproduce a working ApproxMC-py
+		 instance:
+
+		1. Ensure that scipy is installed -- for me 'sudo dnf python3-scipy'
+		2. Ensure you have a bounded #SAT with projection installed, like
+		clasp, sharpCDCL or an adapted version cryptominisat [1].
+		4. Some adapters need xorblast [2], as a SAT-preprocessor for
+		xor-clauses.
+		5. Ensure, e.g. that xorblast.py and sharpCDCL executable, is on $PATH:
+
+		   export PATH=$PATH:/home/weigl/work/xorblast/
+		   export PATH=$PATH:/home/weigl/work/sharpCDCL/build
+
+		6. Run using approxmc-p.py (formely known as run.py):
+
+		   ~/w/approxmc-py % ./approxmc-p.py -vvvv \
+		   --sat-command 'adapters/sharpCDCL.sh {maxcount} {file}' \
+		   ~/work/qif-sat/case_study_crc/logs_2/1452259749/crc32_8_0x04C11DB7.pp.cnf
+
+		I hope that works for you.
+
+		best regards,
+
+		Alexander
+
+
+[1]: https://gitlab.com/QIF/cryptominisat4
+[2]: https://gitlab.com/QIF/xorblast
+
+***** smtapproxmc
+ - [X]
+ - Source: Approximate Probabilistic Inference via Word-Level Counting
+ - Type: (ε,δ)
+ - Code: https://bitbucket.org/kuldeepmeel/smtapproxmc
+
+***** SE
+ - Source: Stochastic Enumeration Method for Counting NP-Hard Problems
+ - Type: guarantee-less
+ - Code: Couldn't find.
+
+***** SampleCount
+ - [X]
+ - Source: From Sampling to Model Counting
+ - Type: Lower
+ - Code: http://www.cs.cornell.edu/~sabhar/software/samplecount/samplecount-1.0-04092007.tgz
+
+***** BPCount/MiniCount
+ - Source: Leveraging Belief Propagation, Backtrack Search, and Statistics for Model Counting
+ - Type: Lower (bpcount), Upper (MiniCount)
+ - Code: Not available
+
+***** MBound
+ - [X]
+ - Source: Model Counting: A New Strategy for Obtaining Good Bounds
+ - Type: Lower/Upper?
+ - Code: http://www.cs.cornell.edu/~sabhar/software/xor-scripts/xor-scripts.tgz
+
+***** SampleSearch
+ - [X]
+ - Source: SampleSearch: Importance sampling in presence of determinism
+ - Type: guarantee-less
+ - Code: http://www.hlt.utdallas.edu/~vgogate/software.html
+
+***** SearchTreeSampler
+ - [X]
+ - Source: Uniform Solution Sampling Using a Constraint Solver As an Oracle
+ - Type: Guarantee-less
+ - Code: https://cs.stanford.edu/~ermon/code/STS.zip
