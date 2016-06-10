@@ -65,27 +65,34 @@ RUN wget http://www.cs.rice.edu/CS/Verification/Projects/ApproxMC/SourceCode/App
 	cp cryptominisat-2.9.4/cryptominisat . && \
 	cp doalarm-0.1.7/doalarm .
 
-# install CryptoMinisat (approxMC-p dep.)
-RUN git clone --depth 1 https://github.com/msoos/cryptominisat.git && \
-	cd cryptominisat && \
+# install CryptoMinisat4 with projection support (approxMC-p dep.)
+RUN git clone --depth 1 https://gitlab.com/QIF/cryptominisat4.git && \
+	cd cryptominisat4 && \
 	apt-get update && \
-	apt-get install -y libm4ri-dev vim-common && \
+	apt-get install -y libm4ri-dev vim-common libboost-program-options-dev && \
 	mkdir build && \
 	cd build && \
-	cmake .. && \
+	cmake -DUSE_GAUSS=ON -DCMAKE_BUILD_TYPE=Release -DONLY_SIMPLE=OFF -DUSE_PTHREADS=ON .. && \
 	make -j4 && \
 	make install && \
-	ldconfig && \
-	mv /usr/local/bin/cryptominisat4_simple /usr/local/bin/cryptominisat4
+	ldconfig # && \
+#	mv /usr/local/bin/cryptominisat4_simple /usr/local/bin/cryptominisat4
+
+# install xorblast (xor constraint preprocessor; approxmc-p dep.)
+RUN git clone https://gitlab.com/QIF/xorblast.git && \
+	cd xorblast && \
+	ln -s "$PWD/xorblast.py" /bin/xorblast.py
 
 # install approxMC-p[y]
-RUN wget http://formal.iti.kit.edu/weigl/software/approxmc-py/approxmc-py-3-QAPL2016.tar.gz && \
-	tar -xf approxmc-py-3-QAPL2016.tar.gz && \
+RUN wget http://formal.iti.kit.edu/approxmc-py/approxmc-py-4.tar.gz && \
+	mkdir approxmc-py && \
 	cd approxmc-py && \
+	tar -xf ../approxmc-py-4.tar.gz && \
 	apt-get update && \
 	apt-get install -y python3-pip python-pip && \
-	pip3 install scipy && \
-	python3 setup.py build
+	pip3 install scipy numpy && \
+	python3 setup.py build && \
+	sed -i -e 's/--verb=0/--verb=0 --autodisablegauss=0 /g' adapters/cryptominisat4.sh
 
 # install samplesearch
 RUN wget http://www.hlt.utdallas.edu/~vgogate/satss

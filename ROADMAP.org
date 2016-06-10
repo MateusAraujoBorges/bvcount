@@ -100,10 +100,7 @@
  - Type: (ε,δ)
  - Code: http://formal.iti.kit.edu/weigl/software/approxmc-py/
  - Notes:
-   - I have no idea how to run this thing. The README is useless. Looks 
-	 like they use some kind of build tool/structure from python (setup.py).
-	 Also, looks like they use python3.
-
+   - Compile cryptominisat4 with the flags: -DUSE_GAUSS=ON -DCMAKE_BUILD_TYPE=Release -DONLY_SIMPLE=OFF -DUSE_PTHREADS=ON
    - Email from Alexander (one of the authors)
 		 Hello Mateus,
 
