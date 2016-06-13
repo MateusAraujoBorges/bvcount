@@ -104,7 +104,7 @@ RUN wget https://cs.stanford.edu/~ermon/code/STS.zip && \
 	unzip STS.zip && \
 	cd STS && \
 	export MROOT="$PWD" && \
-	cd core && \
+	cd simp && \
 	make -j4
 
 # install smtapprox
