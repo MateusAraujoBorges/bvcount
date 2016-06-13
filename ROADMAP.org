@@ -89,13 +89,15 @@
  - Code: https://www.cs.cornell.edu/~weiwei/approxcount.html
 
 ***** ApproxMC
- - [X]
+ - [X] installed 
+ - [X] working
  - Source: A Scalable Approximate Model Counter
  - Type: (ε,δ)
  - Code: http://www.cs.rice.edu/CS/Verification/Projects/ApproxMC/
 
 ***** ApproxMC-P 
- - [X]
+ - [X] installed 
+ - [X] working 
  - Source: Sound Probabilistic #SAT with Projection
  - Type: (ε,δ)
  - Code: http://formal.iti.kit.edu/weigl/software/approxmc-py/
@@ -108,27 +110,27 @@
 		 I needed the following steps to reproduce a working ApproxMC-py
 		 instance:
 
-		1. Ensure that scipy is installed -- for me 'sudo dnf python3-scipy'
-		2. Ensure you have a bounded #SAT with projection installed, like
-		clasp, sharpCDCL or an adapted version cryptominisat [1].
-		4. Some adapters need xorblast [2], as a SAT-preprocessor for
-		xor-clauses.
-		5. Ensure, e.g. that xorblast.py and sharpCDCL executable, is on $PATH:
+	 1. Ensure that scipy is installed -- for me 'sudo dnf python3-scipy'
+	 2. Ensure you have a bounded #SAT with projection installed, like
+	 clasp, sharpCDCL or an adapted version cryptominisat [1].
+	 1. Some adapters need xorblast [2], as a SAT-preprocessor for
+	 xor-clauses.
+	 1. Ensure, e.g. that xorblast.py and sharpCDCL executable, is on $PATH:
 
-		   export PATH=$PATH:/home/weigl/work/xorblast/
-		   export PATH=$PATH:/home/weigl/work/sharpCDCL/build
+		export PATH=$PATH:/home/weigl/work/xorblast/
+		export PATH=$PATH:/home/weigl/work/sharpCDCL/build
 
-		6. Run using approxmc-p.py (formely known as run.py):
+	 2. Run using approxmc-p.py (formely known as run.py):
 
-		   ~/w/approxmc-py % ./approxmc-p.py -vvvv \
-		   --sat-command 'adapters/sharpCDCL.sh {maxcount} {file}' \
-		   ~/work/qif-sat/case_study_crc/logs_2/1452259749/crc32_8_0x04C11DB7.pp.cnf
+		~/w/approxmc-py % ./approxmc-p.py -vvvv \
+		--sat-command 'adapters/sharpCDCL.sh {maxcount} {file}' \
+		~/work/qif-sat/case_study_crc/logs_2/1452259749/crc32_8_0x04C11DB7.pp.cnf
 
-		I hope that works for you.
+	 I hope that works for you.
 
-		best regards,
+	 best regards,
 
-		Alexander
+	 Alexander
 
 
 [1]: https://gitlab.com/QIF/cryptominisat4
