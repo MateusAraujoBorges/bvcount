@@ -1,10 +1,13 @@
 * GOAL
  - Efficient (approximate) model counting of nonlinear bitvector constraints
 
-
+ 
 * Plan
 ** DONE setup environment
 ** TODO convert bitvector constraints to SAT
+ - Z3 sounds like a reasonable option due to the python api:
+   - https://stackoverflow.com/questions/32448867/convert-smt-libv2-qf-aufbv-to-cnf-dimacs-format-using-z3
+   - https://stackoverflow.com/questions/30921416/how-can-i-access-the-variable-mapping-used-when-bit-blasting
 ** TODO evaluate tools 
 ** TODO figure out how to convert BV constraints to BDDs
 *** RESOURCES
@@ -28,6 +31,119 @@
    https://github.com/vladrich/sharpSAT. This version returns an upper
    bound of the number of models for a given projection. See DSharp-p (below)
    input format for more info on how to use the projection.
+ - Results:
+   - run1:
+     root@5d3867d6581a:/tools/sharpSAT# time ./Release/sharpSAT ../PC1.smt2.cnf 
+     -*** Projection vars 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64
+	 Solving ../PC1.smt2.cnf
+	 variables (all/used/free): 	342/342/0
+	 clauses (all/long/binary/unit): 980/460/486/34
+
+	 Preprocessing ..Number of free variables among remembered: 0
+	  DONE
+	 variables (all/used/free): 	164/164/0
+	 clauses (all/long/binary/unit): 478/186/292/0
+	 Maximum cache size:	1594 MB
+
+	 FINAL COUNT AFTER PROJECTION: 100000
+
+	 variables (total / active / free)	164/164/0
+	 clauses (removed) 			980 (502)
+	 decisions 				47
+	 conflicts 				0
+	 conflict clauses (all/bin/unit) 	0/0/0
+
+	 failed literals found by implicit BCP 	 0
+	 implicit BCP miss rate 	 100%
+	 cache size 7MB	
+	 cache (stores / hits) 			48/58
+	 cache miss rate 0%
+	  avg. variable count (stores / hits) 	57.0208/25.3793
+
+	 # solutions 
+	 100000
+	 # END
+
+	 time: 0.009336s
+
+	 real	0m0.015s
+	 user	0m0.012s
+	 sys	0m0.000s
+   - run2:
+	 root@5d3867d6581a:/tools/sharpSAT# time ./Release/sharpSAT ../s-rsa-10.smt2.cnf 
+	 -*** Projection vars 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64
+	 Solving ../s-rsa-10.smt2.cnf
+	 variables (all/used/free): 	11804/11804/0
+	 clauses (all/long/binary/unit): 57856/48713/9138/5
+
+	 Preprocessing ..Number of free variables among remembered: 0
+	  DONE
+	 variables (all/used/free): 	7725/7725/0
+	 clauses (all/long/binary/unit): 35971/28357/7614/0
+	 Maximum cache size:	1511 MB
+
+	 FINAL COUNT AFTER PROJECTION: 1696
+
+	 variables (total / active / free)	7725/7725/0
+	 clauses (removed) 			57856 (21883)
+	 decisions 				1695
+	 conflicts 				0
+	 conflict clauses (all/bin/unit) 	3302/78/2
+
+	 failed literals found by implicit BCP 	 2143
+	 implicit BCP miss rate 	 99.7683%
+	 cache size 54MB	
+	 cache (stores / hits) 			1696/0
+	 cache miss rate 100%
+	  avg. variable count (stores / hits) 	6472.45/0
+
+	 # solutions 
+	 1696
+	 # END
+
+	 time: 19.2473s
+
+	 real	0m19.263s
+	 user	0m19.224s
+	 sys	0m0.040s
+   - run3:
+	 root@5d3867d6581a:/tools/sharpSAT# time ./Release/sharpSAT ../s-rsa-13.smt2.cnf 
+	 -*** Projection vars 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64
+	 Solving ../s-rsa-13.smt2.cnf
+	 variables (all/used/free): 	15949/15949/0
+	 clauses (all/long/binary/unit): 78143/65884/12252/7
+
+	 Preprocessing ..Number of free variables among remembered: 0
+	  DONE
+	 variables (all/used/free): 	11386/11386/0
+	 clauses (all/long/binary/unit): 52909/41937/10972/0
+	 Maximum cache size:	1155 MB
+
+	 FINAL COUNT AFTER PROJECTION: 1694
+
+	 variables (total / active / free)	11386/11386/0
+	 clauses (removed) 			78143 (25234)
+	 decisions 				1693
+	 conflicts 				0
+	 conflict clauses (all/bin/unit) 	2915/86/0
+
+	 failed literals found by implicit BCP 	 2034
+	 implicit BCP miss rate 	 99.7995%
+	 cache size 80MB	
+	 cache (stores / hits) 			1694/0
+	 cache miss rate 100%
+	 avg. variable count (stores / hits) 	9982.24/0
+
+	 # solutions 
+	 1694
+	 # END
+
+	 time: 31.8438s
+
+	 real	0m31.863s
+	 user	0m31.800s
+	 sys	0m0.028s
+
 ***** c2d
  - Converts CNF to d-DNNF(Deterministic, Decomposable Negation Normal
    Form), which allows counting in polynomial time. sharpSat's webpage
@@ -43,7 +159,9 @@
  - Source: DSHARP: Fast d-DNNF Compilation with sharpSAT
  - Note: We will be using the version found at https://bitbucket.org/vladimirkl/dsharp
    because it supports projection.
-   
+ - Results
+   - run1: 
+	 Took a long time, forgot to call time...
 **** Probabilistic 
  - (ε,δ). These counters were originally introduced by Karp and Luby
    to count the models of DNF formulas. They guarantee with a
@@ -94,6 +212,16 @@
  - Source: A Scalable Approximate Model Counter
  - Type: (ε,δ)
  - Code: http://www.cs.rice.edu/CS/Verification/Projects/ApproxMC/
+ - Command: python ApproxMC.py -delta=0.14 -epsilon=0.5 ../s-rsa-10.smt2.cnf
+ - Results:
+   - run1:
+     time python ApproxMC.py -delta=0.14 -epsilon=0.5 -logging=1 ../s-rsa-10.smt2.cnf 
+	 {'epsilon': '0.5', 'inputFile': '../s-rsa-10.smt2.cnf', 'logging': '1', 'delta': '0.14'}
+	 Count with tolerance: 0.5 and confidence: 0.86 is 1632
+
+	 real	5m21.995s
+	 user	5m17.832s
+	 sys	0m2.480s
 
 ***** ApproxMC-P 
  - [X] installed 
@@ -101,6 +229,7 @@
  - Source: Sound Probabilistic #SAT with Projection
  - Type: (ε,δ)
  - Code: http://formal.iti.kit.edu/weigl/software/approxmc-py/
+ - Command: ./approxmc-p.py -vvvv --sat-command 'adapters/sharpCDCL.sh {maxcount} {file}' $INPUT_FILE
  - Notes:
    - Compile cryptominisat4 with the flags: -DUSE_GAUSS=ON -DCMAKE_BUILD_TYPE=Release -DONLY_SIMPLE=OFF -DUSE_PTHREADS=ON
    - Email from Alexander (one of the authors)
@@ -122,15 +251,64 @@
 
 	 2. Run using approxmc-p.py (formely known as run.py):
 
-		~/w/approxmc-py % ./approxmc-p.py -vvvv \
-		--sat-command 'adapters/sharpCDCL.sh {maxcount} {file}' \
-		~/work/qif-sat/case_study_crc/logs_2/1452259749/crc32_8_0x04C11DB7.pp.cnf
+		~/w/approxmc-py % ./approxmc-p.py -vvvv --sat-command 'adapters/sharpCDCL.sh {maxcount} {file}'  \
+        ~/work/qif-sat/case_study_crc/logs_2/1452259749/crc32_8_0x04C11DB7.pp.cnf
 
 	 I hope that works for you.
 
 	 best regards,
 
 	 Alexander
+ - Results:
+   defaults are ε=0.5,δ=0.14
+   - run1:
+	 root@2e94282b6763:/tools/approxmc-py# time ./approxmc-p.py -vvvv --sat-command 'adapters/cryptominisat4.sh {maxcount} {file}' ../s-rsa-10.smt2.cnf 
+	 Model-Count: 1600
+
+     real	0m2.116s
+	 user	0m1.952s
+	 sys	0m0.300s
+
+   - run2:
+     root@2e94282b6763:/tools/approxmc-py# time ./approxmc-p.py -vvvv --sat-command 'adapters/cryptominisat4.sh {maxcount} {file}' ../s-rsa-10.smt2.cnf 
+     Model-Count: 1664
+ 
+	 real	0m2.201s
+	 user	0m2.060s
+	 sys	0m0.344s
+
+   - run3:
+
+	 root@2e94282b6763:/tools/approxmc-py# time ./approxmc-p.py --sat-command 'adapters/cryptominisat4.sh {maxcount} {file}' ../s-rsa-10.smt2.cnf 
+	 Model-Count: 1472
+
+	 real	0m2.092s
+	 user	0m1.960s
+	 sys	0m0.228s
+
+   - run4:
+	 root@5d3867d6581a:/tools/approxmc-py# time ./approxmc-p.py --sat-command 'adapters/cryptominisat4.sh {maxcount} {file}' ../PC1.smt2.cnf 
+	 Model-Count: 102400
+
+	 real	0m0.706s
+	 user	0m0.600s
+	 sys	0m0.316s
+
+   - run5:
+	 root@5d3867d6581a:/tools/approxmc-py# time ./approxmc-p.py --sat-command 'adapters/cryptominisat4.sh {maxcount} {file}' ../s-rsa-13.smt2.cnf 
+	 Model-Count: 1664
+
+	 real	0m3.017s
+	 user	0m2.760s
+	 sys	0m0.376s
+
+   - run6:
+	 root@5d3867d6581a:/tools/approxmc-py# time ./approxmc-p.py --sat-command 'adapters/cryptominisat4.sh {maxcount} {file}' ../s-rsa-13.smt2.cnf 
+	 Model-Count: 1856
+
+	 real	0m2.885s
+	 user	0m2.748s
+	 sys	0m0.284s
 
 
 [1]: https://gitlab.com/QIF/cryptominisat4
@@ -141,17 +319,68 @@
  - Source: Approximate Probabilistic Inference via Word-Level Counting
  - Type: (ε,δ)
  - Code: https://bitbucket.org/kuldeepmeel/smtapproxmc
+ - Results:
+   ### Parsing the Output File ###
+   The `<output_file>` generated by the script is a semicolon separated file with following values:
+   <maximum_bitwidth>;<comma_separated_list_of_primes>;<median>;<time_in_seconds>;<# iterations_which_timedout>;<iteration_in_which_timedout>
+
+   - run1:
+	 root@5d3867d6581a:/tools/smtapproxmc# python3 scripts/approxMC.py ../s-rsa-10.smt2 scripts/primes.txt 10 log out
+	 root@5d3867d6581a:/tools/smtapproxmc# cat out 
+	 32;3,;0.0;2.8200000000000003;0;Timedout in runs: set()
+
+   - run2:
+	 root@5d3867d6581a:/tools/smtapproxmc# python3 scripts/approxMC.py ../s-rsa-10.smt2 scripts/primes.txt 100 log out
+     root@5d3867d6581a:/tools/smtapproxmc# cat out 
+     32;3,;0.0;20.41;0;Timedout in runs: set()
+
+   - run3:
+	 root@5d3867d6581a:/tools/smtapproxmc# python3 scripts/approxMC.py ../PC1.smt2 scripts/primes.txt 100 log out
+	 root@5d3867d6581a:/tools/smtapproxmc# cat out 
+	 32;;111409.5;48.57;0;Timedout in runs: set()
+
+   - run4:
+	 root@5d3867d6581a:/tools/smtapproxmc# python3 scripts/approxMC.py ../PC1.smt2 scripts/primes.txt 10 log out
+	 root@5d3867d6581a:/tools/smtapproxmc# cat out 
+	 32;;131074.0;3.93;0;Timedout in runs: set()root@5d3867d6581a:/tools/smtapproxmc# 
+
+   - run5:
+	 root@5d3867d6581a:/tools/smtapproxmc# python3 scripts/approxMC.py ../s-rsa-10.smt2 scripts/primes.txt 10 log out
+	 root@5d3867d6581a:/tools/smtapproxmc# cat out 
+	 32;3,;0.0;2.13;0;Timedout in runs: set()
+
+   - run6:
+	 root@5d3867d6581a:/tools/smtapproxmc# python3 scripts/approxMC.py ../s-rsa-13.smt2 scripts/primes.txt 10 log out
+	 root@5d3867d6581a:/tools/smtapproxmc# cat out
+	 32;;1963.5;12.11;0;Timedout in runs: set()
+
+   - run7
+	 root@5d3867d6581a:/tools/smtapproxmc# python3 scripts/approxMC.py ../s-rsa-13.smt2 scripts/primes.txt 10 log out
+	 root@5d3867d6581a:/tools/smtapproxmc# cat out
+	 32;257,;7.0;7.87;0;Timedout in runs: set()
+
+   - run8
+	 root@5d3867d6581a:/tools/smtapproxmc# python3 scripts/approxMC.py ../s-rsa-13.smt2 scripts/primes.txt 50 log out
+	 root@5d3867d6581a:/tools/smtapproxmc# cat out
+	 32;;1741.0;44.480000000000004;0;Timedout in runs: set()
+
 
 ***** SE
  - Source: Stochastic Enumeration Method for Counting NP-Hard Problems
  - Type: guarantee-less
  - Code: Couldn't find.
-
+   
 ***** SampleCount
  - [X]
  - Source: From Sampling to Model Counting
  - Type: Lower
  - Code: http://www.cs.cornell.edu/~sabhar/software/samplecount/samplecount-1.0-04092007.tgz
+ - Results:
+   - run1:
+	 root@5d3867d6581a:/tools/samplecount# ./samplecount.sh ../s-rsa-10.smt2.cnf 2 20 3.5 -cutoff 5000 
+	 SampleCount version 1.0
+	 Copyright Cornell University, 2007
+	 if: Badly formed number.
 
 ***** BPCount/MiniCount
  - Source: Leveraging Belief Propagation, Backtrack Search, and Statistics for Model Counting
@@ -163,15 +392,87 @@
  - Source: Model Counting: A New Strategy for Obtaining Good Bounds
  - Type: Lower/Upper?
  - Code: http://www.cs.cornell.edu/~sabhar/software/xor-scripts/xor-scripts.tgz
+ - Skipping this one; looks like an old version of approxmc
 
 ***** SampleSearch
  - [X]
  - Source: SampleSearch: Importance sampling in presence of determinism
  - Type: guarantee-less
  - Code: http://www.hlt.utdallas.edu/~vgogate/software.html
+ - This one is strange: I can't find a way to set a stop criteria - it just keeps
+   going.
+ - Results:
+   - run 1
+	 root@5d3867d6581a:/tools# time ./satss s-rsa-10.smt2.cnf 
+	 c Debugging is ON.
+	 DBL Min = 6.72421e-4932
+	 Problem read
+	 Max cluster size =109
+	 Estimate  = 2.9828e+33
+	 #sampled variables = 1730 out of 11804
+	 Dom size i-bound = 12
+	 Join graph done
+	 Nodes initialized
+	 Iteration 0 Done
+	 Iteration 1 Done
+	 Iteration 2 Done
+	 Iteration 3 Done
+	 Iteration 4 Done
+	 Iteration 5 Done
+	 Iteration 6 Done
+	 Iteration 7 Done
+	 Iteration 8 Done
+	 Iteration 9 Done
+	 buckets created
+	 DRC done
+	 ^C
+
+	 real	26m46.250s
+	 user	26m41.308s
+	 sys	0m1.460s
+
 
 ***** SearchTreeSampler
  - [X]
  - Source: Uniform Solution Sampling Using a Constraint Solver As an Oracle
  - Type: Guarantee-less
  - Code: https://cs.stanford.edu/~ermon/code/STS.zip
+ - Results:
+  - run1:
+	root@5d3867d6581a:/tools/STS# ./core/STS ../PC1.smt2.cnf -verb=0
+
+	WARNING: for repeatability, setting FPU to use double precision
+	SATISFIABLE
+	z <9.830400e+04, 9.830400e+04 > , time=         0.17, samp=1
+	z <9.895936e+04, 9.895936e+04 > , time=         0.28, samp=2
+	z <9.917781e+04, 9.917781e+04 > , time=         0.38, samp=3
+	z <9.895936e+04, 9.895936e+04 > , time=         0.48, samp=4
+	z <1.001390e+05, 1.001390e+05 > , time=         0.59, samp=5
+	z <9.983317e+04, 9.983317e+04 > , time=         0.69, samp=6
+	z <9.924023e+04, 9.924023e+04 > , time=         0.80, samp=7
+	z <9.945088e+04, 9.945088e+04 > , time=         0.90, samp=8
+	z <9.961472e+04, 9.961472e+04 > , time=         1.01, samp=9
+	z <9.922150e+04, 9.922150e+04 > , time=         1.11, samp=10
+	Different : 0
+	Chi-square : 0.000000
+	Estimated log-z: 11.505110
+	Estimated Z: 9.922150e+04
+
+  - run2:
+	root@5d3867d6581a:/tools/STS# ./core/STS ../s-rsa-10.smt2.cnf -verb=0
+	WARNING: for repeatability, setting FPU to use double precision
+	SATISFIABLE
+	z <1.679360e+03, 1.679360e+03 > , time=       442.48, samp=1
+	^Cz <1.658880e+03, 1.658880e+03 > , time=       562.13, samp=2
+	z <-nan, -nan > , time=       562.13, samp=3
+	z <-nan, -nan > , time=       562.13, samp=4
+	z <-nan, -nan > , time=       562.13, samp=5
+	z <-nan, -nan > , time=       562.14, samp=6
+	z <-nan, -nan > , time=       562.14, samp=7
+	z <-nan, -nan > , time=       562.14, samp=8
+	z <-nan, -nan > , time=       562.14, samp=9
+	z <-nan, -nan > , time=       562.14, samp=10
+	Different : 0
+	Chi-square : 0.000000
+	Estimated log-z: -nan
+	Estimated Z: -nan
