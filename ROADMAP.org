@@ -1,15 +1,20 @@
-* GOAL
+* GOAL 
  - Efficient (approximate) model counting of nonlinear bitvector constraints
 
  
 * Plan
 ** DONE setup environment
-** TODO convert bitvector constraints to SAT
+** DONE convert bitvector constraints to SAT
  - Z3 sounds like a reasonable option due to the python api:
    - https://stackoverflow.com/questions/32448867/convert-smt-libv2-qf-aufbv-to-cnf-dimacs-format-using-z3
    - https://stackoverflow.com/questions/30921416/how-can-i-access-the-variable-mapping-used-when-bit-blasting
-** TODO evaluate tools 
+** DONE evaluate tools 
 ** TODO figure out how to convert BV constraints to BDDs
+*** questions
+ - How to project variables with BDDs?
+   - Maybe gen all solutions and then filter for the projection?
+ - What heuristics can be used to avoid bad variable selection during construction?
+
 *** RESOURCES
  - BDD Library for python/web visualizer: http://formal.cs.utah.edu:8080/pbl/BDD.php
  - How to translate SAT to BDD: http://dx.doi.org/10.1109/DAC.1990.114826
