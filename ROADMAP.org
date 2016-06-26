@@ -9,8 +9,14 @@
    - https://stackoverflow.com/questions/32448867/convert-smt-libv2-qf-aufbv-to-cnf-dimacs-format-using-z3
    - https://stackoverflow.com/questions/30921416/how-can-i-access-the-variable-mapping-used-when-bit-blasting
 ** DONE evaluate tools 
-** TODO figure out how to convert BV constraints to BDDs
+** DONE figure out how to convert BV constraints to BDDs
 *** questions
+ - Is it feasible?
+   - For multiplication, at least one output bit will result in a exp-size bdd. (see 
+	 https://bib.irb.hr/datoteka/199194.BDD_complexity_analysis_of_multiplier_circuits.pdf
+	 and Knuth/TAoCP (4b, p. 45). Upper bound on size for the middle bit is 2.8 * 2 ^(6n/5)
+	 (http://www.cs.gunma-u.ac.jp/~amano/paper/jh_2k5_v3.pdf)
+
  - How to project variables with BDDs?
    - Maybe gen all solutions and then filter for the projection?
  - What heuristics can be used to avoid bad variable selection during construction?
@@ -148,6 +154,37 @@
 	 real	0m31.863s
 	 user	0m31.800s
 	 sys	0m0.028s
+   - run 4: mateus@antenora:~/workspace/sharpSAT$ ./sharpSAT ../bvcount/inputs/s-rsa-1.smt2.cnf 
+		 Solving ../bvcount/inputs/s-rsa-1.smt2.cnf
+		 variables (all/used/free): 	22531/22531/0
+		 clauses (all/long/binary/unit): 54386/22421/31965/0
+		 Preprocessing .. DONE
+		 variables (all/used/free): 	18723/13795/4928
+		 clauses (all/long/binary/unit): 42425/16245/26180/0
+		 56 16
+		 Maximum cache size:	1121 MB
+		 variables (total / active / free)	18723/13795/4928
+		 clauses (removed) 			54386 (11955)
+		 decisions 				3465
+		 conflicts 				1748
+		 conflict clauses (all/bin/unit) 	13758/289/6
+		 failed literals found by implicit BCP 	 8752
+		 implicit BCP miss rate 	 99.5518%
+		 bytes cache size     	42110088	
+		 bytes cache (overall) 	63032172
+		 bytes cache (infra / comps) 20234400/21875688	
+		 bytes pure comp data (curr)    21759272
+		 bytes pure comp data (overall) 42575948
+		 bytes cache with sysoverh (curr)    21988472
+		 bytes cache with sysoverh (overall) 43012816
+		 cache (stores / hits) 			1819/0
+		 cache miss rate 100%
+		  avg. variable count (stores / hits) 	11839.2/0
+		 # solutions 
+		 701307556295128209636714898138305940607056817271188923359087003155513381928582872889943608626334410206294055637466502208495374095228601660156838825824788563469514280757358037558997511232684421978334176559145825018081510446739265712972288627975858999234371610076224094374373608572493049785409796315090373010686268057631041427670713572760866079797590081413843630909971940792472068731664170470348968912497370987246341615963197538472863869186954458883336040793775409868694208850007359852700630835455065472053604717270611646256686452441801255199575666731229593746131141897926006387423807896289375036836766309624930056085848984206684652364937827279467440365694429183681411975523043124563439626347194748751536793152602894377995151380331257504502623143396866640088356971442883686243665377407318032570619293161540814740133428244471089134579711170986779324874560257884203679862315097369106253909490553898228417806381522330301203425598770973818391077462205385031515305612587290527580970248016182872260492235180761478931255100142143139014072660696935324405111673696630953700285044363602867268863277933447651853135993762413636802978668406201270144289323298895597723751982156289914462596738074121066596636500919534240503484621007492146213783125361337935559227592833362601777663437796387218593210290816618658750589303748706644829038362457740026505295247071970960467427650384139459086223002777100380494825466103580576115921225544536084842230147310538709594950842729834251228633235540420696569009940192444247179264
+		 # END
+		 time: 35.7415s
+
 
 ***** c2d
  - Converts CNF to d-DNNF(Deterministic, Decomposable Negation Normal
@@ -167,6 +204,8 @@
  - Results
    - run1: 
 	 Took a long time, forgot to call time...
+***** Mathematica
+ - See boolean.nb for experiments. In summary: Counting blows up quickly (OOM).
 **** Probabilistic 
  - (ε,δ). These counters were originally introduced by Karp and Luby
    to count the models of DNF formulas. They guarantee with a
