@@ -27,8 +27,8 @@ def bitblast(formula):
     g = Goal()
     g.add(map_clauses)
     g.add(formula)
-    #t = Then(Tactic('simplify'),Tactic('bit-blast'), Tactic('tseitin-cnf'))
-    t = Then(Tactic('simplify'),Tactic('bit-blast'))
+    t = Then(Tactic('simplify'),Tactic('bit-blast'), Tactic('tseitin-cnf'))
+    #t = Then(Tactic('simplify'),Tactic('bit-blast'))
     bitblasted = t(g)[0]
 
     return bitblasted, id_table
@@ -61,7 +61,17 @@ def to_bdd(cnf,id_table):
     out_bdd = bdd.expr2bdd(conjunction)
     return out_bdd
 
-def to_dimacs(cnf,table):
+def proj_id_last(var,n_proj_vars,n_vars):
+    assert var != 0
+    is_neg = var < 0
+    if abs(var) <= n_proj_vars:
+        new_var = abs(var) - n_proj_vars + n_vars
+    else:
+        new_var = abs(var) - n_proj_vars
+
+    return new_var * (-1 if is_neg else 1)
+
+def to_dimacs(cnf,table,proj_last):
     cnf_clauses = []
     projection_scope = len(table)
 
@@ -71,10 +81,26 @@ def to_dimacs(cnf,table):
         dimacs_clause.append('0')
         cnf_clauses.append(" ".join(dimacs_clause))
 
-    cnf_header = [
-        "p cnf {} {}".format(len(table),len(cnf_clauses)),
-        "cr {}".format(" ".join([str(x) for x in range(1,projection_scope + 1)]))
-    ]
+    if proj_last:
+        n_vars = len(table)
+        clauses = []
+        for clause in cnf_clauses:
+            int_clause = [int(x) for x in clause.split(" ")[:-1]]
+            proj_clause = [proj_id_last(x,projection_scope,n_vars) for x in int_clause]
+            proj_clause.append(0)
+            str_clause = " ".join([str(x) for x in proj_clause])
+            clauses.append(str_clause)
+
+        cnf_clauses = clauses
+        cnf_header = [
+            "p cnf {} {}".format(len(table),len(cnf_clauses)),
+            "cr {}".format(" ".join([str(x) for x in range(n_vars - projection_scope + 1, n_vars + 1)]))
+        ]
+    else:
+        cnf_header = [
+            "p cnf {} {}".format(len(table),len(cnf_clauses)),
+            "cr {}".format(" ".join([str(x) for x in range(1,projection_scope + 1)]))
+        ]
     return cnf_header,cnf_clauses
 
 def map_bitvector(input_vars):
@@ -206,11 +232,14 @@ def collect_vars(e,seen=None):
 
 def main():
     inputfile = sys.argv[1]
+    projection_last = sys.argv[2]
+    projection_last = projection_last and projection_last.lower() != "false"
+
     print("Reading formula...", file=sys.stderr)
     formula = parse_smt2_file(inputfile)
     print("Generating DIMACS with projection...", file=sys.stderr)  
     bitblasted, id_table = bitblast(formula)
-    header, clauses  = to_dimacs(bitblasted, id_table)
+    header, clauses  = to_dimacs(bitblasted, id_table, projection_last)
     print('\n'.join(header))
     print('\n'.join(clauses))
 
