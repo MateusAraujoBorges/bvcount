@@ -1,0 +1,136 @@
+diff -u ../../../All_SAT/tmp/All_SAT/asap_solver.cpp ../../All_SAT/asap_solver.cpp
+--- ../../../All_SAT/tmp/All_SAT/asap_solver.cpp	2007-11-07 00:36:41.000000000 -0800
++++ ../../All_SAT/asap_solver.cpp	2016-08-15 15:13:10.017364557 -0700
+@@ -168,7 +168,7 @@
+     exit (-1);
+   }
+   _params.results = results;
+-  CHECK(dump());
++  // CHECK(dump());
+ }
+ 
+ void CSolver::set_var_value(int v, int value, ClauseIdx ante, int dl)
+@@ -303,7 +303,7 @@
+ 
+ void CSolver::unset_var_value(int v)
+ {
+-  CHECK(cout <<"Unset var " << (variable(v).value()?"+":"-") << v << endl;);
++  //CHECK(cout <<"Unset var " << (variable(v).value()?"+":"-") << v << endl;);
+   CVariable & var = variable(v);
+   if (var.var_score_pos() < _max_score_pos)
+     _max_score_pos = var.var_score_pos();
+@@ -405,7 +405,7 @@
+ 
+ void CSolver::delete_unrelevant_clauses(void) 
+ {
+-    CHECK_FULL (dump());
++    //CHECK_FULL (dump());
+     int original_num_deleted = num_deleted_clauses();
+     int original_del_lits = num_deleted_literals();
+     if (CDatabase::_stats.mem_used_up) {
+@@ -508,8 +508,8 @@
+ 
+ bool CSolver::decide_next_branch(void)
+ {
+-    cout << "Before decision :\n";
+-    dump_assignment_stack();
++    //cout << "Before decision :\n";
++    //dump_assignment_stack();
+ 
+     if (!_implication_queue.empty()) {
+ 	//some hook function did a decision, so skip my own decision making.
+@@ -578,8 +578,8 @@
+ 
+ void CSolver::back_track(int blevel)
+ {
+-  CHECK (cout << "Back track to " << blevel <<" ,currently in "<< dlevel() << " level " << endl;);
+-  CHECK_FULL (dump());
++  // CHECK (cout << "Back track to " << blevel <<" ,currently in "<< dlevel() << " level " << endl;);
++  // CHECK_FULL (dump());
+   //  CHECK(verify_integrity());
+   
+ 
+diff -u ../../../All_SAT/tmp/All_SAT/asap_solver.h ../../All_SAT/asap_solver.h
+--- ../../../All_SAT/tmp/All_SAT/asap_solver.h	2007-10-01 23:08:15.000000000 -0700
++++ ../../All_SAT/asap_solver.h	2016-08-15 15:13:48.673693580 -0700
+@@ -361,8 +361,8 @@
+     }
+ 
+     void queue_implication (int lit, ClauseIdx ante_clause) {
+-	CHECK (cout << "\t\t\t\t\t\tQueueing " << (lit&0x01?" -":" +") << (lit>>1) ;
+-	       cout << " because of  " << ante_clause << endl; );
++	//CHECK (cout << "\t\t\t\t\t\tQueueing " << (lit&0x01?" -":" +") << (lit>>1) ;
++	//       cout << " because of  " << ante_clause << endl; );
+ 	_implication_queue.push(pair<int, ClauseIdx>(lit, ante_clause));
+     }
+ 
+diff -u ../../../All_SAT/tmp/All_SAT/batch_solver.cpp ../../All_SAT/batch_solver.cpp
+--- ../../../All_SAT/tmp/All_SAT/batch_solver.cpp	2007-10-01 22:47:41.000000000 -0700
++++ ../../All_SAT/batch_solver.cpp	2016-08-15 15:14:15.405921141 -0700
+@@ -6,6 +6,7 @@
+ #include <vector>
+ #include "dstruct.h"
+ #include "InterfaceCSolver.h"
++#include <cstring>
+ using namespace std;
+ 
+ #define BATCH_SIZE      2
+diff -u ../../../All_SAT/tmp/All_SAT/InterfaceCSolver.cpp ../../All_SAT/InterfaceCSolver.cpp
+--- ../../../All_SAT/tmp/All_SAT/InterfaceCSolver.cpp	2007-11-07 00:12:26.000000000 -0800
++++ ../../All_SAT/InterfaceCSolver.cpp	2016-08-15 15:10:26.951977296 -0700
+@@ -296,7 +296,8 @@
+ int InterfaceCSolver::handleConflict(int &blevel) {
+   
+   cout << "handle conflict.\n";
+-  dump_assignment_stack();
++  // MAB: commented this to speed things
++  // dump_assignment_stack();
+   int deduced;
+   int back_level;
+   bool synchBackTrack;
+@@ -820,7 +821,8 @@
+ 	if (i >= len) {
+ 	    cerr << "Verify Satisfiable solution failed, please file a bug report, thanks. " << endl;
+ 	    cout << "at solution: ";
+-	    dump_assignment_stack();
++ 	   // MAB: commented this to speed things
++	   // dump_assignment_stack();
+ 	    exit(-1);
+ 	}
+     }
+diff -u ../../../All_SAT/tmp/All_SAT/makefile ../../All_SAT/makefile
+--- ../../../All_SAT/tmp/All_SAT/makefile	2004-11-11 07:24:46.000000000 -0800
++++ ../../All_SAT/makefile	2016-08-15 15:07:37.042533278 -0700
+@@ -1,9 +1,10 @@
+ #CC = CC
+ CC = g++
+ cc = gcc
+-
+ RM = rm -f
+ 
++FLAGS = -m32 -g -O3 -DNDEBUG
++
+ RANLIB = ranlib
+ AR = ar
+ 
+@@ -20,7 +21,7 @@
+ LIB_OBJS = $(LIB_SRCS:.cpp=.o)
+ 
+ TARGET:   $(BATCH_OBJS) libsat.a 
+-	g++ -o batch_all_sat $(BATCH_OBJS) libsat.a
++	g++ $(FLAGS) -o batch_all_sat $(BATCH_OBJS) libsat.a
+ 
+ $(LIB_OBJS): $(LIB_HEADERS) makefile
+ 
+@@ -29,9 +30,9 @@
+ 	$(AR) cr libsat.a $(LIB_OBJS)
+ 	$(RANLIB) libsat.a
+ .c.o:
+-	$(cc) -c $<
++	$(cc) $(FLAGS) -c $<
+ .cpp.o:
+-	$(CC) -c $< 
++	$(CC) $(FLAGS) -c $< 
+ 
+ 
+ clean:

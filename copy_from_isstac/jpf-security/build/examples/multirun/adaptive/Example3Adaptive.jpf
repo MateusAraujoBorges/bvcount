@@ -1,0 +1,28 @@
+target=multirun.adaptive.Example3Adaptive
+
+classpath=${jpf-security}/build/examples
+sourcepath=${jpf-security}/src/examples
+
+mutirun.secure_method=multirun.adaptive.Example3Adaptive.foo
+
+listener=sidechannel.multirun.adaptive.backup.GreedyAdaptiveListener
+#listener=sidechannel.multirun.DebugMultiRunListener
+
+greedy=true
+
+#adaptive=true
+
+multirun.num_run = 2
+sidechannel.input_size = 1
+
+symbolic.min_int=0
+symbolic.max_int=4
+
+sidechannel.min_high=0
+sidechannel.max_high=4
+
+greedy.tmpDir = ${jpf-security}/build/tmp
+
+symbolic.debug = false
+
+sidechannel.verbose = false

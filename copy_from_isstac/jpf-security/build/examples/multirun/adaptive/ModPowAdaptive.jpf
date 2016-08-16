@@ -1,0 +1,36 @@
+target=multirun.adaptive.ModPowAdaptive
+
+mutirun.secure_method=multirun.adaptive.ModPowAdaptive.modPowFastKocherReduction
+
+classpath=${jpf-security}/build/main;${jpf-security}/build/examples
+sourcepath=${jpf-security}/src/examples
+
+listener=sidechannel.multirun.adaptive.GreedyAdaptiveListener
+#listener=sidechannel.multirun.DebugMultiRunListener
+
+greedy=true
+
+adaptive=true
+
+multirun.num_run = 5
+sidechannel.input_size = 1
+
+greedy.tmpDir = ${jpf-security}/build/tmp
+greedy.output = ${jpf-security}/build/tmp/simplifiedRSA.smt2
+
+# optional settings
+symbolic.min_int=1
+
+symbolic.max_int=1717
+#symbolic.max_int=834443
+#symbolic.max_int=1964903306
+
+symbolic.debug = false
+
+sidechannel.min_high=1
+sidechannel.max_high=7
+
+sidechannel.verbose = false
+
+#symbolic.dp=z3bitvector
+symbolic.dp=no_solver

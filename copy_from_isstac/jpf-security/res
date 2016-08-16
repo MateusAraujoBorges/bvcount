@@ -1,0 +1,5679 @@
+changeset:   1019:755fd8553947
+tag:         tip
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Aug 15 16:33:01 2016 -0700
+summary:     new library, remove Guava from Antonio's lib
+
+changeset:   1018:47f5265756ac
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Aug 15 12:20:35 2016 -0700
+summary:     remove unnecessary files
+
+changeset:   1017:df442b18c06a
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Aug 15 12:17:02 2016 -0700
+summary:     Mateus integeration of model counting
+
+changeset:   1016:344f5834e300
+parent:      1015:7e229ef8f9f3
+parent:      1014:fc67a535da4e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Aug 15 07:08:54 2016 -0700
+summary:     merge
+
+changeset:   1015:7e229ef8f9f3
+parent:      1010:f6af9868bdb5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Aug 15 07:08:22 2016 -0700
+summary:     update
+
+changeset:   1014:fc67a535da4e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Aug 12 11:26:18 2016 -0700
+summary:     Add ctor to HeuristicListener that accepts a policy directly
+
+changeset:   1013:f08c9207c35d
+parent:      1012:333cf1acc70f
+parent:      1010:f6af9868bdb5
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Aug 12 09:19:52 2016 -0700
+summary:     merge
+
+changeset:   1012:333cf1acc70f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Aug 12 08:47:07 2016 -0700
+summary:     Add optional serialization of policy object and getter for obtaining a reference to final policy
+
+changeset:   1011:6bc116789e2e
+parent:      1008:f0d6f066efde
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Aug 02 11:34:52 2016 -0700
+summary:     update axes on livetracker chart
+
+changeset:   1010:f6af9868bdb5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Aug 10 15:59:51 2016 -0700
+summary:     update
+
+changeset:   1009:9c542949dc1c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Aug 06 21:20:19 2016 -0700
+summary:     remove all-smt
+
+changeset:   1008:f0d6f066efde
+parent:      1007:7c4000000895
+parent:      1004:ef0b8725e631
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Aug 01 15:22:18 2016 -0700
+summary:     Merge sidechannel work
+
+changeset:   1007:7c4000000895
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Aug 01 15:16:50 2016 -0700
+summary:     prevent overriding of file names for for verbose output
+
+changeset:   1006:5bb130515474
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Aug 01 15:15:48 2016 -0700
+summary:     Catch and log math exception in worst case chart
+
+changeset:   1005:ca5ad03a06bf
+parent:      992:b3a2c32070fd
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Aug 01 15:13:55 2016 -0700
+summary:     Clean up shells and liveStatistics for monte carlo sampler
+
+changeset:   1004:ef0b8725e631
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Aug 01 03:30:11 2016 -0700
+summary:     update
+
+changeset:   1003:9e8562d7db90
+user:        rodykersten
+date:        Fri Jul 29 19:18:53 2016 -0700
+summary:     Some cost models. Live object and outputstream need work. Plus option to disable policies.
+
+changeset:   1002:5f04e4fda533
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jul 27 15:17:19 2016 -0700
+summary:     refactoring
+
+changeset:   1001:6266ec158018
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jul 22 12:16:07 2016 -0700
+summary:     update
+
+changeset:   1000:8cd599568c01
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jul 22 12:00:43 2016 -0700
+summary:     update
+
+changeset:   999:1ca49150de0f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jul 22 10:49:59 2016 -0700
+summary:     add util
+
+changeset:   998:6293b367053e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jul 19 14:10:45 2016 -0700
+summary:     update
+
+changeset:   997:59ea86ff0719
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jul 19 14:09:49 2016 -0700
+summary:     update
+
+changeset:   996:cfee5f82dc5b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jul 19 14:07:51 2016 -0700
+summary:     update
+
+changeset:   995:a7a6be094f63
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jul 19 14:06:42 2016 -0700
+summary:     update
+
+changeset:   994:42af0215ad98
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jul 19 13:49:15 2016 -0700
+summary:     add subspace
+
+changeset:   993:e07bfe5b5d91
+user:        bang <bang@cs.ucsb.edu>
+date:        Fri Jul 08 16:09:55 2016 -0700
+summary:     gabfeed VLAB config file
+
+changeset:   992:b3a2c32070fd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jul 04 23:30:04 2016 -0700
+summary:     fix bug
+
+changeset:   991:d9d39128b94e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jul 04 22:47:33 2016 -0700
+summary:     add All-SMT
+
+changeset:   990:807ffaa4a20f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 29 16:39:05 2016 -0700
+summary:     Add live tracker for histogram and sampling results with jfreechart. Just add
+
+changeset:   989:807bada94098
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 29 13:49:28 2016 -0700
+summary:     extract analysis processor for sampling-based analysis
+
+changeset:   988:f0f4f7bcbd2b
+parent:      982:d261dcef091f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 29 12:33:32 2016 -0700
+summary:     Add intermediate commit. Will add real-time charting of samples
+
+changeset:   987:3dcb7a801f6a
+branch:      popl
+user:        Miroslav Gavrilov <gavrilov.miroslav@gmail.com>
+date:        Wed Jun 29 10:58:51 2016 -0700
+summary:     Added target.args to dir name
+
+changeset:   986:9392b96b1ebe
+branch:      popl
+parent:      985:7baab0c93438
+parent:      984:6587b7153841
+user:        Miroslav Gavrilov <gavrilov.miroslav@gmail.com>
+date:        Sat Jun 25 21:26:43 2016 -0700
+summary:     Merge successful
+
+changeset:   985:7baab0c93438
+branch:      popl
+parent:      983:da78a78fe0a2
+user:        Miroslav Gavrilov <gavrilov.miroslav@gmail.com>
+date:        Sat Jun 25 21:25:45 2016 -0700
+summary:     csv and json outputs available
+
+changeset:   984:6587b7153841
+branch:      popl
+user:        bang <bang@cs.ucsb.edu>
+date:        Sat Jun 25 21:21:05 2016 -0700
+summary:     popl sorting searching algos
+
+changeset:   983:da78a78fe0a2
+branch:      popl
+parent:      978:147c7b24bc54
+user:        bang <bang@cs.ucsb.edu>
+date:        Sat Jun 25 17:43:25 2016 -0700
+summary:     popl experiments
+
+changeset:   982:d261dcef091f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Jun 25 01:04:35 2016 -0700
+summary:     update
+
+changeset:   981:8507a7cbd027
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jun 24 22:56:59 2016 -0700
+summary:     update
+
+changeset:   980:0a0f99ffa278
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jun 23 13:46:19 2016 -0700
+summary:     add Mathematica simplification
+
+changeset:   979:8464edd6dc2c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jun 23 12:39:48 2016 -0700
+summary:     change separator to use with Mathematica
+
+changeset:   978:147c7b24bc54
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jun 17 15:12:14 2016 -0700
+summary:     update
+
+changeset:   977:c00ad4df8764
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jun 16 22:50:43 2016 -0700
+summary:     update
+
+changeset:   976:2bfe36aa98f6
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jun 16 22:50:25 2016 -0700
+summary:     update
+
+changeset:   975:d24bb09e842b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jun 16 11:48:14 2016 -0700
+summary:     update
+
+changeset:   974:6489914a0c8c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jun 15 22:39:16 2016 -0700
+summary:     update
+
+changeset:   973:bfa1c18a11ff
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jun 15 16:38:30 2016 -0700
+summary:     minor update
+
+changeset:   972:60af0109a7b9
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jun 13 15:47:47 2016 -0700
+summary:     update
+
+changeset:   971:944b007d4418
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jun 13 15:25:51 2016 -0700
+summary:     update
+
+changeset:   970:e9d790e8d2f9
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jun 13 12:09:10 2016 -0700
+summary:     update
+
+changeset:   969:6d8a7a993687
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jun 09 15:45:03 2016 -0700
+summary:     Change termination strategy api slightly and add reward bounded termination criterion
+
+changeset:   968:ea44ec6a1285
+parent:      967:f7e8767784b4
+parent:      965:2476b0562f7d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jun 09 11:18:30 2016 -0700
+summary:     merge
+
+changeset:   967:f7e8767784b4
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jun 09 11:18:05 2016 -0700
+summary:     Add Monte Carlo sampling based on sampling framework
+
+changeset:   966:9b92d861b092
+parent:      963:fc68225715aa
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jun 09 10:19:20 2016 -0700
+summary:     Refactor to accommodate monte carlo sampler
+
+changeset:   965:2476b0562f7d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jun 09 06:04:17 2016 -0700
+summary:     update
+
+changeset:   964:379bb84514dc
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jun 09 05:51:46 2016 -0700
+summary:     update
+
+changeset:   963:fc68225715aa
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 08 17:38:27 2016 -0700
+summary:     Update Stopwatch to a deprecated elapsedTime *sigh*. Seriously, clean up the dependencies!! It is absolutely impossible to have decent dependency management, because, e.g., Google Guava is pulled in from multiple "fat" jars that include their dependencies themselves. Ugly.
+
+changeset:   962:426ea45cf61e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 08 17:18:00 2016 -0700
+summary:     Move to pkgs
+
+changeset:   961:8477b1255732
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 08 16:57:47 2016 -0700
+summary:     Add time bounded termination strategy
+
+changeset:   960:5fd714f83421
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 08 11:45:46 2016 -0700
+summary:     Add mcts observers and collect results of best result states (based on policy)
+
+changeset:   959:9485237aa2a7
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jun 07 17:02:44 2016 -0700
+summary:     Move classes into pkgs
+
+changeset:   958:14ab4745ada9
+parent:      957:daa368d34579
+parent:      951:76e4ccf1fbdb
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jun 07 16:42:06 2016 -0700
+summary:     merge
+
+changeset:   957:daa368d34579
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jun 07 16:41:33 2016 -0700
+summary:     Change comments
+
+changeset:   956:9e69c47cf86e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jun 07 16:31:27 2016 -0700
+summary:     Add final node to tree structure
+
+changeset:   955:56677ef310c7
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jun 07 16:25:42 2016 -0700
+summary:     Add termination strategy and fixed issue with pruner. Seems to be working now
+
+changeset:   954:058e093d35df
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jun 07 15:18:49 2016 -0700
+summary:     Implement policies (e.g. ucb) and fix some bugs. Seems to be working except for pruning
+
+changeset:   953:e33bcc22bb0e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jun 06 17:11:42 2016 -0700
+summary:     More work on MCTS. Seems it only needs implementation of ucb... and testing
+
+changeset:   952:395f2eae81c7
+parent:      945:9841b231fca3
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Jun 03 16:58:54 2016 -0700
+summary:     Add Monte Carlo Tree Search sampling of symbolic paths. Basic framework ~90% done. Needs concrete selection and simulation policies + reward function. Will integrate pruning
+
+changeset:   951:76e4ccf1fbdb
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Jun 05 23:37:21 2016 -0700
+summary:     add tests
+
+changeset:   950:d05551b91fdb
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Jun 05 04:35:34 2016 -0700
+summary:     update
+
+changeset:   949:9605bab11db8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Jun 05 04:22:54 2016 -0700
+summary:     minor
+
+changeset:   948:436b0298f2b4
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Jun 05 04:16:16 2016 -0700
+summary:     change Max-SMT to difference logic
+
+changeset:   947:dac0ab3dec02
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jun 03 21:53:04 2016 -0700
+summary:     change to linear integer
+
+changeset:   946:8e7c5ac51d60
+user:        rodykersten
+date:        Mon May 16 17:12:58 2016 -0700
+summary:     New options: startat and increment.
+
+changeset:   945:9841b231fca3
+parent:      944:4332d31b43f9
+parent:      942:8afe168c58a2
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed May 11 14:45:29 2016 -0700
+summary:     merge
+
+changeset:   944:4332d31b43f9
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed May 11 14:45:14 2016 -0700
+summary:     update example shells for submission
+
+changeset:   943:71e9fbb6737a
+parent:      928:2970581f537d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed May 11 14:44:43 2016 -0700
+summary:     update readme for submission
+
+changeset:   942:8afe168c58a2
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed May 11 12:50:37 2016 -0700
+summary:     Update README.md for ABC model counter configuration.
+
+changeset:   941:515b0280ad0f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun May 08 23:34:40 2016 -0700
+summary:     minor modification
+
+changeset:   940:e4fb47bf89df
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun May 08 23:30:34 2016 -0700
+summary:     present negative number in bitvector
+
+changeset:   939:cd21d1d91636
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun May 08 12:42:09 2016 -0700
+summary:     update
+
+changeset:   938:1562f1ee61bd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun May 08 12:36:07 2016 -0700
+summary:     update
+
+changeset:   937:63e3d22a4bba
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat May 07 10:17:26 2016 -0700
+summary:     update examples
+
+changeset:   936:065bfe08633b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat May 07 10:15:23 2016 -0700
+summary:     update examples
+
+changeset:   935:510ce58ed732
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat May 07 09:22:05 2016 -0700
+summary:     refactoring
+
+changeset:   934:97b23ad6500b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat May 07 06:47:03 2016 -0700
+summary:     remove guava.jar? in classpath. Don't know who delete the file
+
+changeset:   933:717cf302f678
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri May 06 23:34:42 2016 -0700
+summary:     update
+
+changeset:   932:d7f73c333a43
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri May 06 23:29:08 2016 -0700
+summary:     update
+
+changeset:   931:0ab4375d1a08
+parent:      930:3408254aa747
+parent:      928:2970581f537d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri May 06 21:51:01 2016 -0700
+summary:     merge
+
+changeset:   930:3408254aa747
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri May 06 21:50:47 2016 -0700
+summary:     clean
+
+changeset:   929:20b9306e733e
+parent:      905:1648616096f0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri May 06 21:48:43 2016 -0700
+summary:     update
+
+changeset:   928:2970581f537d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri May 06 17:57:30 2016 -0700
+summary:     Removed tag src/main/wcanalysis/
+
+changeset:   927:129b7ef72d92
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri May 06 17:56:27 2016 -0700
+summary:     Added tag src/main/wcanalysis/, stable-non-adaptive-history for changeset 9ae47943943a
+
+changeset:   926:80b4f40a4323
+parent:      925:f751b7256173
+parent:      905:1648616096f0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri May 06 17:53:08 2016 -0700
+summary:     merge
+
+changeset:   925:f751b7256173
+parent:      924:e1055d1786c8
+parent:      893:db160dfaefdb
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri May 06 17:52:32 2016 -0700
+summary:     merge
+
+changeset:   924:e1055d1786c8
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon May 02 17:57:49 2016 -0700
+summary:     Move memoryless decision computation
+
+changeset:   923:bb48e63d7155
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon May 02 12:22:11 2016 -0700
+summary:     Adaptive trie storage. Need to implement path truncation
+
+changeset:   922:7c5e164bb8c7
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon May 02 10:08:41 2016 -0700
+summary:     Get rid of historyless objs
+
+changeset:   921:e690d716ea42
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon May 02 09:28:44 2016 -0700
+summary:     Fix output for pow and exp regression
+
+changeset:   920:0f9b7c992680
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Apr 28 09:37:00 2016 -0700
+summary:     update policies
+
+changeset:   919:ed415b1f0c7f
+parent:      918:f78e9edd8f5e
+parent:      848:ac4fe707f69f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 26 13:19:22 2016 -0700
+summary:     merge sang
+
+changeset:   918:f78e9edd8f5e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 26 13:19:03 2016 -0700
+summary:     update jpf files and challenge2onebucket
+
+changeset:   917:7693472ba0fe
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 26 13:17:49 2016 -0700
+summary:     fix visibility of depth state
+
+changeset:   916:f4476ef698a0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 26 13:15:51 2016 -0700
+summary:     add stepsize
+
+changeset:   915:532b6572c0f3
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 26 11:51:01 2016 -0700
+summary:     add combinatorial fit
+
+changeset:   914:fb61eaf37a91
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Apr 22 16:17:13 2016 -0700
+summary:     intermediate ci
+
+changeset:   913:c36162b3f4c0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Apr 21 14:52:00 2016 -0700
+summary:     Reversing the tree structure for better efficiency
+
+changeset:   912:44b9db111b5b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Apr 20 16:40:17 2016 -0700
+summary:     Fix couple of bugs in policy storage
+
+changeset:   911:cdf779da3510
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Apr 20 15:57:24 2016 -0700
+summary:     Add additional files
+
+changeset:   910:f67a6323fc72
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Apr 20 15:18:10 2016 -0700
+summary:     A lot of changes to path measure, policy trie storage, policy construction etc. Intermediate commit
+
+changeset:   909:c08b432ec844
+parent:      908:ce883ebd4e5c
+parent:      843:dcdd2d78b04e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 19 17:05:59 2016 -0700
+summary:     merge
+
+changeset:   908:ce883ebd4e5c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 19 17:05:50 2016 -0700
+summary:     more to intermediate
+
+changeset:   907:f2da5abbf73c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 19 17:05:37 2016 -0700
+summary:     add more to intermediate commit
+
+changeset:   906:4362e18c6870
+parent:      841:c10675105ef8
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Apr 19 17:04:29 2016 -0700
+summary:     intermediate commit
+
+changeset:   905:1648616096f0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri May 06 02:10:48 2016 -0700
+summary:     update
+
+changeset:   904:46f9552bd92a
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri May 06 01:37:02 2016 -0700
+summary:     update
+
+changeset:   903:507119609c42
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri May 06 01:08:10 2016 -0700
+summary:     refactor
+
+changeset:   902:7c52c0467645
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu May 05 22:58:23 2016 -0700
+summary:     begin refactoring
+
+changeset:   901:5a3d677a0194
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu May 05 16:12:43 2016 -0700
+summary:     update
+
+changeset:   900:dd00d859e67f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu May 05 14:25:42 2016 -0700
+summary:     minor update
+
+changeset:   899:81beb8235a74
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu May 05 01:15:52 2016 -0700
+summary:     update
+
+changeset:   898:8260af28b7f0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue May 03 23:32:59 2016 -0700
+summary:     has bug
+
+changeset:   897:003c4677f648
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue May 03 22:37:38 2016 -0700
+summary:     refactoring
+
+changeset:   896:26d6defb5018
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue May 03 08:08:51 2016 -0700
+summary:     update
+
+changeset:   895:8d0e38636d91
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue May 03 06:43:22 2016 -0700
+summary:     simplify
+
+changeset:   894:6232eec49310
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue May 03 01:04:33 2016 -0700
+summary:     fix bug
+
+changeset:   893:db160dfaefdb
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 30 23:42:10 2016 -0700
+summary:     fix bugs related to QF_BV format. There is no negative number in QF_BV
+
+changeset:   892:01145e12e632
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 30 23:16:25 2016 -0700
+summary:     update
+
+changeset:   891:c787c7ad5b99
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 30 22:44:54 2016 -0700
+summary:     Fix bugs. Really done
+
+changeset:   890:9f7a78b926c0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 30 01:51:25 2016 -0700
+summary:     Both approaches works
+
+changeset:   889:5e608aaf1045
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 30 01:10:31 2016 -0700
+summary:     I'm done for the optimized approach
+
+changeset:   888:6cced63983d7
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 30 00:40:51 2016 -0700
+summary:     done?
+
+changeset:   887:414d6594d46e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 30 00:02:49 2016 -0700
+summary:     add CNF2DNF
+
+changeset:   886:3620d12ab8d9
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Apr 29 21:44:57 2016 -0700
+summary:     update 2-d iterator
+
+changeset:   885:097782236f9f
+parent:      884:009f7ae8e0d8
+parent:      883:c67fbf9e527d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Apr 29 10:02:26 2016 -0700
+summary:     update
+
+changeset:   884:009f7ae8e0d8
+parent:      881:0a201288d90f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 28 16:46:09 2016 -0700
+summary:     done ?
+
+changeset:   883:c67fbf9e527d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Apr 29 00:16:05 2016 -0700
+summary:     update
+
+changeset:   882:d11f51c482d3
+user:        rodykersten
+date:        Thu Apr 28 15:33:59 2016 -0700
+summary:     Added option to WorstCaseAnalyzer to run 1,2,3,4,5,10,20,30,100,250,1000 for the ASE experiments: symbolic.worstcase.aseexp=true
+
+changeset:   881:0a201288d90f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 28 02:48:51 2016 -0700
+summary:     still has bug somewhere
+
+changeset:   880:04f0ce2c8162
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 28 02:38:38 2016 -0700
+summary:     change build.xml. classes now depends on main
+
+changeset:   879:05dd38855bcc
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 28 01:15:54 2016 -0700
+summary:     update
+
+changeset:   878:49548d162056
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 28 00:09:01 2016 -0700
+summary:     refactor again
+
+changeset:   877:f2abe2403402
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 27 23:13:54 2016 -0700
+summary:     optimize performance
+
+changeset:   876:e8d894c5c18a
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 27 22:29:08 2016 -0700
+summary:     done for adaptive attack?
+
+changeset:   875:5719851761aa
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 27 22:04:13 2016 -0700
+summary:     done for adaptive attack?
+
+changeset:   874:d1fa40717975
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 27 22:01:24 2016 -0700
+summary:     refactoring
+
+changeset:   873:08604041c086
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 27 16:45:17 2016 -0700
+summary:     update
+
+changeset:   872:fc2ba5ee1678
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 27 16:38:32 2016 -0700
+summary:     update
+
+changeset:   871:93e1849ffe89
+parent:      870:8363178a7839
+parent:      869:efa03314ea13
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 27 15:43:28 2016 -0700
+summary:     merge
+
+changeset:   870:8363178a7839
+parent:      868:1d8dd8e448c5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 27 15:42:56 2016 -0700
+summary:     clean
+
+changeset:   869:efa03314ea13
+user:        rodykersten
+date:        Tue Apr 26 18:33:25 2016 -0700
+summary:     New example: password checker. Plus all the updates to the jpf files used for the ASE paper.
+
+changeset:   868:1d8dd8e448c5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Apr 26 16:07:56 2016 -0700
+summary:     finish generate formula, add back condition
+
+changeset:   867:80e9211c0b9c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Apr 26 15:24:53 2016 -0700
+summary:     generate QF_BV formula from domain
+
+changeset:   866:f574554e1235
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Apr 26 01:54:27 2016 -0700
+summary:     convert antonio's constraint to bitvector
+
+changeset:   865:38be55db39f8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Apr 25 22:38:47 2016 -0700
+summary:     clean up. refactor.
+
+changeset:   864:5305aa152c06
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Apr 25 22:22:11 2016 -0700
+summary:     clean up. refactor.
+
+changeset:   863:a46e3d8c7ca2
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Apr 25 16:52:15 2016 -0700
+summary:     update
+
+changeset:   862:c9fbf2623ab5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Apr 25 14:46:08 2016 -0700
+summary:     update
+
+changeset:   861:6359411cb1d6
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Apr 25 11:53:20 2016 -0700
+summary:     update
+
+changeset:   860:4210684a98d0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Apr 25 10:56:39 2016 -0700
+summary:     add segmented password
+
+changeset:   859:eed91d09914d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Apr 25 01:18:23 2016 -0700
+summary:     update
+
+changeset:   858:f7cf42515760
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Apr 24 23:19:29 2016 -0700
+summary:     update
+
+changeset:   857:2caef6a98e11
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Apr 24 15:49:13 2016 -0700
+summary:     get max constraints. Need to add it to the next run
+
+changeset:   856:c106164ad10c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Apr 24 01:50:48 2016 -0700
+summary:     add omega processing for constraint
+
+changeset:   855:6236ab98d206
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Apr 24 01:32:13 2016 -0700
+summary:     update
+
+changeset:   854:d43c605aab07
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 23 22:42:39 2016 -0700
+summary:     update
+
+changeset:   853:9cc5751309a7
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 23 22:39:09 2016 -0700
+summary:     update
+
+changeset:   852:ac1803b72cb1
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 23 22:33:08 2016 -0700
+summary:     update
+
+changeset:   851:99bb41189447
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 23 01:14:04 2016 -0700
+summary:     update
+
+changeset:   850:d4fb50845d56
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 23 01:06:23 2016 -0700
+summary:     update
+
+changeset:   849:7aa0e8479949
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Apr 23 00:40:48 2016 -0700
+summary:     update
+
+changeset:   848:ac4fe707f69f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 21 22:53:19 2016 -0700
+summary:     minor edit
+
+changeset:   847:b47caaf13957
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 21 22:36:21 2016 -0700
+summary:     add generate formula
+
+changeset:   846:eac6aa8ba65d
+parent:      845:36081d37b14d
+parent:      844:439c57ede4ae
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 21 07:17:40 2016 -0700
+summary:     merge
+
+changeset:   845:36081d37b14d
+parent:      843:dcdd2d78b04e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 21 07:16:36 2016 -0700
+summary:     update
+
+changeset:   844:439c57ede4ae
+user:        rodykersten
+date:        Tue Apr 19 17:06:25 2016 -0700
+summary:     Corrected mistake in SortedListInsert driver (now gives WC compexity = N). Updated Bellman-Ford to match set-up as described in paper, now also gives expected result.
+
+changeset:   843:dcdd2d78b04e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Apr 18 01:02:53 2016 -0700
+summary:     update
+
+changeset:   842:27e27d791705
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 14 06:44:23 2016 -0700
+summary:     update
+
+changeset:   841:c10675105ef8
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Apr 13 14:17:38 2016 -0700
+summary:     Fix couple of misspellings
+
+changeset:   840:9ae47943943a
+tag:         stable-non-adaptive-history
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Apr 13 14:17:13 2016 -0700
+summary:     Add max live object heap size cost model
+
+changeset:   839:059d18bfb1a2
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Apr 13 13:22:35 2016 -0700
+summary:     Add def ctor to heap allocation cost model
+
+changeset:   838:b96c5b3c38ba
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Apr 13 13:20:58 2016 -0700
+summary:     Add stepsize configuration for WCA
+
+changeset:   837:d37299ba3fc4
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Apr 07 13:10:59 2016 -0700
+summary:     update
+
+changeset:   836:cd4176b59d2e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 06 15:32:23 2016 -0700
+summary:     update
+
+changeset:   835:0068ba653c4b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 06 10:52:29 2016 -0700
+summary:     small
+
+changeset:   834:445475003f51
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Apr 06 10:32:31 2016 -0700
+summary:     update
+
+changeset:   833:d2c6d94ff37e
+parent:      832:a531f57026af
+parent:      831:1b945eb87fd1
+user:        corina
+date:        Wed Apr 06 10:29:53 2016 -0700
+summary:     merge
+
+changeset:   832:a531f57026af
+parent:      830:9c5244aa1c46
+user:        corina
+date:        Wed Apr 06 10:29:06 2016 -0700
+summary:     updated
+
+changeset:   831:1b945eb87fd1
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Apr 05 15:13:24 2016 -0700
+summary:     update
+
+changeset:   830:9c5244aa1c46
+user:        corina
+date:        Tue Apr 05 13:55:49 2016 -0700
+summary:     updated size
+
+changeset:   829:df3263d29032
+user:        corina
+date:        Tue Apr 05 11:41:36 2016 -0700
+summary:     update
+
+changeset:   828:ae8a854fb9df
+user:        corina
+date:        Tue Apr 05 11:38:46 2016 -0700
+summary:     added password check with noisy observations based on the document fro Apogee
+
+changeset:   827:2bef203f7f4b
+parent:      826:08ce5f0b9c4b
+parent:      824:8a737c3522de
+user:        corina
+date:        Mon Apr 04 13:53:27 2016 -0700
+summary:     merge
+
+changeset:   826:08ce5f0b9c4b
+user:        corina
+date:        Mon Apr 04 13:52:44 2016 -0700
+summary:     merge
+
+changeset:   825:77de50570e5a
+parent:      823:27d474fab424
+user:        corina
+date:        Mon Apr 04 13:52:11 2016 -0700
+summary:     adding noise
+
+changeset:   824:8a737c3522de
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 28 21:13:44 2016 -0700
+summary:     update
+
+changeset:   823:27d474fab424
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 28 11:25:28 2016 -0700
+summary:     very small
+
+changeset:   822:d6feb3dc8273
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 28 10:55:38 2016 -0700
+summary:     very small
+
+changeset:   821:00cdbbfa57c7
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 28 10:53:48 2016 -0700
+summary:     polish output
+
+changeset:   820:4d75aa74793f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 28 10:42:23 2016 -0700
+summary:     update the multi-run
+
+changeset:   819:5d2010bc6c73
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Mar 24 11:26:50 2016 -0700
+summary:     revert files that were accidentally deleted
+
+changeset:   818:6a5770fc14cc
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Mar 23 21:42:07 2016 -0700
+summary:     remove debug output
+
+changeset:   817:d91fe0d4f499
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Mar 23 21:37:24 2016 -0700
+summary:     Add temporary hack to obtaining PC at searchFinished event. Seems necessary to make image processor exploration work correctly. Will fix this in a better way later.
+
+changeset:   816:d3209b7b248b
+parent:      815:3e7c1b617810
+parent:      814:3f060736b65f
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 23 15:12:19 2016 -0700
+summary:     merge
+
+changeset:   815:3e7c1b617810
+parent:      812:d58429523fa9
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 23 15:11:54 2016 -0700
+summary:     Site visit demo setup CRIME and Password (prefix oracles). Law DB with ABC config.
+
+changeset:   814:3f060736b65f
+parent:      813:4332ee17bc7b
+parent:      812:d58429523fa9
+user:        corina
+date:        Tue Mar 22 18:51:00 2016 -0700
+summary:     merge
+
+changeset:   813:4332ee17bc7b
+parent:      810:ae734f3d44d5
+user:        corina
+date:        Tue Mar 22 18:50:31 2016 -0700
+summary:     updates
+
+changeset:   812:d58429523fa9
+parent:      811:5fe93874e17e
+parent:      810:ae734f3d44d5
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Mar 22 17:21:52 2016 -0700
+summary:     merge
+
+changeset:   811:5fe93874e17e
+parent:      809:b259d1c42695
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Mar 22 17:21:34 2016 -0700
+summary:     CRIME site visit demo setup.
+
+changeset:   810:ae734f3d44d5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Mar 22 14:04:33 2016 -0700
+summary:     simplify the driver
+
+changeset:   809:b259d1c42695
+parent:      808:9f856bd3638c
+parent:      805:3ba9265da49d
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Mar 22 12:18:38 2016 -0700
+summary:     merge
+
+changeset:   808:9f856bd3638c
+parent:      807:a55a430280ce
+parent:      804:2be287492b82
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Mar 22 11:10:26 2016 -0700
+summary:     merge
+
+changeset:   807:a55a430280ce
+parent:      806:dc616ba5429e
+parent:      803:3d2695d229c0
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Mar 22 10:33:10 2016 -0700
+summary:     merge
+
+changeset:   806:dc616ba5429e
+parent:      799:089ee926256f
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Mar 22 10:32:35 2016 -0700
+summary:     Site visit demo setup: entropy and probability plotting scripts. Move multi-run analysis into Side channel listener.
+
+changeset:   805:3ba9265da49d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Mar 22 11:23:53 2016 -0700
+summary:     remove some simple warnings
+
+changeset:   804:2be287492b82
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Mar 22 11:03:14 2016 -0700
+summary:     add the space side channel
+
+changeset:   803:3d2695d229c0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 21 16:40:07 2016 -0700
+summary:     update
+
+changeset:   802:64a69901fdd3
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 21 16:07:42 2016 -0700
+summary:     update
+
+changeset:   801:d3e68a20acb5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 21 15:14:16 2016 -0700
+summary:     update build file to compile examples in the Engagement 1
+
+changeset:   800:e42369a39421
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 21 14:59:26 2016 -0700
+summary:     add original
+
+changeset:   799:089ee926256f
+parent:      798:6e19740a59ea
+parent:      797:3efa6cb04f49
+user:        bang <bang@cs.ucsb.edu>
+date:        Mon Mar 21 12:34:25 2016 -0700
+summary:     merge
+
+changeset:   798:6e19740a59ea
+parent:      788:851e3c9a99df
+user:        bang <bang@cs.ucsb.edu>
+date:        Mon Mar 21 12:33:55 2016 -0700
+summary:     Crime demo setup for site visit.
+
+changeset:   797:3efa6cb04f49
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 21 12:01:05 2016 -0700
+summary:     update
+
+changeset:   796:4d8f34898bec
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Mar 20 22:28:29 2016 -0700
+summary:     update
+
+changeset:   795:d13ba1d52ee7
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Mar 20 22:21:16 2016 -0700
+summary:     update
+
+changeset:   794:f6ba318997e5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Mar 20 03:05:17 2016 -0700
+summary:     minor update
+
+changeset:   793:d6b05e9fee6f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Mar 19 09:17:09 2016 -0700
+summary:     remove randomnes
+
+changeset:   792:b66b86525006
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Mar 19 09:05:52 2016 -0700
+summary:     small update
+
+changeset:   791:e52907068e56
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Mar 19 09:01:18 2016 -0700
+summary:     move engage1 problem to directory
+
+changeset:   790:51590480a68b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Mar 19 08:50:24 2016 -0700
+summary:     update
+
+changeset:   789:7363d732c396
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Mar 19 08:49:26 2016 -0700
+summary:     update
+
+changeset:   788:851e3c9a99df
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Mar 18 13:15:40 2016 -0700
+summary:     update
+
+changeset:   787:0c70ecd5e50c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Mar 17 16:37:13 2016 -0700
+summary:     update
+
+changeset:   786:57bf4eefd414
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Mar 17 15:59:36 2016 -0700
+summary:     update lawdb
+
+changeset:   785:71bb74a59c03
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Mar 17 15:47:12 2016 -0700
+summary:     update
+
+changeset:   784:94caddd3b02f
+parent:      783:1bb28421f9e9
+parent:      781:4760b31d0609
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Mar 17 15:34:56 2016 -0700
+summary:     merge
+
+changeset:   783:1bb28421f9e9
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Mar 17 15:34:14 2016 -0700
+summary:     update
+
+changeset:   782:8e4215629bc5
+parent:      775:bb3f8ded3e28
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 16 14:10:11 2016 -0700
+summary:     minor change
+
+changeset:   781:4760b31d0609
+parent:      780:c8d691c0d11a
+parent:      779:c166ae51a264
+user:        bang <bang@cs.ucsb.edu>
+date:        Thu Mar 17 14:37:04 2016 -0700
+summary:     merge
+
+changeset:   780:c8d691c0d11a
+parent:      778:335dc0f5c307
+user:        bang <bang@cs.ucsb.edu>
+date:        Thu Mar 17 14:36:24 2016 -0700
+summary:     config file for gabfeed ABC
+
+changeset:   779:c166ae51a264
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 16 21:29:14 2016 -0700
+summary:     update driver
+
+changeset:   778:335dc0f5c307
+parent:      777:95cde0a5d59b
+parent:      775:bb3f8ded3e28
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 16 12:18:09 2016 -0700
+summary:     merge
+
+changeset:   777:95cde0a5d59b
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 16 12:17:09 2016 -0700
+summary:     organize fse experiment scripts and data.
+
+changeset:   776:e81b68dce940
+parent:      771:1c94015f6e0d
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Mar 15 16:10:05 2016 -0700
+summary:     FSE experiments scripts and results.
+
+changeset:   775:bb3f8ded3e28
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Mar 15 13:02:58 2016 -0700
+summary:     add string variable collector
+
+changeset:   774:770a491c878c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 14 16:36:46 2016 -0700
+summary:     update
+
+changeset:   773:930a81e66588
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 14 16:13:53 2016 -0700
+summary:     update
+
+changeset:   772:9ba769a3bc92
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 14 16:03:21 2016 -0700
+summary:     update
+
+changeset:   771:1c94015f6e0d
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 09 13:50:15 2016 -0800
+summary:     Segment oracle attack cumulatie probability analysis.
+
+changeset:   770:2b2f3cfa662f
+parent:      769:8f80300654eb
+parent:      766:88145434da38
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 09 12:22:02 2016 -0800
+summary:     merge again PasswordCheckNoString.java
+
+changeset:   769:8f80300654eb
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 09 12:17:05 2016 -0800
+summary:     merge passwordCheckNoString.java
+
+changeset:   768:a5748cc4a133
+parent:      767:419db37d3caf
+parent:      765:727619e8d3c4
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 09 11:45:50 2016 -0800
+summary:     merge
+
+changeset:   767:419db37d3caf
+parent:      756:1751e92ec638
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Mar 09 10:36:55 2016 -0800
+summary:     Experiments folder in fse. Side channel update for multirun probability analysis.
+
+changeset:   766:88145434da38
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 09 10:49:50 2016 -0800
+summary:     update
+
+changeset:   765:727619e8d3c4
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 09 10:36:46 2016 -0800
+summary:     update util
+
+changeset:   764:77f6c92f0937
+parent:      763:38596a0a80c8
+parent:      760:c5b1940a3657
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 09 10:14:23 2016 -0800
+summary:     merge
+
+changeset:   763:38596a0a80c8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 09 10:13:45 2016 -0800
+summary:     update
+
+changeset:   762:704b947bb939
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Mar 08 16:49:17 2016 -0800
+summary:     update
+
+changeset:   761:324eabb9c94b
+parent:      754:41b8f34b6ddf
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Mar 07 16:47:12 2016 -0800
+summary:     update
+
+changeset:   760:c5b1940a3657
+user:        baki <baki@cs.ucsb.edu>
+date:        Tue Mar 08 17:39:10 2016 -0800
+summary:     Update configuration
+
+changeset:   759:9efec418cdbc
+user:        baki <baki@cs.ucsb.edu>
+date:        Tue Mar 08 17:37:45 2016 -0800
+summary:     Update driver for CrimeWithString example
+
+changeset:   758:edeb13b711ec
+parent:      757:8d72da27b5b4
+parent:      756:1751e92ec638
+user:        baki <baki@cs.ucsb.edu>
+date:        Tue Mar 08 17:25:42 2016 -0800
+summary:     Merge changes
+
+changeset:   757:8d72da27b5b4
+parent:      754:41b8f34b6ddf
+user:        baki <baki@cs.ucsb.edu>
+date:        Tue Mar 08 17:23:48 2016 -0800
+summary:     Modify side channel analysis for string analysis examples
+
+changeset:   756:1751e92ec638
+parent:      755:dbd0a12be1f2
+parent:      754:41b8f34b6ddf
+user:        bang <bang@cs.ucsb.edu>
+date:        Mon Mar 07 15:18:26 2016 -0800
+summary:     merge
+
+changeset:   755:dbd0a12be1f2
+parent:      747:87e193b6b56f
+user:        bang <bang@cs.ucsb.edu>
+date:        Mon Mar 07 15:17:49 2016 -0800
+summary:     config files for ABC vs Latte experiments for FSE paper.
+
+changeset:   754:41b8f34b6ddf
+parent:      753:e36916a929be
+parent:      752:c313a54eb1d3
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Mar 05 16:43:59 2016 -0800
+summary:     merge
+
+changeset:   753:e36916a929be
+parent:      751:fc4283b71301
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Mar 05 16:40:56 2016 -0800
+summary:     add path printer
+
+changeset:   752:c313a54eb1d3
+user:        baki <baki@cs.ucsb.edu>
+date:        Sat Mar 05 16:12:24 2016 -0800
+summary:     Add string version of Crime
+
+changeset:   751:fc4283b71301
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Mar 04 10:45:37 2016 -0800
+summary:     change BYTE to CHAR
+
+changeset:   750:a16ce30151f8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Mar 04 02:17:17 2016 -0800
+summary:     finish driver
+
+changeset:   749:b09d350a18fe
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Mar 04 00:56:16 2016 -0800
+summary:     update
+
+changeset:   748:19d25bf97b2e
+user:        baki <baki@cs.ucsb.edu>
+date:        Thu Mar 03 17:14:14 2016 -0800
+summary:     Add missing string variables from configuration
+
+changeset:   747:87e193b6b56f
+parent:      746:9fb9ef3ba454
+parent:      745:697925f6fdfa
+user:        bang <bang@cs.ucsb.edu>
+date:        Thu Mar 03 14:54:34 2016 -0800
+summary:     update
+
+changeset:   746:9fb9ef3ba454
+parent:      738:b216b4616c66
+user:        bang <bang@cs.ucsb.edu>
+date:        Thu Mar 03 14:52:57 2016 -0800
+summary:     ABC Side channel listener translator fixes.
+
+changeset:   745:697925f6fdfa
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 02 23:58:28 2016 -0800
+summary:     update
+
+changeset:   744:4abd9adc0952
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 02 22:08:16 2016 -0800
+summary:     update
+
+changeset:   743:2b4659baa3a6
+user:        baki <baki@cs.ucsb.edu>
+date:        Wed Mar 02 17:16:37 2016 -0800
+summary:     Use conf param for model counting mode in driver
+
+changeset:   742:263e18218847
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 02 15:01:59 2016 -0800
+summary:     update
+
+changeset:   741:ac2f91e7a2f0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 02 14:51:41 2016 -0800
+summary:     minor update
+
+changeset:   740:01c4499c92dd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 02 14:22:07 2016 -0800
+summary:     add probabilistic multirun
+
+changeset:   739:e36176d607fe
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Mar 02 03:31:48 2016 -0800
+summary:     add best adversary for password
+
+changeset:   738:b216b4616c66
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Mar 01 12:10:00 2016 -0800
+summary:     Generic side channel listener and password example for FSE experiments
+
+changeset:   737:aa605d3afda6
+parent:      736:21671c3a3068
+parent:      735:6cc29744c4ab
+user:        bang <bang@cs.ucsb.edu>
+date:        Mon Feb 29 15:42:38 2016 -0800
+summary:     merge
+
+changeset:   736:21671c3a3068
+parent:      734:c8712d5814eb
+user:        bang <bang@cs.ucsb.edu>
+date:        Mon Feb 29 15:41:58 2016 -0800
+summary:     Generic side channel listener.
+
+changeset:   735:6cc29744c4ab
+user:        baki <baki@cs.ucsb.edu>
+date:        Mon Feb 29 11:45:15 2016 -0800
+summary:     Add password examples to fse dir
+
+changeset:   734:c8712d5814eb
+user:        bang <bang@cs.ucsb.edu>
+date:        Sun Feb 28 12:12:25 2016 -0800
+summary:     ABC listeners
+
+changeset:   733:19bfe08db188
+parent:      732:343cfa2f059f
+parent:      731:337ae30256cb
+user:        bang <bang@cs.ucsb.edu>
+date:        Fri Feb 26 15:22:51 2016 -0800
+summary:     merge
+
+changeset:   732:343cfa2f059f
+parent:      729:126507ef0537
+user:        bang <bang@cs.ucsb.edu>
+date:        Fri Feb 26 15:22:20 2016 -0800
+summary:     New Listener
+
+changeset:   731:337ae30256cb
+parent:      730:a1dbc2da15d8
+parent:      729:126507ef0537
+user:        baki <baki@cs.ucsb.edu>
+date:        Fri Feb 26 15:15:31 2016 -0800
+summary:     Merge latest changes
+
+changeset:   730:a1dbc2da15d8
+parent:      724:5599d4ea5147
+user:        baki <baki@cs.ucsb.edu>
+date:        Fri Feb 26 15:00:32 2016 -0800
+summary:     Add a folder for experiments
+
+changeset:   729:126507ef0537
+parent:      728:1ec72a0cb128
+parent:      726:3d06eee75a59
+user:        bang <bang@cs.ucsb.edu>
+date:        Fri Feb 26 13:13:17 2016 -0800
+summary:     merge
+
+changeset:   728:1ec72a0cb128
+user:        bang <bang@cs.ucsb.edu>
+date:        Fri Feb 26 13:12:05 2016 -0800
+summary:     remove swap files
+
+changeset:   727:3703bd4b6dac
+parent:      720:2dd3acf40d65
+user:        bang <bang@cs.ucsb.edu>
+date:        Fri Feb 26 13:10:04 2016 -0800
+summary:     Side channel analysis with ABC model counting.
+
+changeset:   726:3d06eee75a59
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Feb 25 11:39:58 2016 -0800
+summary:     update
+
+changeset:   725:3f9c2e982232
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Feb 25 11:23:40 2016 -0800
+summary:     refactoring examples
+
+changeset:   724:5599d4ea5147
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Feb 24 14:47:17 2016 -0800
+summary:     remove incorrect classpath item
+
+changeset:   723:661bb1ff070c
+user:        some updaes to model counting
+date:        Wed Feb 24 14:35:05 2016 -0800
+summary:     added lib
+
+changeset:   722:41a2ccc94612
+user:        some updaes to model counting
+date:        Wed Feb 24 14:34:49 2016 -0800
+summary:     updates
+
+changeset:   721:05eed0e3d05c
+user:        corina
+date:        Tue Feb 23 19:30:05 2016 -0800
+summary:     added lib for model counting
+
+changeset:   720:2dd3acf40d65
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Feb 18 11:02:05 2016 -0500
+summary:     add challenge 1
+
+changeset:   719:caee0355c6de
+parent:      718:ae404373cc93
+parent:      716:aead2935a402
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Feb 10 20:52:50 2016 -0800
+summary:     merge pathlistener
+
+changeset:   718:ae404373cc93
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Feb 10 20:51:09 2016 -0800
+summary:     Add first version of heap allocation model for worst case analysis
+
+changeset:   717:16f626f9c786
+parent:      715:08ca74da72ac
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Feb 10 14:10:08 2016 -0800
+summary:     Fix possible null dereference
+
+changeset:   716:aead2935a402
+user:        rodykersten
+date:        Wed Feb 10 15:57:59 2016 -0800
+summary:     Prune filename here as well.
+
+changeset:   715:08ca74da72ac
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Feb 10 14:02:16 2016 -0800
+summary:     add missing classpath items in .project
+
+changeset:   714:995b6263e960
+parent:      713:5d58cef29172
+parent:      712:65a76184935c
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Feb 10 13:46:42 2016 -0800
+summary:     merge
+
+changeset:   713:5d58cef29172
+parent:      708:03a9ba7efa32
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Feb 10 13:46:11 2016 -0800
+summary:     Challenge 3 with ABC strings.
+
+changeset:   712:65a76184935c
+user:        rodykersten
+date:        Tue Feb 09 09:45:56 2016 -0800
+summary:     Driver + jpf file for BZip2 vulnerability. Does not work  yet...
+
+changeset:   711:42c959d320d5
+parent:      708:03a9ba7efa32
+user:        rodykersten
+date:        Tue Feb 09 09:44:35 2016 -0800
+summary:     Prune filenames >255 chars.
+
+changeset:   710:339a33e2c3cf
+branch:      cloud
+user:        dmitriyk <dmitriyk@isis.vanderbilt.edu>
+date:        Thu Feb 04 14:29:32 2016 -0600
+summary:     - Tweak to counters
+
+changeset:   709:facb3b45fc32
+branch:      cloud
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Thu Feb 04 11:44:57 2016 -0600
+summary:     Intermediate changes to distribtued listener.
+
+changeset:   708:03a9ba7efa32
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Feb 03 15:16:06 2016 -0800
+summary:     Side channel analysis with ABC for challenge 3.
+
+changeset:   707:e6973ed3d61b
+user:        bang <bang@cs.ucsb.edu>
+date:        Wed Feb 03 15:14:25 2016 -0800
+summary:     Side channel analysis with ABC.
+
+changeset:   706:116ec4cd36af
+user:        rodykersten
+date:        Tue Feb 02 17:21:16 2016 -0800
+summary:     BZip2 code for engagement
+
+changeset:   705:a313ac85764a
+user:        rodykersten
+date:        Tue Feb 02 17:20:50 2016 -0800
+summary:     Libs for the first engagement
+
+changeset:   704:9ee60c2d6ef3
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Feb 02 15:30:18 2016 -0800
+summary:     clean examples
+
+changeset:   703:cc8cdeefd729
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Feb 02 14:06:02 2016 -0800
+summary:     update
+
+changeset:   702:3bea252a611d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Feb 02 13:38:59 2016 -0800
+summary:     update
+
+changeset:   701:3c290c2c4cf5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Feb 02 12:48:09 2016 -0800
+summary:     update
+
+changeset:   700:6ae9d560c136
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Feb 02 12:15:18 2016 -0800
+summary:     add N
+
+changeset:   699:45ba434596ba
+parent:      698:99d045debd01
+parent:      691:422bda95796c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Feb 01 14:39:46 2016 -0800
+summary:     merge
+
+changeset:   698:99d045debd01
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Feb 01 14:38:54 2016 -0800
+summary:     Add edits to driver and parser of 30rock
+
+changeset:   697:bb5c3b62a681
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Feb 01 14:33:46 2016 -0800
+summary:     Add additional null pointer check
+
+changeset:   696:4cb53ec8e739
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Feb 01 14:33:27 2016 -0800
+summary:     Update chartint utility tool with CSV file output for all predicted values
+
+changeset:   695:dad328d33281
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Feb 01 14:32:28 2016 -0800
+summary:     Add additional check in worst case analyzer shell
+
+changeset:   694:17adab0f4909
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Feb 01 14:30:23 2016 -0800
+summary:     output function fits and CSV data for predicted data points
+
+changeset:   693:9915b2077d08
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Feb 01 14:28:55 2016 -0800
+summary:     add more examples for worst case analysis
+
+changeset:   692:b3bda1479e6e
+parent:      687:7b01d06149da
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Feb 01 14:28:09 2016 -0800
+summary:     fix measured method
+
+changeset:   691:422bda95796c
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Fri Jan 29 15:42:22 2016 -0600
+summary:     Decrease array length for unit testing.
+
+changeset:   690:f0f2148c023c
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Fri Jan 29 15:30:47 2016 -0600
+summary:     Decrease array size so unit test doesn't time out.
+
+changeset:   689:59c18d2fa3ac
+user:        dmitriyk <dmitriyk@isis.vanderbilt.edu>
+date:        Fri Jan 29 13:52:36 2016 -0600
+summary:     Updated build.xml for language level 8
+
+changeset:   688:8cc7b74c8aa8
+user:        dmitriyk <dmitriyk@isis.vanderbilt.edu>
+date:        Fri Jan 29 13:50:26 2016 -0600
+summary:     Updates to distributed stuff.
+
+changeset:   687:7b01d06149da
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 28 12:23:08 2016 -0800
+summary:     adjustment to pathlistener events
+
+changeset:   686:f95089b8365c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 28 12:22:28 2016 -0800
+summary:     Fixed incorrect measured method in RBTS
+
+changeset:   685:98e59157e658
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 28 11:29:58 2016 -0800
+summary:     add commons csv lib and update jpf.properties
+
+changeset:   684:d551577358a5
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 28 11:29:08 2016 -0800
+summary:     add option to reuse policy. Add small utility for generating worst case charts from a csv results file
+
+changeset:   683:673078d0dff0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 28 09:36:43 2016 -0800
+summary:     add nlogn fitting func
+
+changeset:   682:ee3b02b5174b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 28 08:11:06 2016 -0800
+summary:     Add shells for all heuristic examples
+
+changeset:   681:5b534a663020
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 27 16:04:37 2016 -0800
+summary:     update
+
+changeset:   680:ff751f61a3a7
+parent:      678:7a75e508034b
+parent:      679:69393349daf2
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 27 14:49:20 2016 -0800
+summary:     add domain and range check for function fits
+
+changeset:   679:69393349daf2
+parent:      677:a6ad40b12113
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 27 14:47:42 2016 -0800
+summary:     Add domain and range check for trendlines
+
+changeset:   678:7a75e508034b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 27 14:16:25 2016 -0800
+summary:     update RSA
+
+changeset:   677:a6ad40b12113
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 27 11:43:02 2016 -0800
+summary:     Add quicksort wca shell
+
+changeset:   676:2f7d3e1c1515
+parent:      675:03e0ec4d99d6
+parent:      674:779fbc953931
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 27 11:38:25 2016 -0800
+summary:     merge!
+
+changeset:   675:03e0ec4d99d6
+parent:      667:15e89fa4096c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 27 11:36:33 2016 -0800
+summary:     remove hardcoded disabling of pc generator optimization. Seems the heuristic works best if it is turned on (it might even be a requirement to not follow infeasible paths)
+
+changeset:   674:779fbc953931
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 27 11:04:52 2016 -0800
+summary:     update RSA with modulo
+
+changeset:   673:2e57db1b93f5
+parent:      672:892fe0dfa7d4
+parent:      671:d61983626a89
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jan 26 16:16:48 2016 -0800
+summary:     update
+
+changeset:   672:892fe0dfa7d4
+parent:      668:930685c1ddf6
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jan 26 16:16:15 2016 -0800
+summary:     update
+
+changeset:   671:d61983626a89
+parent:      670:762c61eb2d6c
+parent:      668:930685c1ddf6
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Jan 26 14:09:42 2016 -0800
+summary:     merge
+
+changeset:   670:762c61eb2d6c
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Jan 26 14:08:44 2016 -0800
+summary:     remove arithmetic dfa file
+
+changeset:   669:f53236cb8bbe
+parent:      622:92b8fa5acccf
+user:        bang <bang@cs.ucsb.edu>
+date:        Tue Jan 26 14:06:43 2016 -0800
+summary:     Side channels with ABC listeners and jpf files.
+
+changeset:   668:930685c1ddf6
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jan 26 14:03:16 2016 -0800
+summary:     update
+
+changeset:   667:15e89fa4096c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 25 06:49:23 2016 -0800
+summary:     display time for each run
+
+changeset:   666:c019730c853f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 25 06:41:49 2016 -0800
+summary:     update
+
+changeset:   665:bddf08da7518
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 25 05:42:56 2016 -0800
+summary:     greedy adaptive for challenge 3
+
+changeset:   664:bf5f9e1f374f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Jan 24 05:49:01 2016 -0800
+summary:     update
+
+changeset:   663:deca805dd061
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Jan 23 01:15:12 2016 -0800
+summary:     finish driver for challenge 3
+
+changeset:   662:1e956bf944c5
+user:        rodykersten
+date:        Fri Jan 22 11:38:45 2016 -0800
+summary:     Updated experiments. All exhaustive results match WISE now.
+
+changeset:   661:658abccdf51b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jan 22 07:11:30 2016 -0800
+summary:     add challenge 3 driver
+
+changeset:   660:7e168be7a0b3
+parent:      659:7b52eece1be0
+parent:      658:0c501001d05c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jan 22 06:31:41 2016 -0800
+summary:     merge
+
+changeset:   659:7b52eece1be0
+parent:      657:2e8580d4a8ad
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jan 22 06:31:09 2016 -0800
+summary:     fixed the time
+
+changeset:   658:0c501001d05c
+user:        rodykersten
+date:        Thu Jan 21 22:31:39 2016 -0800
+summary:     Driver for challenge 4. Runs up to large N, gives a nice N^2 result and finds that none of the characters in both files/strings should be equal.
+
+changeset:   657:2e8580d4a8ad
+parent:      656:13de60b689fc
+parent:      654:74b9b58e7bf1
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 16:23:15 2016 -0800
+summary:     merge
+
+changeset:   656:13de60b689fc
+parent:      647:aeed9d32d080
+parent:      655:00a7e31e18fb
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 16:22:57 2016 -0800
+summary:     let's get the branches in sync... MEEEERGE
+
+changeset:   655:00a7e31e18fb
+branch:      wcanalysis
+parent:      645:4a4e99b50307
+parent:      653:542effc936e1
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 16:22:19 2016 -0800
+summary:     merge
+
+changeset:   654:74b9b58e7bf1
+parent:      649:171fe1f7d657
+parent:      653:542effc936e1
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 15:38:09 2016 -0800
+summary:     merge back in wcanalysis
+
+changeset:   653:542effc936e1
+branch:      wcanalysis
+parent:      652:3914d628674c
+parent:      648:679c8af79eeb
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 15:36:44 2016 -0800
+summary:     merge head
+
+changeset:   652:3914d628674c
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 15:36:09 2016 -0800
+summary:     update jpf file for challenge 2
+
+changeset:   651:757dfbec4fe0
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 15:35:50 2016 -0800
+summary:     add no solver option for heuristic search
+
+changeset:   650:5385a0cdbbcb
+branch:      wcanalysis
+parent:      643:82599d3f37fe
+parent:      649:171fe1f7d657
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 15:19:57 2016 -0800
+summary:     Catching up with default
+
+changeset:   649:171fe1f7d657
+parent:      639:7f2a01784225
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 15:19:31 2016 -0800
+summary:     update challenge2onebucket driver
+
+changeset:   648:679c8af79eeb
+branch:      wcanalysis
+parent:      631:cd2e05d39f4e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 21 10:52:27 2016 -0800
+summary:     update proggraphlib to newest version...
+
+changeset:   647:aeed9d32d080
+parent:      646:db7a629e673c
+parent:      644:b77cfa318455
+user:        Rody Kersten <rody.kersten@sv.cmu.edu>
+date:        Thu Jan 21 16:09:19 2016 -0800
+summary:     merge
+
+changeset:   646:db7a629e673c
+parent:      639:7f2a01784225
+parent:      645:4a4e99b50307
+user:        Rody Kersten <rody.kersten@sv.cmu.edu>
+date:        Thu Jan 21 16:07:39 2016 -0800
+summary:     merge
+
+changeset:   645:4a4e99b50307
+branch:      wcanalysis
+parent:      643:82599d3f37fe
+parent:      639:7f2a01784225
+user:        Rody Kersten <rody.kersten@sv.cmu.edu>
+date:        Thu Jan 21 16:04:46 2016 -0800
+summary:     merge
+
+changeset:   644:b77cfa318455
+parent:      639:7f2a01784225
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 21 15:30:05 2016 -0800
+summary:     update
+
+changeset:   643:82599d3f37fe
+branch:      wcanalysis
+user:        rodykersten
+date:        Thu Jan 21 13:51:44 2016 -0800
+summary:     New challenges
+
+changeset:   642:a3ff0f51630a
+branch:      wcanalysis
+user:        rodykersten
+date:        Thu Jan 21 13:43:19 2016 -0800
+summary:     Move 'challenge3' out of the way...
+
+changeset:   641:02f6e4a434ca
+branch:      wcanalysis
+user:        rodykersten
+date:        Thu Jan 21 13:29:59 2016 -0800
+summary:     JPF files for experiments for ISSTA paper.
+
+changeset:   640:2a0294e4dd86
+branch:      wcanalysis
+parent:      631:cd2e05d39f4e
+user:        rodykersten
+date:        Thu Jan 21 13:29:33 2016 -0800
+summary:     Original version of 30rock
+
+changeset:   639:7f2a01784225
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 21 11:27:10 2016 -0800
+summary:     update Password Check, but not sure if it has bug
+
+changeset:   638:cdb6536afe24
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 21 10:12:47 2016 -0800
+summary:     move examples
+
+changeset:   637:777fd20a1680
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 21 01:35:53 2016 -0800
+summary:     add simple password
+
+changeset:   636:4ea022c718a7
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 21 01:19:07 2016 -0800
+summary:     fix bug in RSA
+
+changeset:   635:97f0062b2627
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 21 01:13:36 2016 -0800
+summary:     add RSA adaptive
+
+changeset:   634:e7a1deb80503
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 20 22:49:42 2016 -0800
+summary:     I'm done
+
+changeset:   633:c7776989e828
+parent:      632:228ab3befea8
+parent:      629:bd5b97b5243c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 20 16:06:40 2016 -0800
+summary:     merge
+
+changeset:   632:228ab3befea8
+parent:      628:d3a91f0004be
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 20 16:06:15 2016 -0800
+summary:     update
+
+changeset:   631:cd2e05d39f4e
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 20 14:49:11 2016 -0800
+summary:     Add null check
+
+changeset:   630:78b99de5209c
+branch:      wcanalysis
+parent:      618:7f831cbb0081
+parent:      629:bd5b97b5243c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 20 14:38:46 2016 -0800
+summary:     catching up with default
+
+changeset:   629:bd5b97b5243c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 20 14:38:25 2016 -0800
+summary:     define key length ex2
+
+changeset:   628:d3a91f0004be
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jan 19 16:15:13 2016 -0800
+summary:     add a tree
+
+changeset:   627:afb9beacbfda
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jan 19 13:28:16 2016 -0800
+summary:     greedy adaptive for 1 run
+
+changeset:   626:a5ff1fb57067
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Jan 19 01:51:52 2016 -0800
+summary:     update
+
+changeset:   625:6afba52b827b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Jan 17 00:46:45 2016 -0800
+summary:     done with greedy adaptive
+
+changeset:   624:46abf184c347
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Jan 17 00:33:36 2016 -0800
+summary:     I'm done with the greedy adaptive
+
+changeset:   623:885bd9ea6dab
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Jan 16 23:40:54 2016 -0800
+summary:     nearly finished
+
+changeset:   622:92b8fa5acccf
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Jan 15 12:35:34 2016 -0800
+summary:     update
+
+changeset:   621:0a70536fec75
+parent:      620:39d72e0d17f4
+parent:      619:36499ea6bdd2
+user:        bang <bang@cs.ucsb.edu>
+date:        Fri Jan 15 12:05:37 2016 -0800
+summary:     Merge
+
+changeset:   620:39d72e0d17f4
+parent:      605:03ee55a576df
+user:        bang <bang@cs.ucsb.edu>
+date:        Fri Jan 15 12:02:29 2016 -0800
+summary:     Add files for integer counting with ABC, SideChannelListenerABC and PathCounterListener.
+
+changeset:   619:36499ea6bdd2
+parent:      617:73a89687b851
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 14 16:16:07 2016 -0800
+summary:     update
+
+changeset:   618:7f831cbb0081
+branch:      wcanalysis
+parent:      615:a1ceaa9daefe
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 14 16:07:31 2016 -0800
+summary:     add assume to rock challenge
+
+changeset:   617:73a89687b851
+parent:      616:10776f9a5542
+parent:      614:60306ae8cc08
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 14 14:54:19 2016 -0800
+summary:     merge
+
+changeset:   616:10776f9a5542
+parent:      612:574a25f4bcdd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 14 14:53:34 2016 -0800
+summary:     udpate
+
+changeset:   615:a1ceaa9daefe
+branch:      wcanalysis
+parent:      609:4958bfe5ee2f
+parent:      614:60306ae8cc08
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 14 14:48:37 2016 -0800
+summary:     merge default
+
+changeset:   614:60306ae8cc08
+parent:      613:55bd68b70a25
+parent:      612:574a25f4bcdd
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 14 14:48:19 2016 -0800
+summary:     merge
+
+changeset:   613:55bd68b70a25
+parent:      605:03ee55a576df
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 14 14:47:48 2016 -0800
+summary:     updared shell and CCC construction
+
+changeset:   612:574a25f4bcdd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 13 11:36:34 2016 -0800
+summary:     udpate
+
+changeset:   611:3f27c4404d77
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 13 10:45:18 2016 -0800
+summary:     minor update
+
+changeset:   610:a2a58e25580d
+parent:      605:03ee55a576df
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 13 10:20:06 2016 -0800
+summary:     Corina creates an example from Kopf's paper
+
+changeset:   609:4958bfe5ee2f
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jan 11 17:32:19 2016 -0800
+summary:     split std lib string correctly
+
+changeset:   608:25a36091c610
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jan 11 15:48:09 2016 -0800
+summary:     Update visualizaer classpath with java.class.path and sun.boot.class.path
+
+changeset:   607:770d1de628e5
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jan 11 13:17:51 2016 -0800
+summary:     test hg
+
+changeset:   606:cfe5f585bff3
+branch:      wcanalysis
+parent:      584:a02a639aa53a
+parent:      605:03ee55a576df
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jan 11 12:45:03 2016 -0800
+summary:     catching up
+
+changeset:   605:03ee55a576df
+parent:      604:258b5688fdd9
+parent:      603:7bad13fa6efb
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jan 11 12:44:47 2016 -0800
+summary:     merge
+
+changeset:   604:258b5688fdd9
+parent:      591:3525a1c09e75
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jan 11 12:43:10 2016 -0800
+summary:     Update cfg extractor with more meaningful exceptions when classpath is incomplete for finding classes
+
+changeset:   603:7bad13fa6efb
+parent:      602:01040a33a575
+parent:      601:277419fce98c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 11 12:14:09 2016 -0800
+summary:     merge
+
+changeset:   602:01040a33a575
+parent:      600:9574d60d90a1
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 11 12:13:23 2016 -0800
+summary:     small update
+
+changeset:   601:277419fce98c
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Mon Jan 11 13:53:39 2016 -0600
+summary:     Modify challenge30rock to use string array instead of regex/format.
+
+changeset:   600:9574d60d90a1
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 11 10:38:49 2016 -0800
+summary:     update
+
+changeset:   599:419ef566f971
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 11 10:35:15 2016 -0800
+summary:     update
+
+changeset:   598:c46d96b73156
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 11 09:55:45 2016 -0800
+summary:     update
+
+changeset:   597:bf76ba62aee6
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 11 04:03:20 2016 -0800
+summary:     need also min byte
+
+changeset:   596:3ebe4ddef15e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 11 03:58:43 2016 -0800
+summary:     update
+
+changeset:   595:c21d41a4ef88
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Jan 09 02:45:25 2016 -0800
+summary:     update
+
+changeset:   594:d310eed9e3fc
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Jan 09 02:23:40 2016 -0800
+summary:     update
+
+changeset:   593:2cb7861a6a49
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Jan 09 01:42:56 2016 -0800
+summary:     clean examples
+
+changeset:   592:a2010be490cd
+user:        corina
+date:        Fri Jan 08 17:40:41 2016 -0800
+summary:     updates
+
+changeset:   591:3525a1c09e75
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Jan 07 14:23:56 2016 -0800
+summary:     update
+
+changeset:   590:69db6e33bba4
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jan 07 14:17:31 2016 -0800
+summary:     update to challenge 30 rock
+
+changeset:   589:72ad3a62d484
+user:        rodykersten
+date:        Thu Jan 07 13:41:07 2016 -0800
+summary:     Sources + jpf file for 30 Rock challenge that Zhenkai made.
+
+changeset:   588:369fe4f3343e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 06 15:59:03 2016 -0800
+summary:     update
+
+changeset:   587:62215e880f5a
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 06 15:17:18 2016 -0800
+summary:     update
+
+changeset:   586:a00f793ccd4d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Jan 06 14:53:32 2016 -0800
+summary:     minor update
+
+changeset:   585:c1378840c4d8
+parent:      580:eeeacfe39b68
+parent:      584:a02a639aa53a
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 06 10:02:08 2016 -0800
+summary:     merge hotfix
+
+changeset:   584:a02a639aa53a
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jan 06 10:01:30 2016 -0800
+summary:     remove hardcoded history size.
+
+changeset:   583:9c30da31bfda
+branch:      wcanalysis
+parent:      581:2e2086e2c9ba
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:59:37 2016 -0800
+summary:     removed commented block
+
+changeset:   582:bdd9bf465a39
+branch:      depth-heuristic
+parent:      189:5c0e0ac59de3
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:55:43 2016 -0800
+summary:     close old branch
+
+changeset:   581:2e2086e2c9ba
+branch:      wcanalysis
+parent:      577:7c9c6bfd01f0
+parent:      580:eeeacfe39b68
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:55:16 2016 -0800
+summary:     catching up with default
+
+changeset:   580:eeeacfe39b68
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:54:52 2016 -0800
+summary:     change visibility of path class
+
+changeset:   579:cafd4b351c1e
+parent:      578:e30a551f57a9
+parent:      577:7c9c6bfd01f0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:49:10 2016 -0800
+summary:     merge
+
+changeset:   578:e30a551f57a9
+parent:      555:61dcb6bb9350
+parent:      576:ab27e4b67298
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:48:34 2016 -0800
+summary:     merge anon head
+
+changeset:   577:7c9c6bfd01f0
+branch:      wcanalysis
+parent:      575:c38249669e1d
+parent:      576:ab27e4b67298
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:27:42 2016 -0800
+summary:     close
+
+changeset:   576:ab27e4b67298
+parent:      573:815423ee6382
+parent:      575:c38249669e1d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:27:17 2016 -0800
+summary:     fixing branch
+
+changeset:   575:c38249669e1d
+branch:      wcanalysis
+parent:      574:b7c70b03d8ee
+parent:      573:815423ee6382
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:17:51 2016 -0800
+summary:     merge unnamed branch into wcanalysis
+
+changeset:   574:b7c70b03d8ee
+branch:      wcanalysis
+parent:      572:c2cf5bbe4b0a
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:17:22 2016 -0800
+summary:     small change
+
+changeset:   573:815423ee6382
+parent:      566:e38b6d9f407c
+parent:      572:c2cf5bbe4b0a
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:12:58 2016 -0800
+summary:     merge in wcanalysis. Let's close the unnamed branch
+
+changeset:   572:c2cf5bbe4b0a
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:11:32 2016 -0800
+summary:     add package renamings
+
+changeset:   571:a7b6b3964b88
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:10:44 2016 -0800
+summary:     Add new packages and rearrange
+
+changeset:   570:9930f2d2c2a5
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 11:01:24 2016 -0800
+summary:     add notion of branch policy and builders
+
+changeset:   569:702770d650e8
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 10:59:04 2016 -0800
+summary:     update output folder name
+
+changeset:   568:ad85761a790b
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 09:23:57 2016 -0800
+summary:     add back in examples
+
+changeset:   567:738dcfdff5e6
+branch:      wcanalysis
+parent:      544:742094819462
+parent:      566:e38b6d9f407c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 09:19:02 2016 -0800
+summary:     merge into wcanalysis. Now: obtain again example etc
+
+changeset:   566:e38b6d9f407c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 00:37:18 2016 -0800
+summary:     cleaned up some stuff after merge
+
+changeset:   565:c82c606fea4c
+parent:      564:2774eda681de
+parent:      544:742094819462
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 00:31:14 2016 -0800
+summary:     merge wcanalysis into unnamed
+
+changeset:   564:2774eda681de
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 00:26:07 2016 -0800
+summary:     update examples to use new heuristic
+
+changeset:   563:3ab1c0b6fe1a
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Jan 05 00:25:08 2016 -0800
+summary:     First working version of new and improved heuristic done
+
+changeset:   562:c54c23116847
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Jan 03 23:10:43 2016 -0800
+summary:     Almost done
+
+changeset:   561:b18e64747db5
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Jan 03 20:36:03 2016 -0800
+summary:     Numerous changes. Compiles again
+
+changeset:   560:e1fd75724ab7
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Jan 03 14:02:51 2016 -0800
+summary:     Add more work to transitioning to choice based policy
+
+changeset:   559:ed30aa36046e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Dec 31 17:55:10 2015 +0100
+summary:     add interfaces
+
+changeset:   558:6e26942d8362
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Dec 31 17:54:34 2015 +0100
+summary:     more intermediate ci. Will start removing cfg and have notion of policy instead
+
+changeset:   557:4d3c388892af
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Dec 29 17:38:53 2015 +0100
+summary:     Intermediate ci
+
+changeset:   556:3acdff44f28c
+parent:      539:672d5dcc804e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Dec 23 19:40:25 2015 +0100
+summary:     Intermediate commit
+
+changeset:   555:61dcb6bb9350
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Tue Jan 05 13:20:36 2016 -0600
+summary:     Fixed failing unit test testing logical AND operator.
+
+changeset:   554:90784f1cd58f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 04 14:16:42 2016 -0800
+summary:     small update
+
+changeset:   553:dc47612a26f8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 04 11:43:01 2016 -0800
+summary:     update
+
+changeset:   552:e11c9c7e6a8b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 04 11:32:29 2016 -0800
+summary:     update
+
+changeset:   551:61d58c099d56
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Jan 04 11:20:51 2016 -0800
+summary:     add listener for customized output
+
+changeset:   550:ae3e206468e9
+parent:      549:91e1bb845898
+parent:      548:dfc379181252
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Dec 22 15:44:48 2015 -0600
+summary:     merge
+
+changeset:   549:91e1bb845898
+parent:      518:807743321f53
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Dec 22 15:43:04 2015 -0600
+summary:     Fixed tests long vs. int
+
+changeset:   548:dfc379181252
+parent:      547:7c2e14b2c156
+parent:      546:19a76db33b83
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Dec 22 11:47:53 2015 -0800
+summary:     merge
+
+changeset:   547:7c2e14b2c156
+parent:      545:80602acd6459
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Dec 22 11:47:21 2015 -0800
+summary:     update
+
+changeset:   546:19a76db33b83
+user:        git
+date:        Mon Dec 21 19:48:34 2015 -0800
+summary:     Updated the algorithm to crack the first challenge to include an exploit of the newly found vulnerability.
+
+changeset:   545:80602acd6459
+parent:      543:c7fbc16a6819
+user:        corina
+date:        Mon Dec 21 15:27:33 2015 -0800
+summary:     modified challenge1
+
+changeset:   544:742094819462
+branch:      wcanalysis
+parent:      538:f75c0f6831c2
+user:        rodykersten
+date:        Mon Dec 21 13:22:07 2015 -0800
+summary:     Some work on using ChoiceGenerators instead of Decision class. HueristicListener not updated yet.
+
+changeset:   543:c7fbc16a6819
+user:        corina
+date:        Mon Dec 21 11:33:08 2015 -0800
+summary:     updates to challenge1
+
+changeset:   542:3fb415da0da0
+user:        corina
+date:        Mon Dec 21 10:54:58 2015 -0800
+summary:     updated challenge1
+
+changeset:   541:f94337afae02
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Dec 17 15:03:43 2015 -0800
+summary:     update
+
+changeset:   540:59f414ad6120
+parent:      539:672d5dcc804e
+parent:      537:e4ec4c6844c3
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Dec 17 14:09:17 2015 -0800
+summary:     catching up
+
+changeset:   539:672d5dcc804e
+parent:      536:f949a5a2934c
+parent:      538:f75c0f6831c2
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Dec 17 14:08:52 2015 -0800
+summary:     merge wcanalysis
+
+changeset:   538:f75c0f6831c2
+branch:      wcanalysis
+parent:      525:0159737678d0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Dec 17 14:06:56 2015 -0800
+summary:     adding challenge3
+
+changeset:   537:e4ec4c6844c3
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Dec 17 13:57:15 2015 -0800
+summary:     update
+
+changeset:   536:f949a5a2934c
+user:        corina
+date:        Mon Dec 14 17:06:09 2015 -0800
+summary:     more modifs
+
+changeset:   535:8d0c2681e2d3
+parent:      534:bf7361baabc7
+parent:      533:5afd5dd3ca27
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 14 16:44:55 2015 -0800
+summary:     merge
+
+changeset:   534:bf7361baabc7
+parent:      531:d744b2d9290c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 14 16:31:14 2015 -0800
+summary:     debugging
+
+changeset:   533:5afd5dd3ca27
+parent:      531:d744b2d9290c
+parent:      532:ef0f321edba4
+user:        bang <bang@cs.ucsb.edu>
+date:        Mon Dec 14 15:30:14 2015 -0800
+summary:     Merge string compress commit.
+
+changeset:   532:ef0f321edba4
+parent:      530:b1b7cc88c6a4
+user:        bang <bang@cs.ucsb.edu>
+date:        Mon Dec 14 15:14:19 2015 -0800
+summary:     Add Compress with string ops.
+
+changeset:   531:d744b2d9290c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 14 15:17:44 2015 -0800
+summary:     update
+
+changeset:   530:b1b7cc88c6a4
+user:        corina
+date:        Mon Dec 14 15:10:37 2015 -0800
+summary:     updated again to simplify more
+
+changeset:   529:6464245db053
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 14 11:57:19 2015 -0800
+summary:     simplified the compression
+
+changeset:   528:c96d2d245e5a
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 14 11:29:55 2015 -0800
+summary:     update
+
+changeset:   527:0c7a153cb6e0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 14 11:19:07 2015 -0800
+summary:     driver for challenge 1
+
+changeset:   526:2dac524990d3
+parent:      518:807743321f53
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Dec 11 10:19:10 2015 -0800
+summary:     minor update
+
+changeset:   525:0159737678d0
+branch:      wcanalysis
+parent:      524:8dd6e80c727b
+parent:      519:1f061bc54869
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Dec 09 14:09:26 2015 -0800
+summary:     Merge with Rody's work on adding support for the comparison instructions
+
+changeset:   524:8dd6e80c727b
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Dec 09 14:01:53 2015 -0800
+summary:     reverting Arrays class (jdk15) back to original state. Insertion sort is performed on lists with less than 7 elements for merge sort
+
+changeset:   523:9af207040001
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Dec 09 14:01:06 2015 -0800
+summary:     Add updated jpf files for mergesort. With the current state of the heuristic, we can obtain a perfect policy for merge sort using those jpf files
+
+changeset:   522:1152640a3954
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Dec 08 19:25:07 2015 -0800
+summary:     Add fix to how decisions, histories, and paths are copied
+
+changeset:   521:fb97d3fa2ab1
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Dec 08 18:03:00 2015 -0800
+summary:     Fix ordering of insertions
+
+changeset:   520:6e677d57e50e
+branch:      wcanalysis
+parent:      516:8d6ea9429e31
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Dec 08 16:17:24 2015 -0800
+summary:     Fix wrong package name
+
+changeset:   519:1f061bc54869
+branch:      wcanalysis
+parent:      516:8d6ea9429e31
+user:        rodykersten
+date:        Tue Dec 08 18:16:01 2015 -0800
+summary:     Heuristic updated to work with longs.
+
+changeset:   518:807743321f53
+user:        rodykersten
+date:        Tue Dec 08 11:46:33 2015 -0800
+summary:     Use symbolic.bvlength option.
+
+changeset:   517:9e12d71ff4fa
+parent:      514:ae1ced1a8f9f
+user:        rodykersten
+date:        Tue Dec 08 10:20:38 2015 -0800
+summary:     Alternate version of the LZ77 compression algorithm that we can analyse.
+
+changeset:   516:8d6ea9429e31
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Dec 07 21:52:22 2015 -0800
+summary:     update config name of pc choice optimization
+
+changeset:   515:1938297c9074
+branch:      wcanalysis
+parent:      508:97e37096e88b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Dec 07 18:37:43 2015 -0800
+summary:     Add to worstcaseanalyzer that pc choice will never be used. For policy extraction when no decision history is used, this does not matter, but otherwise it will!
+
+changeset:   514:ae1ced1a8f9f
+parent:      513:5fe158789f6a
+parent:      510:c2d5555a3b36
+user:        corina
+date:        Mon Dec 07 18:44:23 2015 -0800
+summary:     updated
+
+changeset:   513:5fe158789f6a
+user:        corina
+date:        Mon Dec 07 18:43:37 2015 -0800
+summary:     update
+
+changeset:   512:870e57daadfd
+user:        corina
+date:        Mon Dec 07 18:42:15 2015 -0800
+summary:     updated
+
+changeset:   511:b51da63865e9
+parent:      509:1e68640e0647
+user:        corina
+date:        Mon Dec 07 18:42:01 2015 -0800
+summary:     updated configuration
+
+changeset:   510:c2d5555a3b36
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 07 16:23:19 2015 -0800
+summary:     minor update
+
+changeset:   509:1e68640e0647
+parent:      506:46cb300d8fc7
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 07 12:05:09 2015 -0800
+summary:     update
+
+changeset:   508:97e37096e88b
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Dec 04 16:10:06 2015 -0800
+summary:     Add guard when generating path
+
+changeset:   507:8d98df422cdb
+branch:      wcanalysis
+parent:      503:bc7dfd44b50d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Dec 04 16:02:22 2015 -0800
+summary:     move path generation
+
+changeset:   506:46cb300d8fc7
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 07 11:52:34 2015 -0800
+summary:     test String
+
+changeset:   505:f2e4d56a42cd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 07 11:11:32 2015 -0800
+summary:     add test case for String
+
+changeset:   504:f39112093b7f
+parent:      497:f0f35006f365
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Dec 07 10:47:21 2015 -0800
+summary:     add ex
+
+changeset:   503:bc7dfd44b50d
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Dec 04 15:39:46 2015 -0800
+summary:     add more renames of listeners
+
+changeset:   502:a635c05415bc
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Dec 04 15:39:12 2015 -0800
+summary:     update names of listeners
+
+changeset:   501:87deebe9218c
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Dec 04 15:38:08 2015 -0800
+summary:     update readme with new names
+
+changeset:   500:46f18f6f6f48
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Dec 04 15:37:53 2015 -0800
+summary:     Correct imports based on previous refactoring
+
+changeset:   499:e62de1d0dbf5
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Dec 04 15:37:06 2015 -0800
+summary:     move listeners etc to wcanalysis
+
+changeset:   498:418783cf1e5e
+branch:      wcanalysis
+parent:      494:655ad5dfb3a4
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Dec 04 15:05:18 2015 -0800
+summary:     Verbose output by default
+
+changeset:   497:f0f35006f365
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Fri Dec 04 15:02:16 2015 -0600
+summary:     Changes to BasicSAT. Works on tested benchmarks. Could probably be improved by using HashMaps instead of ArrayLists in Solver.java.
+
+changeset:   496:ed0f37d9d34e
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Fri Dec 04 10:20:06 2015 -0600
+summary:     Removing .cs properties file from BasicSAT.
+
+changeset:   495:c2e32b36f596
+parent:      492:2eb41455be7f
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Fri Dec 04 10:15:07 2015 -0600
+summary:     Removed .cs files from BasicSAT.
+
+changeset:   494:655ad5dfb3a4
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Dec 03 17:21:28 2015 -0800
+summary:     Add coverage metrics for policy extraction. Will be output to the results folder when verbose output is set to true in the jpf file.
+
+changeset:   493:bc110b6b57c7
+branch:      wcanalysis
+parent:      473:fbcc138e0b99
+parent:      492:2eb41455be7f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Dec 01 14:12:45 2015 -0800
+summary:     merge default
+
+changeset:   492:2eb41455be7f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 30 23:02:39 2015 -0800
+summary:     remove comments and superfluous decisionset
+
+changeset:   491:9a001368f4ca
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 30 22:59:55 2015 -0800
+summary:     update logic for block count computation
+
+changeset:   490:dc03b6460b15
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 30 22:38:26 2015 -0800
+summary:     Clean up
+
+changeset:   489:f0554b4e8d37
+parent:      488:a9f66220eeed
+parent:      487:9ef8d3a6256b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 30 22:04:27 2015 -0800
+summary:     merge
+
+changeset:   488:a9f66220eeed
+parent:      474:498b88f5e7f4
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 30 22:02:10 2015 -0800
+summary:     Add optimization to heuristic which avoids executing transitions of already pruned branches
+
+changeset:   487:9ef8d3a6256b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Nov 30 16:33:31 2015 -0800
+summary:     add timing
+
+changeset:   486:9256d3f59651
+parent:      485:322b2e0dd0cd
+parent:      484:29d9d9dc4858
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Nov 30 14:25:34 2015 -0800
+summary:     minor update
+
+changeset:   485:322b2e0dd0cd
+parent:      478:45f18c63ee31
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Nov 30 14:25:09 2015 -0800
+summary:     minor change
+
+changeset:   484:29d9d9dc4858
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Nov 30 16:16:58 2015 -0600
+summary:     Fixed tests
+
+changeset:   483:3db931869ae6
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Nov 30 16:07:02 2015 -0600
+summary:     Added floating point tests
+
+changeset:   482:cc4784381f1c
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Nov 30 15:49:41 2015 -0600
+summary:     Increased timput
+
+changeset:   481:fae53806a98d
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Nov 30 15:36:45 2015 -0600
+summary:     Removed log spam
+
+changeset:   480:c840574dcf2a
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Nov 30 15:00:23 2015 -0600
+summary:     Updated tests
+
+changeset:   479:241bf34e1447
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Nov 30 14:59:06 2015 -0600
+summary:     Updated tests
+
+changeset:   478:45f18c63ee31
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Nov 29 10:32:51 2015 -0800
+summary:     RSA: get bounds on secret from config file
+
+changeset:   477:fb0a2f8b217b
+user:        rodykersten
+date:        Wed Nov 25 17:32:42 2015 -0800
+summary:     Set-up to run actual challenge 2 code through heuristic. Does not work yet.
+
+changeset:   476:0763c4aacdd6
+user:        rodykersten
+date:        Wed Nov 25 16:07:17 2015 -0800
+summary:     Modified the collision finder to output the average number of tries needed before a collision is found. If the hash function is reasonably good, this number should be around 65536 (the number of buckets / range of the hash function). It does in fact converge to 65000-66000. This suggests that the hash does not contain any large problems and therefore the challenge is more about finding out that the most complex case is when there are collisions than it is about actually finding collisions / problems with the hash itself.
+
+changeset:   475:1eecc70d0e74
+user:        rodykersten
+date:        Wed Nov 25 14:02:29 2015 -0800
+summary:     Updated to current char capabilities
+
+changeset:   474:498b88f5e7f4
+parent:      460:679661bd2e39
+parent:      473:fbcc138e0b99
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 25 10:48:35 2015 -0800
+summary:     Merge back entire wcanalysis branch.
+
+changeset:   473:fbcc138e0b99
+branch:      wcanalysis
+parent:      472:7be17f31831e
+parent:      460:679661bd2e39
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 25 10:47:01 2015 -0800
+summary:     merge default -- preparing to merge back entire wcanalysis branch
+
+changeset:   472:7be17f31831e
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 25 10:43:05 2015 -0800
+summary:     add jpf files for challenge2onebucket
+
+changeset:   471:edf718ae1c27
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 25 10:42:26 2015 -0800
+summary:     small change to testapp of onebucket
+
+changeset:   470:da48b7aee4b6
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 25 01:23:18 2015 -0800
+summary:     guards for corner cases of pathconditions (when they are null etc). Also added proper handling of statistics of heuristic resolutions
+
+changeset:   469:999fac38ae5a
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 25 00:58:51 2015 -0800
+summary:     cleaned up prints. path measure and stack frame local decision history resolution seems to be working. Tested with challenge 2. Note that symbc bytecode implementation MUST be changed to the old implementations without the pcchoice optimization! I did a quick revert, but it should be done properly
+
+changeset:   468:ebaa6a9f0293
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 25 00:55:18 2015 -0800
+summary:     debug commit with ugly prints for input size 3 for challenge 2
+
+changeset:   467:a991fa4618fa
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 24 23:53:26 2015 -0800
+summary:     intermediate ci
+
+changeset:   466:cc5af8a2842f
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 24 22:12:02 2015 -0800
+summary:     updated path measure and context local decision histories done. Now, testing
+
+changeset:   465:bfecbc8e810e
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 24 17:52:01 2015 -0800
+summary:     added guard for copy constr
+
+changeset:   464:2fd692e7cc3d
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 24 17:49:51 2015 -0800
+summary:     Add fix for copying state data
+
+changeset:   463:62b299fb0e24
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 24 17:38:09 2015 -0800
+summary:     Add first take on updated path measure computation
+
+changeset:   462:ee556a4ca282
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 24 17:09:56 2015 -0800
+summary:     intermediate commit -- moving path measure computation to state
+
+changeset:   461:f49cc7e0b5c3
+branch:      wcanalysis
+parent:      447:9adb3af8dccc
+parent:      452:6fc4a48d444a
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 23 09:08:53 2015 -0800
+summary:     catch up with default
+
+changeset:   460:679661bd2e39
+user:        rodykersten
+date:        Tue Nov 24 13:41:54 2015 -0800
+summary:     bugfix
+
+changeset:   459:420f2ecde53c
+user:        corina
+date:        Tue Nov 24 12:53:13 2015 -0800
+summary:     update
+
+changeset:   458:52bee07b0fd8
+user:        corina
+date:        Tue Nov 24 10:09:59 2015 -0800
+summary:     update
+
+changeset:   457:d4433cfa23f6
+user:        corina
+date:        Tue Nov 24 09:48:21 2015 -0800
+summary:     another update
+
+changeset:   456:e0966d9638fb
+user:        corina
+date:        Mon Nov 23 15:38:47 2015 -0800
+summary:     update
+
+changeset:   455:b420fcbe6c25
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Nov 20 13:00:51 2015 -0800
+summary:     Max-SMT works superfast after this change
+
+changeset:   454:8288924e13b0
+parent:      453:f677f308afc5
+parent:      452:6fc4a48d444a
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 19 15:52:57 2015 -0800
+summary:     merge
+
+changeset:   453:f677f308afc5
+parent:      444:ce00932759e8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 19 15:52:33 2015 -0800
+summary:     make the tool compatible with the latest z3
+
+changeset:   452:6fc4a48d444a
+parent:      451:11b536e7014d
+parent:      450:fea2c04e2386
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Nov 19 13:35:04 2015 -0800
+summary:     merge
+
+changeset:   451:11b536e7014d
+parent:      449:ae372d832b4d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Nov 19 13:34:08 2015 -0800
+summary:     Enforce use of hashtable with one bucket
+
+changeset:   450:fea2c04e2386
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Thu Nov 19 14:26:49 2015 -0600
+summary:     Added jpf for example
+
+changeset:   449:ae372d832b4d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 18 23:44:03 2015 -0800
+summary:     remove jpf files for worst case analysis
+
+changeset:   448:1e2fb452a0ac
+parent:      444:ce00932759e8
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 18 23:41:50 2015 -0800
+summary:     add modified challenge 2 example with only one bucket
+
+changeset:   447:9adb3af8dccc
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 18 23:40:43 2015 -0800
+summary:     intermediate commit
+
+changeset:   446:995d64b519a7
+branch:      wcanalysis
+parent:      445:c1b47ab46b57
+parent:      432:4587f8d2d5e9
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 17 14:50:56 2015 -0800
+summary:     merge and apply hacked version of testapp (challenge 2)
+
+changeset:   445:c1b47ab46b57
+branch:      wcanalysis
+parent:      431:a6cd0f7a134f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 16 10:28:19 2015 -0800
+summary:     intermediate commit
+
+changeset:   444:ce00932759e8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Nov 18 16:23:31 2015 -0800
+summary:     update
+
+changeset:   443:0e8773099459
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Nov 18 16:22:44 2015 -0800
+summary:     update
+
+changeset:   442:d0a98f1c4e19
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 22:20:15 2015 -0800
+summary:     separate range for low and high
+
+changeset:   441:6a986244b2ee
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 22:16:59 2015 -0800
+summary:     separate range for low and high
+
+changeset:   440:58acfbeb716c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 22:05:08 2015 -0800
+summary:     interger works, but z3 returns unknown
+
+changeset:   439:b645c3c4288f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 21:43:06 2015 -0800
+summary:     add integer support
+
+changeset:   438:75cf8777a6c6
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 14:51:22 2015 -0800
+summary:     fix a small error
+
+changeset:   437:826de2296406
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 14:34:55 2015 -0800
+summary:     refactor the bitvector generator
+
+changeset:   436:812f5821d2ca
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 12:28:25 2015 -0800
+summary:     minor update
+
+changeset:   435:8d50a24abe69
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 02:37:07 2015 -0800
+summary:     I'm done
+
+changeset:   434:4da39a53bdd4
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 17 01:44:43 2015 -0800
+summary:     finished, but has different result with Corina's
+
+changeset:   433:618f20fc124c
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Nov 16 14:36:33 2015 -0800
+summary:     minor update
+
+changeset:   432:4587f8d2d5e9
+parent:      429:bc366f5b6da9
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Nov 16 09:52:12 2015 -0800
+summary:     update
+
+changeset:   431:a6cd0f7a134f
+branch:      wcanalysis
+parent:      430:faf856c65788
+parent:      429:bc366f5b6da9
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Nov 13 10:26:23 2015 -0800
+summary:     Catch up with default to get challenge problem2
+
+changeset:   430:faf856c65788
+branch:      wcanalysis
+parent:      421:7f2d5ec2f42d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Nov 13 09:10:00 2015 -0800
+summary:     update before merging default
+
+changeset:   429:bc366f5b6da9
+parent:      428:dfade18bc7c8
+parent:      426:4285b5107bd0
+user:        corina
+date:        Fri Nov 13 08:46:54 2015 -0800
+summary:     merge
+
+changeset:   428:dfade18bc7c8
+user:        corina
+date:        Fri Nov 13 08:44:41 2015 -0800
+summary:     added jpf config for challenge2
+
+changeset:   427:3128aae9a265
+parent:      417:9e5c2103a4d4
+user:        corina
+date:        Fri Nov 13 08:42:58 2015 -0800
+summary:     removed abstraction
+
+changeset:   426:4285b5107bd0
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 12 23:06:17 2015 -0800
+summary:     minor update
+
+changeset:   425:89343d381f35
+parent:      424:dd535c1c29b0
+parent:      423:d735900f208b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 12 22:54:11 2015 -0800
+summary:     merge
+
+changeset:   424:dd535c1c29b0
+parent:      422:d20d4ca1a5b8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 12 22:53:40 2015 -0800
+summary:     native peers work now
+
+changeset:   423:d735900f208b
+user:        rodykersten
+date:        Thu Nov 12 22:51:00 2015 -0800
+summary:     script to break challenge 2
+
+changeset:   422:d20d4ca1a5b8
+parent:      420:9256da068649
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 12 22:26:21 2015 -0800
+summary:     build.xml: add peers to jpf-security.jar
+
+changeset:   421:7f2d5ec2f42d
+branch:      wcanalysis
+parent:      413:a73753d04971
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Nov 12 21:36:14 2015 -0800
+summary:     Add default jpf config values
+
+changeset:   420:9256da068649
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 12 21:32:19 2015 -0800
+summary:     fix peer_packages
+
+changeset:   419:c29ecf57ade7
+parent:      418:39ada87e15ae
+parent:      417:9e5c2103a4d4
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 12 15:55:54 2015 -0800
+summary:     merge
+
+changeset:   418:39ada87e15ae
+parent:      415:8fd9171fbc99
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 12 15:32:45 2015 -0800
+summary:     peers do not work
+
+changeset:   417:9e5c2103a4d4
+user:        corina
+date:        Thu Nov 12 14:37:11 2015 -0800
+summary:     added String abstraction for the challenge
+
+changeset:   416:a04a1772dba5
+user:        corina
+date:        Thu Nov 12 13:37:42 2015 -0800
+summary:     added challenge2
+
+changeset:   415:8fd9171fbc99
+user:        corina
+date:        Thu Nov 12 11:18:01 2015 -0800
+summary:     for side channel
+
+changeset:   414:5f7dbed9d1f7
+parent:      410:584c20d7e6bf
+user:        corina
+date:        Thu Nov 12 09:03:15 2015 -0800
+summary:     update
+
+changeset:   413:a73753d04971
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 11 23:48:53 2015 -0800
+summary:     Refine output when using invariant pruning. We now distinguish between whether a decisionwas resolved "perfectly", with a history match, or invariant pruning
+
+changeset:   412:b434401d21b8
+branch:      wcanalysis
+parent:      411:4949b17af8b2
+parent:      410:584c20d7e6bf
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 11 22:13:00 2015 -0800
+summary:     Catch up with merge. Sidechannel analysis looks broken??
+
+changeset:   411:4949b17af8b2
+branch:      wcanalysis
+parent:      408:251974bc456a
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 11 22:08:04 2015 -0800
+summary:     Add comment about disntiguishing between invariant pruning and resolved choices
+
+changeset:   410:584c20d7e6bf
+user:        corina
+date:        Wed Nov 11 20:28:20 2015 -0800
+summary:     small
+
+changeset:   409:588e5bece6f7
+parent:      407:b8f2c735de44
+user:        corina
+date:        Wed Nov 11 20:19:28 2015 -0800
+summary:     removed HashMap model because it does not seem necessary
+
+changeset:   408:251974bc456a
+branch:      wcanalysis
+parent:      404:6747a9b2fefc
+user:        corina
+date:        Wed Nov 11 19:25:25 2015 -0800
+summary:     updates
+
+changeset:   407:b8f2c735de44
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Nov 11 17:43:11 2015 -0800
+summary:     Debug still has bug
+
+changeset:   406:e5c960eff3cd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Nov 11 15:33:48 2015 -0800
+summary:     add Debug Listener
+
+changeset:   405:b01aa430526a
+parent:      397:9f3a65a3d0ce
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Nov 11 15:33:01 2015 -0800
+summary:     add Debug Listener
+
+changeset:   404:6747a9b2fefc
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 16:44:22 2015 -0800
+summary:     add jpf files for jzlib deflate and inflate
+
+changeset:   403:9c2905052cc4
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 14:31:10 2015 -0800
+summary:     update drivers and accompanying jpf files. Inflater does not seem to work properly, because
+
+changeset:   402:61d745af1056
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 14:30:16 2015 -0800
+summary:     change aux dir name to verbose.
+
+changeset:   401:aa86bfe13a73
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 13:04:01 2015 -0800
+summary:     add jpf files for jzlib deflate and inflate targets
+
+changeset:   400:1e3f521a0ffd
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 12:40:58 2015 -0800
+summary:     Move jzlib
+
+changeset:   399:8fbdf01949cd
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 12:13:47 2015 -0800
+summary:     Add test drivers for inflation and deflation in jzlib
+
+changeset:   398:f52ca2f44d5b
+branch:      wcanalysis
+parent:      396:a232a1b2104a
+parent:      397:9f3a65a3d0ce
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 11:29:12 2015 -0800
+summary:     catch up with default branch
+
+changeset:   397:9f3a65a3d0ce
+parent:      393:cc93d21a6151
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 11:26:53 2015 -0800
+summary:     Add jzlib example
+
+changeset:   396:a232a1b2104a
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Nov 10 11:25:53 2015 -0800
+summary:     Count invariant pruning for merge sort. Currently invariants are hardcoded
+
+changeset:   395:7559344d0e96
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 09 22:00:06 2015 -0800
+summary:     Remove that hideous type parameter of the heuristic state object
+
+changeset:   394:cdccb8ad57e2
+branch:      wcanalysis
+parent:      392:df2d2a396089
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 09 09:48:22 2015 -0800
+summary:     renamed methods in decision collection
+
+changeset:   393:cc93d21a6151
+parent:      380:925a25ca29b5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Nov 09 11:39:11 2015 -0800
+summary:     refine example
+
+changeset:   392:df2d2a396089
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Nov 07 14:08:32 2015 -0800
+summary:     Add jpf file that uses WC shell instead
+
+changeset:   391:1a132372a0d8
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Nov 07 14:07:20 2015 -0800
+summary:     Add multiple projectors for optimizing traversal
+
+changeset:   390:7d421d2a129b
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Nov 07 13:42:03 2015 -0800
+summary:     Move things around. Fix output of publishers depending on publisher type
+
+changeset:   389:9b44e8acd87c
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Nov 07 13:40:56 2015 -0800
+summary:     Path projection split into decision collector and visualizer
+
+changeset:   388:b85a1b916e81
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Nov 07 13:17:13 2015 -0800
+summary:     update heuristic setup
+
+changeset:   387:4aab8b604d33
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Nov 07 00:39:56 2015 -0800
+summary:     Add results publisher specifically for heuristic
+
+changeset:   386:7d843e8411d7
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Nov 07 00:39:24 2015 -0800
+summary:     Output functionality for heuristic listener and policy extractor. Huge update
+
+changeset:   385:9c688d2b71b2
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Nov 06 21:58:28 2015 -0800
+summary:     Refactor policy listener and heuristic. Publisher needs to be refactored
+
+changeset:   384:9a1baa407bfc
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Nov 06 20:37:25 2015 -0800
+summary:     refactor policy listener
+
+changeset:   383:a4e417aea922
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Nov 06 20:34:59 2015 -0800
+summary:     Add jpf shell the automatically obtains policies for an input range and extracts the results
+
+changeset:   382:f15378e25d64
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Nov 06 16:17:21 2015 -0800
+summary:     Add iterative merge sort
+
+changeset:   381:56cfe0a93f29
+branch:      wcanalysis
+parent:      372:c11352607538
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Nov 06 16:14:54 2015 -0800
+summary:     Add as default more verbose output
+
+changeset:   380:925a25ca29b5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Nov 07 21:37:55 2015 -0800
+summary:     update
+
+changeset:   379:61d803788135
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Nov 07 18:12:18 2015 -0800
+summary:     refine
+
+changeset:   378:af78a91fad1a
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Nov 06 21:55:54 2015 -0800
+summary:     add the constraints of the range
+
+changeset:   377:108b4f9b3374
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Nov 06 02:25:14 2015 -0800
+summary:     refactor
+
+changeset:   376:2e58f65a8e83
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Nov 06 02:12:34 2015 -0800
+summary:     I'm done
+
+changeset:   375:7c1790cb98ed
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 05 16:22:29 2015 -0800
+summary:     minor update. Still need to fix the Simplified RSA
+
+changeset:   374:7137e00c776f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 05 16:12:36 2015 -0800
+summary:     finish automating the paper. Not test yet
+
+changeset:   373:f29a487f651e
+parent:      367:83a312ffa385
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 05 01:03:22 2015 -0800
+summary:     add listener
+
+changeset:   372:c11352607538
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 04 23:42:04 2015 -0800
+summary:     refactored path structure
+
+changeset:   371:368d69abc963
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 04 23:41:33 2015 -0800
+summary:     goodbye pathlistener
+
+changeset:   370:e73712235d60
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 04 23:40:44 2015 -0800
+summary:     Fix to policy generation
+
+changeset:   369:ea5b516174f3
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 04 23:40:31 2015 -0800
+summary:     more verbose output when generating policies
+
+changeset:   368:1626e5232748
+branch:      wcanalysis
+parent:      357:c70f8bd9ebc1
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Nov 04 23:39:42 2015 -0800
+summary:     support for memoryless policies
+
+changeset:   367:83a312ffa385
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Nov 04 00:39:06 2015 -0800
+summary:     update
+
+changeset:   366:aeac1bfcb9d2
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Nov 04 00:05:20 2015 -0800
+summary:     start editing RSA
+
+changeset:   365:80de8d51230b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 03 21:28:19 2015 -0800
+summary:     add operators for bitvector
+
+changeset:   364:a605aba5cf76
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 03 20:50:46 2015 -0800
+summary:     refactor
+
+changeset:   363:d0d3bda3e5a3
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 03 16:06:49 2015 -0800
+summary:     minor update
+
+changeset:   362:b04c64b19c83
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 03 16:01:04 2015 -0800
+summary:     minor update
+
+changeset:   361:e44ab15b0464
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 03 15:58:09 2015 -0800
+summary:     refactor
+
+changeset:   360:0ee17d84f4b1
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 03 14:47:13 2015 -0800
+summary:     minor update
+
+changeset:   359:61c4a61fa9a4
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Nov 03 14:13:08 2015 -0800
+summary:     refactor
+
+changeset:   358:4fd798e9fbf3
+parent:      353:2e8e678c7e83
+parent:      354:4c5322ddfd18
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 02 23:35:36 2015 -0800
+summary:     catching up
+
+changeset:   357:c70f8bd9ebc1
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 02 23:33:17 2015 -0800
+summary:     Add all prediction models to output
+
+changeset:   356:5e701efa88c6
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 02 17:40:35 2015 -0800
+summary:     updates to function output
+
+changeset:   355:13184b7f22c5
+branch:      wcanalysis
+parent:      352:1b0fc5a5a774
+parent:      354:4c5322ddfd18
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 02 17:29:54 2015 -0800
+summary:     merge changes to regression models (r^2 computation)
+
+changeset:   354:4c5322ddfd18
+parent:      340:b8d07dac066b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Nov 02 17:27:07 2015 -0800
+summary:     r^2 value computed for all regression models
+
+changeset:   353:2e8e678c7e83
+parent:      351:767ac32c1391
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Nov 02 20:42:10 2015 -0800
+summary:     rename class
+
+changeset:   352:1b0fc5a5a774
+branch:      wcanalysis
+parent:      350:24ef7ba0999e
+parent:      351:767ac32c1391
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 22:23:18 2015 -0800
+summary:     just catching up with default...
+
+changeset:   351:767ac32c1391
+parent:      348:82fd49f8e89d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 22:22:59 2015 -0800
+summary:     Fix to package name of max channel capacity listener
+
+changeset:   350:24ef7ba0999e
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 22:21:49 2015 -0800
+summary:     Update to merge sort jpf file to give an example of using the new stateful policies
+
+changeset:   349:17b6dbac798a
+branch:      wcanalysis
+parent:      338:51035172742c
+parent:      348:82fd49f8e89d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 22:07:02 2015 -0800
+summary:     Merge with default (catching up)
+
+changeset:   348:82fd49f8e89d
+parent:      347:09376b1c1802
+parent:      189:5c0e0ac59de3
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 22:05:24 2015 -0800
+summary:     merge although diff does not show changes
+
+changeset:   347:09376b1c1802
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 16:47:03 2015 -0800
+summary:     Lots of updates for outputting policies visually. Cleaned up files. Counts editor does not work with stateful policies -- fix if it is useful
+
+changeset:   346:66e174433eec
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 15:32:05 2015 -0800
+summary:     Heuristic listener can take into account decision history
+
+changeset:   345:9e2c514ace46
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 15:31:07 2015 -0800
+summary:     Fixes to decision history extraction
+
+changeset:   344:af722914da40
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Nov 01 15:26:08 2015 -0800
+summary:     Refactor decisions structures. Too many inner classes
+
+changeset:   343:b715d1141156
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Oct 31 22:38:28 2015 -0700
+summary:     Added tag historyindep_pol for changeset b8d07dac066b
+
+changeset:   342:d503717e74e5
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Oct 31 22:21:08 2015 -0700
+summary:     History-based policy generation done. Exploration based on the policy still remains, that is, adding to the state current decision history (must be associated with choice generators).
+
+changeset:   341:b651193f563b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Oct 30 18:21:03 2015 -0700
+summary:     Add decision history. Policy listener collects stateful policies now
+
+changeset:   340:b8d07dac066b
+tag:         historyindep_pol
+parent:      339:174d1e87cd2d
+parent:      338:51035172742c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Oct 30 17:25:54 2015 -0700
+summary:     Merge wcanalysis branch. Use WorstCaseAnalyzer shell
+
+changeset:   339:174d1e87cd2d
+parent:      335:98edd656049c
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Oct 30 13:31:08 2015 -0500
+summary:     Renamed to reflect class name inside
+
+changeset:   338:51035172742c
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Oct 29 17:29:01 2015 -0700
+summary:     fixed output folder name
+
+changeset:   337:769793e7451f
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Oct 29 17:28:49 2015 -0700
+summary:     Omega constraints converter and output from heuristics publisher
+
+changeset:   336:c5a9b5d6386f
+branch:      wcanalysis
+parent:      330:eb63eb4c1d5c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Oct 29 13:55:01 2015 -0700
+summary:     Add raw data plotting and extension of prediction model
+
+changeset:   335:98edd656049c
+parent:      334:43786b89a409
+parent:      332:1aa3bdadf540
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Thu Oct 29 10:52:37 2015 -0500
+summary:     merge
+
+changeset:   334:43786b89a409
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Thu Oct 29 10:50:26 2015 -0500
+summary:     Updated tests
+
+changeset:   333:90eca24267f6
+parent:      328:ef429e48e937
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Thu Oct 29 10:49:10 2015 -0500
+summary:     Meqsuring time only from main function start.
+
+changeset:   332:1aa3bdadf540
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Wed Oct 28 21:37:01 2015 -0700
+summary:     update
+
+changeset:   331:68274aa48b9c
+parent:      328:ef429e48e937
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Wed Oct 28 15:10:07 2015 -0500
+summary:     Adding floating-point test.
+
+changeset:   330:eb63eb4c1d5c
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Oct 28 12:38:05 2015 -0700
+summary:     Add corsshair and "budget" lines, i.e. input size and resource bounds
+
+changeset:   329:377bad134a11
+branch:      wcanalysis
+parent:      324:d803a8ec5125
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 27 21:55:13 2015 -0700
+summary:     Generate SMTLib format of constraints for worst case paths in the results publisher
+
+changeset:   328:ef429e48e937
+parent:      326:b1d8f088386f
+parent:      327:68e3aeb6ddab
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Oct 27 09:29:28 2015 -0500
+summary:     merge
+
+changeset:   327:68e3aeb6ddab
+parent:      319:36737622aba5
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Oct 27 09:27:46 2015 -0500
+summary:     Fixed tests.
+
+changeset:   326:b1d8f088386f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 26 22:33:46 2015 -0700
+summary:     finish dirty greedy
+
+changeset:   325:509fe5211f06
+parent:      323:a2f935b85530
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 26 21:25:27 2015 -0700
+summary:     DISABLE MODELS FOR INPUT/OUTPUT STREAMS
+
+changeset:   324:d803a8ec5125
+branch:      wcanalysis
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Oct 26 17:49:43 2015 -0700
+summary:     First take on shell for worst case analysis
+
+changeset:   323:a2f935b85530
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 26 16:45:03 2015 -0700
+summary:     update
+
+changeset:   322:6994166556dd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 26 16:32:22 2015 -0700
+summary:     fix package in the example
+
+changeset:   321:f46f339872bd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 26 16:25:18 2015 -0700
+summary:     add test for Big Integer
+
+changeset:   320:2d251c64b1dc
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 26 16:12:52 2015 -0700
+summary:     update
+
+changeset:   319:36737622aba5
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sun Oct 25 22:25:11 2015 -0700
+summary:     fix bug in test driver
+
+changeset:   318:814b4b4a41f8
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Oct 19 17:08:47 2015 -0500
+summary:     Added heuristics tests
+
+changeset:   317:79e7d9ecad57
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Oct 19 14:51:01 2015 -0500
+summary:     Reorganizing tests
+
+changeset:   316:ff008eec4f89
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Oct 19 14:50:27 2015 -0500
+summary:     Updated tests
+
+changeset:   315:dc3540edf532
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Oct 17 04:51:52 2015 -0700
+summary:     update
+
+changeset:   314:99bf4a8c7291
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Oct 17 03:15:46 2015 -0700
+summary:     update test
+
+changeset:   313:1682178d1c37
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Oct 17 03:12:04 2015 -0700
+summary:     update test
+
+changeset:   312:fad3c929c9ec
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Sat Oct 17 00:42:42 2015 -0700
+summary:     update
+
+changeset:   311:bf3699e2fd3f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Oct 16 21:29:13 2015 -0700
+summary:     update
+
+changeset:   310:d1cd48843e93
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Oct 16 21:26:12 2015 -0700
+summary:     update
+
+changeset:   309:faf075b9fc33
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Oct 16 15:14:36 2015 -0700
+summary:     update test
+
+changeset:   308:6defcd81c258
+parent:      307:04c68aa2d244
+parent:      305:649b0ddfa2ab
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Oct 16 10:03:42 2015 -0500
+summary:     merge
+
+changeset:   307:04c68aa2d244
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Oct 16 10:03:19 2015 -0500
+summary:     Reformatted readme
+
+changeset:   306:f8bb30bc6280
+parent:      300:710a2be06d5d
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Oct 16 10:02:51 2015 -0500
+summary:     Added tag r1 for changeset 710a2be06d5d
+
+changeset:   305:649b0ddfa2ab
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Oct 15 16:08:31 2015 -0700
+summary:     update
+
+changeset:   304:41add0e6e766
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Oct 15 14:49:13 2015 -0700
+summary:     minor update
+
+changeset:   303:a4656ae462d3
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Oct 15 14:42:16 2015 -0700
+summary:     refine the test
+
+changeset:   302:6405ac899048
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Oct 15 13:58:42 2015 -0700
+summary:     update 32
+
+changeset:   301:ddb29d347b5b
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Oct 15 13:33:04 2015 -0700
+summary:     update the listener to encode bitvector size 5
+
+changeset:   300:710a2be06d5d
+tag:         r1
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 14 12:00:22 2015 -0500
+summary:     Formatting. Removed 3rd non-working example
+
+changeset:   299:923e5f337751
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 14 11:59:52 2015 -0500
+summary:     Updated
+
+changeset:   298:b8f2bd3d7015
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 14 11:06:20 2015 -0500
+summary:     Removed detailed readme: was merged to README.
+
+changeset:   297:7b9cbb71b135
+parent:      296:7c202ae59052
+parent:      293:e180930d4bb3
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 14 11:05:50 2015 -0500
+summary:     merge
+
+changeset:   296:7c202ae59052
+parent:      295:04096b54fe8f
+parent:      294:7a5f6eb6e94e
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 14 11:03:15 2015 -0500
+summary:     merge
+
+changeset:   295:04096b54fe8f
+parent:      288:28b140414992
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 14 10:59:39 2015 -0500
+summary:     Updated README
+
+changeset:   294:7a5f6eb6e94e
+parent:      279:956b7ccd62bf
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Oct 13 13:07:56 2015 -0500
+summary:     Fixed path specs
+
+changeset:   293:e180930d4bb3
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Oct 13 00:00:04 2015 -0700
+summary:     update README
+
+changeset:   292:81df558975bb
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 23:57:44 2015 -0700
+summary:     update README
+
+changeset:   291:b8ffcb9029a4
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 23:56:49 2015 -0700
+summary:     update README
+
+changeset:   290:c0305e96be96
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 22:08:09 2015 -0700
+summary:     update README
+
+changeset:   289:fe9c0b5b52e4
+parent:      262:eeb5a7b896cd
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 22:02:14 2015 -0700
+summary:     update README
+
+changeset:   288:28b140414992
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 13 16:34:42 2015 -0700
+summary:     small fixed to detailed readme
+
+changeset:   287:6f52fee9e339
+parent:      286:58b42f9056ba
+parent:      285:6b7cfd27fc9d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 13 16:31:12 2015 -0700
+summary:     merge
+
+changeset:   286:58b42f9056ba
+parent:      284:95b4031aa830
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 13 16:30:43 2015 -0700
+summary:     small fix to readme
+
+changeset:   285:6b7cfd27fc9d
+user:        lememta <lememta@gmail.com>
+date:        Tue Oct 13 15:51:26 2015 -0700
+summary:     more updates on readme
+
+changeset:   284:95b4031aa830
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 13 15:33:37 2015 -0700
+summary:     merged contents of readme_wca into readme_detail
+
+changeset:   283:f983412e8527
+user:        lememta <lememta@gmail.com>
+date:        Tue Oct 13 15:18:57 2015 -0700
+summary:     small changes
+
+changeset:   282:8868610ff78d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 13 14:22:39 2015 -0700
+summary:     added a slightly modified version of README_WCA.md to README.md
+
+changeset:   281:732682be8365
+parent:      280:738332277c31
+parent:      279:956b7ccd62bf
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 13 12:05:38 2015 -0700
+summary:     merge
+
+changeset:   280:738332277c31
+parent:      276:20601a0fbb2b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 13 12:05:03 2015 -0700
+summary:     added readme for WCA
+
+changeset:   279:956b7ccd62bf
+parent:      278:968f0eb32c9e
+parent:      276:20601a0fbb2b
+user:        lememta <lememta@gmail.com>
+date:        Tue Oct 13 10:34:29 2015 -0700
+summary:     update readme
+
+changeset:   278:968f0eb32c9e
+user:        lememta <lememta@gmail.com>
+date:        Tue Oct 13 10:30:48 2015 -0700
+summary:     readme files
+
+changeset:   277:f30cac3bbbdb
+parent:      275:7e761fca6adb
+user:        lememta <lememta@gmail.com>
+date:        Tue Oct 13 10:28:25 2015 -0700
+summary:     modifying the readme file
+
+changeset:   276:20601a0fbb2b
+user:        corina
+date:        Tue Oct 13 08:26:53 2015 -0700
+summary:     updates to README
+
+changeset:   275:7e761fca6adb
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Oct 13 00:00:04 2015 -0700
+summary:     update README
+
+changeset:   274:49b0ad13efba
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 23:57:44 2015 -0700
+summary:     update README
+
+changeset:   273:0c7b8afebc16
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 23:56:49 2015 -0700
+summary:     update README
+
+changeset:   272:e84a307bd49e
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 22:08:09 2015 -0700
+summary:     update README
+
+changeset:   271:262f2531b937
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 22:02:14 2015 -0700
+summary:     update README
+
+changeset:   270:df21140dbe69
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 21:26:09 2015 -0700
+summary:     update examples
+
+changeset:   269:fb76bf33df29
+parent:      268:01fcaa1d2044
+parent:      267:72b02d8ee28f
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 12:23:47 2015 -0700
+summary:     merge
+
+changeset:   268:01fcaa1d2044
+parent:      264:5039f72ac376
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Mon Oct 12 12:23:17 2015 -0700
+summary:     add library
+
+changeset:   267:72b02d8ee28f
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Sun Oct 11 21:49:26 2015 -0700
+summary:     update
+
+changeset:   266:b23969bfcaf7
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Sun Oct 11 21:11:54 2015 -0700
+summary:     update listener
+
+changeset:   265:0d80beca3704
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Sun Oct 11 21:05:16 2015 -0700
+summary:     add example
+
+changeset:   264:5039f72ac376
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Oct 09 14:11:01 2015 -0700
+summary:     test commit again
+
+changeset:   263:ff31dfc24fc8
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Fri Oct 09 14:07:22 2015 -0700
+summary:     test commit
+
+changeset:   262:eeb5a7b896cd
+parent:      260:89982dd20f72
+parent:      261:6aa2bc77ea19
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Oct 09 16:01:34 2015 -0500
+summary:     Merge
+
+changeset:   261:6aa2bc77ea19
+parent:      259:9cd5fbf422e7
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Oct 09 15:59:31 2015 -0500
+summary:     Readme for string examples.
+
+changeset:   260:89982dd20f72
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Oct 09 13:41:53 2015 -0700
+summary:     added explanation in the README of the data (i.e. csv file) output by the heuristic
+
+changeset:   259:9cd5fbf422e7
+user:        bang
+date:        Thu Oct 08 18:27:52 2015 -0700
+summary:     clean up. remove redundant files.
+
+changeset:   258:78e9f6b238ad
+user:        bang
+date:        Thu Oct 08 18:25:58 2015 -0700
+summary:     WCA Time Listener for strings.
+
+changeset:   257:fa4b4d4feb03
+user:        bang
+date:        Thu Oct 08 18:25:41 2015 -0700
+summary:     WCA Time Listener for strings.
+
+changeset:   256:f7c8bacf73ca
+parent:      255:841c654a5505
+parent:      254:2dc622ce4c6c
+user:        bang
+date:        Thu Oct 08 10:49:04 2015 -0700
+summary:     Merge with string worst case analysis
+
+changeset:   255:841c654a5505
+parent:      232:489234ba8da0
+user:        bang
+date:        Thu Oct 08 10:47:51 2015 -0700
+summary:     String worst-case analysis.
+
+changeset:   254:2dc622ce4c6c
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 07 14:31:36 2015 -0500
+summary:     Fixed listener name.
+
+changeset:   253:94405147b3b4
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 07 14:16:04 2015 -0500
+summary:     Fixed smaller errors.
+
+changeset:   252:c6c88640b43a
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 07 13:32:16 2015 -0500
+summary:     Changed jpf config files so they execute properly.
+
+changeset:   251:ef966160417b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Oct 07 10:21:25 2015 -0700
+summary:     csv files (containing analysis results) of the heuristic are now produced by default
+
+changeset:   250:de5c9f34273f
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Wed Oct 07 11:27:49 2015 -0500
+summary:     Test updates. Only test HashMapZ3BV is currently failing.
+
+changeset:   249:ce9ff750039d
+parent:      248:f0dd8f8b206f
+parent:      245:3ccbe9a97ee4
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 07 11:22:41 2015 -0500
+summary:     Merged
+
+changeset:   248:f0dd8f8b206f
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 07 11:14:46 2015 -0500
+summary:     Create output dir if it doesn't exist.
+
+changeset:   247:51db9f6953df
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 07 11:14:17 2015 -0500
+summary:     Added proggraphlib
+
+changeset:   246:986d310f5b40
+parent:      244:81a1b4b11256
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Oct 07 09:32:49 2015 -0500
+summary:     Changes command line.
+
+changeset:   245:3ccbe9a97ee4
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Oct 07 08:02:20 2015 -0700
+summary:     added bogus outputfolder
+
+changeset:   244:81a1b4b11256
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 06 22:42:03 2015 -0700
+summary:     updated to proggraphlib 1.0.0
+
+changeset:   243:54f116c24793
+user:        corina
+date:        Tue Oct 06 20:03:13 2015 -0700
+summary:     updated exampels for high-low and multi run
+
+changeset:   242:8707241155ea
+user:        corina
+date:        Tue Oct 06 20:01:48 2015 -0700
+summary:     updated readme
+
+changeset:   241:e11db5ecebcf
+user:        Quoc-Sang Phan <sang.phan@sv.cmu.edu>
+date:        Tue Oct 06 15:40:31 2015 -0700
+summary:     very minor update to README
+
+changeset:   240:4a26486588d2
+user:        Quoc-Sang Phan <sang.phan@sv.cmu.edu>
+date:        Tue Oct 06 15:18:36 2015 -0700
+summary:     minor update
+
+changeset:   239:54c840ce14fb
+user:        Quoc-Sang Phan <sang.phan@sv.cmu.edu>
+date:        Tue Oct 06 14:33:26 2015 -0700
+summary:     update README
+
+changeset:   238:6c45aa2eb560
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Oct 06 13:56:24 2015 -0700
+summary:     reverted readme
+
+changeset:   237:242495c00179
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Oct 06 13:55:47 2015 -0700
+summary:     edited readme
+
+changeset:   236:82a80c0cf15c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Oct 06 13:37:27 2015 -0700
+summary:     testing repo
+
+changeset:   235:06dd6d713dda
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Oct 06 12:01:04 2015 -0700
+summary:     udpate README
+
+changeset:   234:892ddc7ad28d
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Tue Oct 06 11:19:28 2015 -0700
+summary:     remove third-party tool installation in README
+
+changeset:   233:bf1ae8aca184
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Oct 05 21:37:15 2015 -0700
+summary:     update README
+
+changeset:   232:489234ba8da0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Oct 05 10:50:26 2015 -0700
+summary:     updated readme with usage of user supplied heuristic with the counts editor
+
+changeset:   231:dd2b823016ba
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Oct 03 15:20:13 2015 -0700
+summary:     Added small interactive utility for modifying the counts in the CFG structure
+
+changeset:   230:b4d8b61aae0f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Oct 03 15:19:38 2015 -0700
+summary:     updated imports for new proggraphlib
+
+changeset:   229:3648a028f308
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Oct 03 15:18:37 2015 -0700
+summary:     update proggraphlib and heuristic setup accordingly
+
+changeset:   228:fbe02a7940b4
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sat Oct 03 15:17:21 2015 -0700
+summary:     Added commons cli dependency for counts editor
+
+changeset:   227:c091b80058ce
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Oct 02 12:19:03 2015 -0500
+summary:     Separated tests based on solver.
+
+changeset:   226:724ae7999ebf
+user:        corina
+date:        Fri Oct 02 10:22:48 2015 -0700
+summary:     small update
+
+changeset:   225:10bc5f579eea
+parent:      224:8289d8e8bb9e
+parent:      222:7de132df008a
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Oct 01 23:51:23 2015 -0700
+summary:     merge
+
+changeset:   224:8289d8e8bb9e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Oct 01 23:47:25 2015 -0700
+summary:     updated heuristic setup jpf file for benchmarks
+
+changeset:   223:ab5d7841f360
+parent:      215:c3c79bef0753
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Oct 01 23:45:56 2015 -0700
+summary:     updated jpf-security to use new unifying json serializer
+
+changeset:   222:7de132df008a
+parent:      221:8113191f12bd
+parent:      219:827e0945f0e6
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Sep 30 11:58:14 2015 -0500
+summary:     Merge
+
+changeset:   221:8113191f12bd
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Sep 30 11:57:09 2015 -0500
+summary:     Updated to conform with SPF driver.
+
+changeset:   220:3ac636565529
+parent:      198:09b7c6aa3e50
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Sep 30 11:56:19 2015 -0500
+summary:     Added RSA examples.
+
+changeset:   219:827e0945f0e6
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Sep 30 06:23:59 2015 -0700
+summary:     Finish symbolic inputs from Socket and File. Not test yet
+
+changeset:   218:522baa125488
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Sep 30 06:16:12 2015 -0700
+summary:     update
+
+changeset:   217:3957a75221ab
+parent:      216:7d307b343b30
+parent:      215:c3c79bef0753
+user:        corina
+date:        Mon Sep 28 21:16:27 2015 -0700
+summary:     merge
+
+changeset:   216:7d307b343b30
+parent:      214:9a838812d2ba
+user:        corina
+date:        Mon Sep 28 21:15:57 2015 -0700
+summary:     added fast modular exponentiation for RSA example
+
+changeset:   215:c3c79bef0753
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 28 18:02:08 2015 -0700
+summary:     updated README for heuristic search with overview, usage, and examples
+
+changeset:   214:9a838812d2ba
+user:        corina
+date:        Mon Sep 28 16:43:25 2015 -0700
+summary:     added RSASimplified
+
+changeset:   213:ff90c72ed32c
+user:        corina
+date:        Mon Sep 28 15:47:42 2015 -0700
+summary:     updated readme file
+
+changeset:   212:2afc8ebf363b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 28 14:02:19 2015 -0700
+summary:     Added readme
+
+changeset:   211:f97701e194e6
+parent:      210:f549538b8e85
+parent:      207:93b6a859ac62
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 28 13:50:15 2015 -0700
+summary:     merge
+
+changeset:   210:f549538b8e85
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 28 11:33:11 2015 -0700
+summary:     proggraphlib updated
+
+changeset:   209:776c8eb81338
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 28 11:30:20 2015 -0700
+summary:     Moved things around a bit and updated jpf files accordingly. Heuristic can now be found in the "heuristic" package (I think we should prepend a top level package like isstac...). The new scratchpad package is for experimentation
+
+changeset:   208:de0a1f46f6c6
+parent:      203:85b4cdabfef0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 28 11:21:26 2015 -0700
+summary:     Some javadoc
+
+changeset:   207:93b6a859ac62
+parent:      206:ac929824f90b
+parent:      205:fd1959c1c432
+user:        corina
+date:        Sun Sep 27 23:06:42 2015 -0700
+summary:     merge
+
+changeset:   206:ac929824f90b
+parent:      204:b557de674f00
+user:        corina
+date:        Sun Sep 27 23:05:43 2015 -0700
+summary:     computing worst case input via weighted maxSMT solving
+
+changeset:   205:fd1959c1c432
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Sun Sep 27 22:43:31 2015 -0700
+summary:     JPF doesn't support character encoding at the moment
+
+changeset:   204:b557de674f00
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Sun Sep 27 14:00:43 2015 -0700
+summary:     added proggraphlib. Seriously, can we please change build system...
+
+changeset:   203:85b4cdabfef0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 25 17:27:21 2015 -0700
+summary:     more on stateful heuristic
+
+changeset:   202:c034df7f90a8
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 25 17:25:41 2015 -0700
+summary:     Started working on stateful heuristic
+
+changeset:   201:3c5d3c30d9eb
+parent:      200:8460a80520a6
+parent:      198:09b7c6aa3e50
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 25 14:38:15 2015 -0700
+summary:     merge
+
+changeset:   200:8460a80520a6
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 25 14:38:04 2015 -0700
+summary:     added entries to hgignore
+
+changeset:   199:a8744923572a
+parent:      194:5148206fbf94
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Sep 22 11:54:54 2015 -0700
+summary:     updated user passwd example to use numeric computations
+
+changeset:   198:09b7c6aa3e50
+parent:      197:f99501b6036e
+parent:      196:f1637c13e48c
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Tue Sep 22 13:41:40 2015 -0500
+summary:     Merge.
+
+changeset:   197:f99501b6036e
+parent:      193:16aaa0895bd0
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Tue Sep 22 13:41:03 2015 -0500
+summary:     Added XML parser exploit example.
+
+changeset:   196:f1637c13e48c
+parent:      195:e858ef4d5ba5
+parent:      194:5148206fbf94
+user:        corina
+date:        Tue Sep 22 11:02:30 2015 -0700
+summary:     merge
+
+changeset:   195:e858ef4d5ba5
+parent:      191:b3b251bc63d3
+user:        corina
+date:        Tue Sep 22 11:01:40 2015 -0700
+summary:     some updates
+
+changeset:   194:5148206fbf94
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Tue Sep 22 10:19:27 2015 -0700
+summary:     Added user password example obtained from disassembling the corresponding class in the "corpus".
+
+changeset:   193:16aaa0895bd0
+parent:      191:b3b251bc63d3
+parent:      192:d6658a41861a
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Sep 22 08:52:59 2015 -0500
+summary:     Merge
+
+changeset:   192:d6658a41861a
+parent:      179:00bee26e2a75
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Sep 22 08:51:34 2015 -0500
+summary:     Added new tests (logical ops)
+
+changeset:   191:b3b251bc63d3
+parent:      190:7559d3c4a248
+parent:      188:dc5e10a3a85f
+user:        corina
+date:        Mon Sep 21 19:22:37 2015 -0700
+summary:     merge
+
+changeset:   190:7559d3c4a248
+parent:      186:77c44f805731
+user:        corina
+date:        Mon Sep 21 19:21:57 2015 -0700
+summary:     more on multi-run analysis
+
+changeset:   189:5c0e0ac59de3
+branch:      depth-heuristic
+parent:      187:3a818dad214f
+parent:      188:dc5e10a3a85f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 21 14:25:14 2015 -0700
+summary:     Merge. Catching up with default branch
+
+changeset:   188:dc5e10a3a85f
+parent:      186:77c44f805731
+parent:      187:3a818dad214f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 21 14:13:45 2015 -0700
+summary:     Merged depth-heuristic branch. The stateless heuristic is now complete. Hooray
+
+changeset:   187:3a818dad214f
+branch:      depth-heuristic
+parent:      183:f58cbe8d6a80
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 21 14:11:13 2015 -0700
+summary:     import correction
+
+changeset:   186:77c44f805731
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Sep 21 02:57:23 2015 -0700
+summary:     finish File, but still have problem with OutputStreamWriter
+
+changeset:   185:7c58a0cad646
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Sep 21 01:31:08 2015 -0700
+summary:     add UDP example
+
+changeset:   184:3198a1dad6d0
+parent:      179:00bee26e2a75
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Sep 21 00:31:11 2015 -0700
+summary:     update Socket
+
+changeset:   183:f58cbe8d6a80
+branch:      depth-heuristic
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 18 18:05:01 2015 -0700
+summary:     fixed quick sort -- previous version was incorrect
+
+changeset:   182:12c01d4857ea
+branch:      depth-heuristic
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 18 18:03:37 2015 -0700
+summary:     remoed some prints in path listener
+
+changeset:   181:49fe147c98af
+branch:      depth-heuristic
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 18 16:02:53 2015 -0700
+summary:     Updated sorting function -- the original one from wise does not seem to be correct
+
+changeset:   180:c58395cf9fb6
+branch:      depth-heuristic
+parent:      171:b1b9676ec04b
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 18 16:02:20 2015 -0700
+summary:     Merged commonalities, and updated depth calc
+
+changeset:   179:00bee26e2a75
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Sep 18 11:32:27 2015 -0500
+summary:     Added new tests.
+
+changeset:   178:244923eee032
+parent:      177:8690f36821f6
+parent:      174:178c14271869
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Sep 18 11:26:59 2015 -0500
+summary:     Merge
+
+changeset:   177:8690f36821f6
+parent:      176:c674f8dc8796
+parent:      175:b39531be37f6
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Sep 18 11:22:58 2015 -0500
+summary:     Merge
+
+changeset:   176:c674f8dc8796
+parent:      172:d0de6b23b1a9
+parent:      171:b1b9676ec04b
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Sep 18 11:22:08 2015 -0500
+summary:     Merge
+
+changeset:   175:b39531be37f6
+parent:      168:dcef3f937db5
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Sep 18 11:16:28 2015 -0500
+summary:     Upgraded tests.
+
+changeset:   174:178c14271869
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Sat Sep 12 08:26:50 2015 -0500
+summary:     Changed expected values from 10000 to 100000
+
+changeset:   173:887a33838745
+parent:      165:ad45907dc4d2
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Sat Sep 12 08:25:35 2015 -0500
+summary:     Changed to use logger.
+
+changeset:   172:d0de6b23b1a9
+parent:      168:dcef3f937db5
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Sep 17 22:52:56 2015 -0700
+summary:     minor edit
+
+changeset:   171:b1b9676ec04b
+branch:      depth-heuristic
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Sep 17 18:15:20 2015 -0700
+summary:     using path measure to compare potential worst case paths. Also refactored a bit -- this still needs some work. Also, heuristiclistener should only produce statistics for the "target method" in a similar way as the listener for counts collection does it
+
+changeset:   170:d7515d3c4e20
+branch:      depth-heuristic
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 14 17:36:44 2015 -0700
+summary:     Intermediate commit. Added ability to specify target measured methods, i.e., methods, that after being called and as long as they are part of the call stack, will trigger the functionality for annotating the cfg with decision counts. Also the notion of "depth" has changed: now, regardless of whether the PC optimization is used or not, an if-stmt with a symbolic predicate, will be regarded as an increase in depth. The increase in depth will ONLY happen as long as the target measured methods are in the call stack.
+
+changeset:   169:fb8656c442b9
+branch:      depth-heuristic
+parent:      164:315fcefc7e79
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Sep 14 14:52:57 2015 -0700
+summary:     bb sequence numbers
+
+changeset:   168:dcef3f937db5
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Sat Sep 12 23:23:13 2015 -0700
+summary:     minor update
+
+changeset:   167:387234360b60
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Sat Sep 12 17:33:14 2015 -0700
+summary:     finish the listeners for writing over java.io.OutputStream
+
+changeset:   166:e26a26e303e0
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Sat Sep 12 15:21:56 2015 -0700
+summary:     update classes
+
+changeset:   165:ad45907dc4d2
+parent:      161:d530267d52c5
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Sat Sep 12 07:48:34 2015 -0500
+summary:     Fixed compilation error.
+
+changeset:   164:315fcefc7e79
+branch:      depth-heuristic
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 11 01:53:01 2015 -0700
+summary:     path projection update
+
+changeset:   163:45661fdd0b37
+branch:      depth-heuristic
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 11 01:15:10 2015 -0700
+summary:     projection of worst czse path (in terms of depth) on CFG... and more!
+
+changeset:   162:674d09921106
+branch:      depth-heuristic
+parent:      159:fd1171a4b13d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Sep 10 20:00:35 2015 -0700
+summary:     intermediate ci
+
+changeset:   161:d530267d52c5
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Sep 10 19:13:39 2015 -0700
+summary:     change building sequence to fix compile error
+
+changeset:   160:daf56fac3326
+parent:      158:63555938858f
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Sep 10 18:46:12 2015 -0700
+summary:     add network processing
+
+changeset:   159:fd1171a4b13d
+branch:      depth-heuristic
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Sep 10 15:45:00 2015 -0700
+summary:     started converting heuristic to use depth instead of number of instructions executed
+
+changeset:   158:63555938858f
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Sep 10 09:26:32 2015 -0700
+summary:     upgraded proggraphlib. Would be nice to change to a build system with good dependency management...
+
+changeset:   157:fefc802b7e57
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 04 13:09:17 2015 -0700
+summary:     Updated merge sort to not use insertion sort for small input sizes
+
+changeset:   156:18e842a3effd
+parent:      155:be42e6c7d6ed
+parent:      152:ac8e8132efb9
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 04 11:35:18 2015 -0700
+summary:     merge...
+
+changeset:   155:be42e6c7d6ed
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 04 11:33:26 2015 -0700
+summary:     Updated check of execution path
+
+changeset:   154:3476585b9766
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 04 10:44:36 2015 -0700
+summary:     removed print out. Dijkstra still has problems when using z3 for some strange reason
+
+changeset:   153:cd9e730ba885
+parent:      151:eacbc63b870e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Sep 04 10:43:48 2015 -0700
+summary:     Updated sorting algorithms in benchmarks from Wise paper. In particular changed quicksort implementation (from jdk 1.5) to use quicksort regardless of input size. Originally it falls back to insertion sort for input size <7. Merge sort was similarly changed.
+
+changeset:   152:ac8e8132efb9
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Thu Sep 03 16:00:10 2015 -0500
+summary:     Use old pc printing; readablePCConstraint is buggy.
+
+changeset:   151:eacbc63b870e
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Sep 03 12:21:20 2015 -0700
+summary:     Added scripts for automating evaluation of heuristic
+
+changeset:   150:2ece10a6ff73
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Sep 03 12:13:25 2015 -0700
+summary:     Fixed issue with projection of wc path on cfg
+
+changeset:   149:de7bde3dd5d4
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Sep 03 12:12:53 2015 -0700
+summary:     Added heuristics results publisher to obtain statistics output as csv files. Used for evaluation
+
+changeset:   148:f253c6211020
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Sep 03 12:08:15 2015 -0700
+summary:     Updated proggraphlib
+
+changeset:   147:c43fe5be2ad9
+user:        corina
+date:        Wed Sep 02 19:36:36 2015 -0700
+summary:     new example from sandor
+
+changeset:   146:55d3f4f4b809
+user:        corina
+date:        Tue Sep 01 14:44:14 2015 -0700
+summary:     modified with autoboxing
+
+changeset:   145:73d45ba250c7
+parent:      144:bc0fc6588347
+parent:      143:7dfdeb1b8260
+user:        corina
+date:        Tue Sep 01 13:12:33 2015 -0700
+summary:     merge
+
+changeset:   144:bc0fc6588347
+parent:      133:51cad17fe594
+user:        corina
+date:        Tue Sep 01 13:11:42 2015 -0700
+summary:     updated example
+
+changeset:   143:7dfdeb1b8260
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Sep 01 11:14:46 2015 -0500
+summary:     Added new array test.
+
+changeset:   142:1c39f303e62f
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Sep 01 11:14:20 2015 -0500
+summary:     Added new array tests.
+
+changeset:   141:3aaab90068ce
+parent:      140:2e2e30c952d8
+parent:      139:735a796da85d
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 31 17:28:26 2015 -0500
+summary:     merge
+
+changeset:   140:2e2e30c952d8
+parent:      138:cfd436e445df
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 31 17:18:12 2015 -0500
+summary:     Added choco/z3 tests.
+
+changeset:   139:735a796da85d
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Aug 31 14:59:04 2015 -0700
+summary:     add examples
+
+changeset:   138:cfd436e445df
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 31 16:42:14 2015 -0500
+summary:     Upgraded tests to look at numerical results.
+
+changeset:   137:6c1e23b61431
+parent:      136:c3c7b65def16
+parent:      133:51cad17fe594
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 31 16:01:08 2015 -0500
+summary:     merge
+
+changeset:   136:c3c7b65def16
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 31 16:00:19 2015 -0500
+summary:     Fixed tabulator
+
+changeset:   135:c8661c105627
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 31 15:59:23 2015 -0500
+summary:     Changed solver to z3
+
+changeset:   134:9ee0bcbc5877
+parent:      129:a48ac4ce8fb1
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 31 15:59:09 2015 -0500
+summary:     Expreimental: added print for solution only.
+
+changeset:   133:51cad17fe594
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Aug 31 11:53:35 2015 -0700
+summary:     very minor edit
+
+changeset:   132:abf3ffa18afe
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Aug 31 11:52:48 2015 -0700
+summary:     change package name
+
+changeset:   131:ddc2abc43ce2
+user:        corina
+date:        Mon Aug 31 11:35:06 2015 -0700
+summary:     small update
+
+changeset:   130:60f3e444d346
+user:        corina
+date:        Mon Aug 31 11:32:23 2015 -0700
+summary:     added example high low
+
+changeset:   129:a48ac4ce8fb1
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Aug 27 20:26:17 2015 -0700
+summary:     very minor edit
+
+changeset:   128:fd33f58070bb
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Aug 27 14:54:09 2015 -0700
+summary:     make the example truly secure
+
+changeset:   127:3de3dfcfc619
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Aug 27 14:07:54 2015 -0700
+summary:     minor edit
+
+changeset:   126:9420515c60fc
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Aug 27 13:59:16 2015 -0700
+summary:     fix bug for multiple symbolic variables
+
+changeset:   125:00688725ec13
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Aug 27 13:27:33 2015 -0700
+summary:     add examples
+
+changeset:   124:a8f34a57a976
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Aug 27 11:51:45 2015 -0700
+summary:     fix bug for multiple secrets
+
+changeset:   123:760c3651e100
+parent:      122:f0ccabd665bb
+parent:      120:c6b02bfda037
+user:        corina
+date:        Wed Aug 26 15:33:33 2015 -0700
+summary:     merge
+
+changeset:   122:f0ccabd665bb
+user:        corina
+date:        Wed Aug 26 15:17:35 2015 -0700
+summary:     merge
+
+changeset:   121:26ba7980da8f
+parent:      118:fd79e5206e10
+user:        corina
+date:        Wed Aug 26 15:16:55 2015 -0700
+summary:     fixed HashMap
+
+changeset:   120:c6b02bfda037
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Aug 26 14:46:02 2015 -0700
+summary:     Fixed .classpath file with deleted proggraphlib entry
+
+changeset:   119:63049477b471
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Aug 25 17:37:26 2015 -0700
+summary:     finish computing Shannon entropy
+
+changeset:   118:fd79e5206e10
+parent:      117:48ce9475bb96
+parent:      116:796615c0a9ec
+user:        corina
+date:        Tue Aug 25 17:01:29 2015 -0700
+summary:     merge
+
+changeset:   117:48ce9475bb96
+parent:      112:523e4982b0f6
+user:        corina
+date:        Tue Aug 25 17:00:52 2015 -0700
+summary:     finished the arrays
+
+changeset:   116:796615c0a9ec
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Aug 25 16:58:51 2015 -0700
+summary:     compute Shannon entropy
+
+changeset:   115:05cf9b0c33d8
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 24 10:46:46 2015 -0500
+summary:     Fixed inheritance
+
+changeset:   114:3eae1ba46883
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 24 10:38:21 2015 -0500
+summary:     Added some distributed heuristics
+
+changeset:   113:af6ea6ae2401
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 24 10:36:29 2015 -0500
+summary:     Added State to store different state-related data
+
+changeset:   112:523e4982b0f6
+user:        coina
+date:        Sun Aug 23 23:18:06 2015 -0700
+summary:     more work on HashMap
+
+changeset:   111:67e4cebffa0e
+user:        corina
+date:        Fri Aug 21 17:58:29 2015 -0700
+summary:     provided a complete working model of HashMap
+
+changeset:   110:a8e74f0be0d7
+parent:      109:0970578f80d5
+parent:      108:6cbee749f0d2
+user:        corina
+date:        Fri Aug 21 17:06:43 2015 -0700
+summary:     merge
+
+changeset:   109:0970578f80d5
+parent:      102:c067c34ddddc
+user:        corina
+date:        Fri Aug 21 17:05:23 2015 -0700
+summary:     strated work on HashMap
+
+changeset:   108:6cbee749f0d2
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Aug 21 16:47:51 2015 -0700
+summary:     Added framework for easily experimenting with heuristic search on the WISE examples
+
+changeset:   107:8d58b985371a
+parent:      104:36b33afb4bdf
+parent:      106:c251174ad2ba
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Aug 21 00:43:29 2015 -0700
+summary:     merged cfg_refactoring (local bookmark) with default branch
+
+changeset:   106:c251174ad2ba
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Aug 21 00:29:44 2015 -0700
+summary:     Extracted cfg generator. It can now be found in proggraphlib, a general library for generating flow graphs etc with soot and asm
+
+changeset:   105:a84d4fcb7ced
+parent:      102:c067c34ddddc
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Aug 21 00:27:28 2015 -0700
+summary:     added new lib for generating flow graphs
+
+changeset:   104:36b33afb4bdf
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Aug 20 20:20:21 2015 -0700
+summary:     add an toy example
+
+changeset:   103:16775ec6f8ba
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Aug 20 20:07:28 2015 -0700
+summary:     Refactor side-channel quantifiers, add an abstract class
+
+changeset:   102:c067c34ddddc
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Aug 19 23:20:13 2015 -0700
+summary:     Big update to annotated CFG generation from worst case paths. Also the heuristic listener has been improved a lot and a couple of issues corrected. Still needs some clean-up
+
+changeset:   101:822d8591c538
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Aug 19 23:18:20 2015 -0700
+summary:     More sane naming of CFGs
+
+changeset:   100:9b83a9a23e8d
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Aug 19 23:17:09 2015 -0700
+summary:     Updated json and java serializers. The former produces more sane input now by preventing serialization of the next reference on Instruction instances
+
+changeset:   99:ff4640b0e3a6
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Aug 19 23:02:06 2015 -0700
+summary:     recursive deserialization of stored CFG objects added. A few improvements to the caching CFG extractor can still be made
+
+changeset:   98:d4b84bbaca17
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Aug 19 23:00:02 2015 -0700
+summary:     added json serializer of CFG structure. Deserialization not supported yet
+
+changeset:   97:7629bce77752
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Wed Aug 05 16:43:14 2015 -0500
+summary:     Change test execution directory.
+
+changeset:   96:cd54d5ee3773
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Wed Aug 05 16:39:57 2015 -0500
+summary:     Forgot to add hamcrest jar in previous commit.
+
+changeset:   95:0d6cde8e0fef
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Wed Aug 05 16:33:20 2015 -0500
+summary:     Add junit test target to build.xml
+
+changeset:   94:848f56863773
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Mon Aug 03 10:01:55 2015 -0500
+summary:     Fixed compilation problem with diamont inference.
+
+changeset:   93:6f89112fa349
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Jul 31 18:16:56 2015 -0700
+summary:     Refactored decision
+
+changeset:   92:250e7afc593c
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Jul 31 18:13:46 2015 -0700
+summary:     Long list of changes: Added heuristics listener that based on counts information obtained from the corresponding CFG, selects the most "promising" choice. The counts are obtained using the choice counter listeners, that project the (worst or best case) execution paths on the CFGs by annotating decision nodes. An example of using the new listeners can be found in SimpleSys.jpf.Also many smaller improvements such as the lazy CFG generator and additional features such as CFG (de-)serialization.
+
+changeset:   91:d5b5bb262ce0
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Fri Jul 31 17:58:52 2015 -0700
+summary:     temp ci needed for additional renaming
+
+changeset:   90:3d25ab240e7d
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Jul 31 11:24:54 2015 -0500
+summary:     Extended functionality to collect inter-procedurel dependencies (dependencies between CFGs)
+
+changeset:   89:8c09f4b6c78c
+user:        corina
+date:        Mon Jul 27 17:01:28 2015 -0700
+summary:     fixed packages
+
+changeset:   88:2743958a0720
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Mon Jul 27 17:48:20 2015 -0500
+summary:     string solving example
+
+changeset:   87:d658f5211fde
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Fri Jul 24 17:21:34 2015 -0500
+summary:     trying and failing to get the SAT solver to work
+
+changeset:   86:b882a6363ea4
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Thu Jul 23 17:40:32 2015 -0500
+summary:     fixed SAT solver bug
+
+changeset:   85:92d1fd4f470d
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Wed Jul 22 18:21:22 2015 -0500
+summary:     forgot to add files
+
+changeset:   84:cb79ce4bd82d
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Tue Jul 21 15:06:42 2015 -0500
+summary:     SAT solver done
+
+changeset:   83:64b8fd150dba
+user:        Zhenkai Zhang
+date:        Fri Jul 10 16:26:33 2015 -0500
+summary:     naive BDD implementation, takes any boolean formula, Zhenkai
+
+changeset:   82:74cbb3de9d33
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Wed Jul 08 16:54:43 2015 -0500
+summary:     SAT solver works
+
+changeset:   81:06d3aa3b8284
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jul 06 12:41:52 2015 -0700
+summary:     updated eclipse classpath...
+
+changeset:   80:027e0c8d3239
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jul 06 12:38:27 2015 -0700
+summary:     Added first take on projecting information from symbolic execution on the CFGs. Can be used for search heuristics and for visualization (currently, simple dot files can be produced). See CondCounterListener and usage in src/examples/visualizer/SimpleSys.jpf. Probably needs more testing
+
+changeset:   79:f597384e2309
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jul 06 12:25:54 2015 -0700
+summary:     Added listener for projecting call sequences from sym exe on the call graph. See example in src/examples/visualizer/SimpleSys.jpf for usage
+
+changeset:   78:7f71251ae0c1
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Mon Jul 06 12:18:23 2015 -0700
+summary:     Added call graph generation. Supports both CHA and points-to.
+
+changeset:   77:ac028a2325db
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Tue Jun 30 17:01:00 2015 -0500
+summary:     add zip, exception, new Huffman examples
+
+changeset:   76:65ab9c2c1bff
+parent:      75:eda5a7d690fa
+parent:      72:a3ac55ef0ba7
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Jun 30 16:09:05 2015 -0500
+summary:     Merge
+
+changeset:   75:eda5a7d690fa
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Jun 30 16:00:54 2015 -0500
+summary:     Removed superfluous DistributedSPF class.
+
+changeset:   74:57667489f4fc
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Jun 30 15:56:33 2015 -0500
+summary:     Using TimingChannelListener.
+
+changeset:   73:aee968002447
+parent:      70:0a1614e91a5d
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Tue Jun 30 15:54:30 2015 -0500
+summary:     Turned on output. This listener is used by generic SPF.
+
+changeset:   72:a3ac55ef0ba7
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Tue Jun 30 13:22:36 2015 -0500
+summary:     last commit screwed up build.xml
+
+changeset:   71:da694c7bec28
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Mon Jun 29 13:30:23 2015 -0500
+summary:     check in SAT solver
+
+changeset:   70:0a1614e91a5d
+user:        corina
+date:        Fri Jun 26 13:08:02 2015 -0700
+summary:     updates to result aggregation
+
+changeset:   69:96a947e83708
+user:        corina
+date:        Thu Jun 25 00:04:31 2015 -0700
+summary:     not yet done for channel capacity
+
+changeset:   68:b6cb733e4f55
+user:        corina
+date:        Wed Jun 24 23:52:20 2015 -0700
+summary:     added specialized code for wct
+
+changeset:   67:bfd3ac6b6d40
+parent:      66:8a1f94e5507c
+parent:      65:396bf828857c
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Jun 24 16:51:43 2015 -0500
+summary:     merge
+
+changeset:   66:8a1f94e5507c
+parent:      64:22edb0da594a
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Wed Jun 24 16:48:36 2015 -0500
+summary:     Work in progress distributed files.
+
+changeset:   65:396bf828857c
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Mon Jun 22 17:57:58 2015 -0500
+summary:     make build.xml work like SPF
+
+changeset:   64:22edb0da594a
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Fri Jun 19 14:11:55 2015 -0500
+summary:     Added structures to store results instead printing to stdout. Changed DistributedSPF main to run in standalone mode. Added ResultAggregator class.
+
+changeset:   63:69806624a787
+user:        Sandor Nyako <snyako@isis.vanderbilt.edu>
+date:        Thu Jun 18 10:06:37 2015 -0500
+summary:     Changed listeners to fit for cloud execution. (PRovide results in a structure instead of as console output)
+
+changeset:   62:0172cf66e600
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Wed Jun 17 12:41:17 2015 -0500
+summary:     Cleaned up distributed SPF.
+
+changeset:   61:8234609663a2
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Thu Jun 11 09:06:06 2015 -0700
+summary:     removed costnode (not used anywhere)
+
+changeset:   60:8adc0b40a395
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 10 16:01:52 2015 -0700
+summary:     Added javascript-based visualization
+
+changeset:   59:59236b130ecd
+parent:      58:c1fefa002387
+parent:      53:af8b1c35216a
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 10 12:41:08 2015 -0700
+summary:     merged
+
+changeset:   58:c1fefa002387
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 10 12:39:57 2015 -0700
+summary:     update to eclipse classpath
+
+changeset:   57:120a35be52b5
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 10 12:20:00 2015 -0700
+summary:     added small example
+
+changeset:   56:e6fa4016fdd3
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 10 10:53:29 2015 -0700
+summary:     interactive symbolic execution tree (java swing based)
+
+changeset:   55:afa71ce1f482
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 10 10:51:48 2015 -0700
+summary:     added json listener
+
+changeset:   54:032f0e6c9a92
+parent:      50:a61d64a0a4ab
+user:        Kasper Luckow <ksluckow@gmail.com>
+date:        Wed Jun 10 10:50:07 2015 -0700
+summary:     Added cost listener with (simple) cost model
+
+changeset:   53:af8b1c35216a
+parent:      52:fb1bc7abde6f
+parent:      51:dc7d86ffbed4
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Tue Jun 09 15:32:01 2015 -0500
+summary:     Merged in Corina's updates.
+
+changeset:   52:fb1bc7abde6f
+parent:      50:a61d64a0a4ab
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Tue Jun 09 14:59:04 2015 -0500
+summary:     Add try/catch for compilation.
+
+changeset:   51:dc7d86ffbed4
+parent:      49:e7da2e19d64d
+user:        corina
+date:        Mon Jun 08 15:25:12 2015 -0700
+summary:     added printing pc solutions
+
+changeset:   50:a61d64a0a4ab
+user:        Daniel Balasubramanian <daniel@isis.vanderbilt.edu>
+date:        Fri Jun 05 15:15:05 2015 -0500
+summary:     Updated distributed listener with settings that seem to cause an error during execution.
+
+changeset:   49:e7da2e19d64d
+user:        corina
+date:        Thu Jun 04 13:41:28 2015 -0700
+summary:     small correction
+
+changeset:   48:0baa3b1d3f5b
+user:        corina
+date:        Thu Jun 04 11:34:25 2015 -0700
+summary:     first version of distributed spf :)
+
+changeset:   47:1091460a1130
+user:        corina
+date:        Thu Jun 04 07:47:14 2015 -0700
+summary:     more updates
+
+changeset:   46:758a0db5306c
+user:        corina
+date:        Thu Jun 04 06:29:43 2015 -0700
+summary:     updated distributed listener
+
+changeset:   45:c5f8a3bbf22b
+user:        corina
+date:        Thu Jun 04 06:16:13 2015 -0700
+summary:     started working on distributed listener
+
+changeset:   44:e1000b78936c
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Tue Jun 02 14:53:39 2015 -0500
+summary:     added more tests and a JUnit test class
+
+changeset:   43:6aa1a50fa1bc
+user:        Mark Schott <mark.v.schott@vanderbilt.edu>
+date:        Thu May 28 13:06:41 2015 -0500
+summary:     added some tests
+
+changeset:   42:ef7a3f4361f4
+user:        isstac
+date:        Mon May 18 13:19:51 2015 -0500
+summary:     Added example (printing out all bracket combinations)
+
+changeset:   41:c3ffd6c9147a
+user:        corina
+date:        Mon May 11 15:51:53 2015 -0700
+summary:     added memoization of trees and iterative deepening listener
+
+changeset:   40:7a663cbe96dc
+user:        corina
+date:        Tue Apr 28 17:31:31 2015 -0700
+summary:     update
+
+changeset:   39:e91caa82d31d
+user:        corina
+date:        Tue Apr 28 17:29:49 2015 -0700
+summary:     updates
+
+changeset:   38:926a9ed4a428
+user:        corina
+date:        Wed Jan 28 14:33:51 2015 -0800
+summary:     added printing of constraints for worst cases
+
+changeset:   37:e3c40e017fd2
+user:        corina
+date:        Wed Jan 28 14:04:48 2015 -0800
+summary:     fixed compile errors
+
+changeset:   36:ae3d30f30ae3
+user:        corina
+date:        Tue Jan 27 16:11:53 2015 -0800
+summary:     some updates
+
+changeset:   35:cc0a44d3da70
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Jan 21 12:26:15 2015 -0800
+summary:     update test script
+
+changeset:   34:861873bc1590
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Jan 21 12:18:57 2015 -0800
+summary:     update test script
+
+changeset:   33:8f23fddd08fb
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Jan 20 20:49:46 2015 -0800
+summary:     remove unnecessary file
+
+changeset:   32:756745e07bc6
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Jan 20 17:15:18 2015 -0800
+summary:     edit
+
+changeset:   31:23daf5fcc488
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Jan 20 17:13:32 2015 -0800
+summary:     edit test script
+
+changeset:   30:5ee6f6e53da4
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Jan 20 17:09:43 2015 -0800
+summary:     add testScript
+
+changeset:   29:431d14fa07ce
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Jan 20 17:05:47 2015 -0800
+summary:     edit incorrect comments
+
+changeset:   28:eb9054074e4e
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Jan 20 16:48:02 2015 -0800
+summary:     add .jpf files
+
+changeset:   27:2bcfe0c72c86
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Jan 20 16:33:12 2015 -0800
+summary:     clean, remove debug stuff
+
+changeset:   26:dd7cbc203750
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Jan 20 15:59:16 2015 -0800
+summary:     update configure because of name change
+
+changeset:   25:f62b5721aa06
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Dec 16 16:32:49 2014 -0800
+summary:     update RunQuantifiers
+
+changeset:   24:43c1e46201bd
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Dec 16 11:48:16 2014 -0800
+summary:     add option to run SCQ
+
+changeset:   23:e2155fe23dcc
+user:        corina
+date:        Mon Dec 15 14:32:10 2014 -0800
+summary:     added all the examples from the wise paper
+
+changeset:   22:fbe5dffda36a
+user:        Quoc-Sang Phan <dark2bright@gmail.com>
+date:        Thu Nov 27 00:11:48 2014 +0000
+summary:     TestQuantifiers.java edited online with Bitbucket
+
+changeset:   21:50cb17e7004b
+user:        lememta
+date:        Wed Nov 26 13:01:59 2014 -0800
+summary:     added bluetooth benchmark
+
+changeset:   20:84317bd0de8b
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Fri Nov 21 09:27:17 2014 -0800
+summary:     fix listeners. Take into account VM initialization etc
+
+changeset:   19:b1bbd2119832
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Fri Nov 21 00:37:09 2014 -0800
+summary:     fix jpf file
+
+changeset:   18:9d98677a83e1
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Fri Nov 21 00:32:47 2014 -0800
+summary:     fix listeners, add jpf files for examples
+
+changeset:   17:9cd929cfb26e
+user:        corina
+date:        Wed Nov 19 15:39:13 2014 -0800
+summary:     some cleaning; more tomorrow
+
+changeset:   16:565cbc79c20b
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Nov 17 23:45:01 2014 -0800
+summary:     minor update
+
+changeset:   15:0174d5092823
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Mon Nov 17 23:43:09 2014 -0800
+summary:     Edit memory channel
+
+changeset:   14:57a4905d0837
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Nov 05 07:11:36 2014 -0800
+summary:     clean up
+
+changeset:   13:093b967fae28
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Nov 05 06:51:44 2014 -0800
+summary:     add tool
+
+changeset:   12:6dee3ade992e
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Nov 05 06:35:27 2014 -0800
+summary:     add timing and bubble sort
+
+changeset:   11:075acedb8af9
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Tue Nov 04 16:54:34 2014 -0800
+summary:     add option for memory
+
+changeset:   10:82f52aa1b9ea
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Oct 30 22:59:35 2014 -0700
+summary:     add RSA example. But it doesn't work
+
+changeset:   9:26dd195f6453
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Oct 29 21:39:36 2014 -0700
+summary:     refactoring
+
+changeset:   8:75eb696ee207
+user:        corina
+date:        Wed Oct 29 16:38:20 2014 -0700
+summary:     added the example
+
+changeset:   7:51b7c9deb798
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Oct 29 13:55:16 2014 -0700
+summary:     add worst case execution time analysis
+
+changeset:   6:e93f10eb8a4d
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Oct 29 07:59:11 2014 -0700
+summary:     add Pasquale example
+
+changeset:   5:736ab7fb9802
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Oct 23 19:38:39 2014 -0700
+summary:     a Naive Timing Channel Quantifier
+
+changeset:   4:e0e95361b573
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Oct 23 18:07:42 2014 -0700
+summary:     add an example
+
+changeset:   3:3a5823e86a74
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Oct 23 18:07:02 2014 -0700
+summary:     add main to the example
+
+changeset:   2:f3cc9b61e8a5
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Thu Oct 23 00:43:54 2014 -0700
+summary:     add some simple classes
+
+changeset:   1:de3f77da8836
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Oct 22 16:39:13 2014 -0700
+summary:     add a naive timing channel analyzer
+
+changeset:   0:c9a870a6837b
+user:        Quoc-Sang Phan<dark2bright@gmail.com>
+date:        Wed Oct 22 16:23:02 2014 -0700
+summary:     add a project template
+

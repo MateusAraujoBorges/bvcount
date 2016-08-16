@@ -1,0 +1,1846 @@
+diff -r 9c542949dc1c src/examples/sidechannel/InsecureChecker.jpf
+--- a/src/examples/sidechannel/InsecureChecker.jpf	Sat Aug 06 21:20:19 2016 -0700
++++ b/src/examples/sidechannel/InsecureChecker.jpf	Mon Aug 15 15:32:08 2016 -0700
+@@ -1,3 +1,6 @@
++@using jpf-security
++@using jpf-symbc
++
+ target=sidechannel.InsecurePasswordChecker
+ symbolic.method=sidechannel.InsecurePasswordChecker.check(con)
+ 
+@@ -6,11 +9,18 @@
+ classpath=${jpf-security}/build/examples;
+ sourcepath=${jpf-security}/src/examples
+ 
+-listener = sidechannel.TimingChannelQuantifier
++listener = sidechannel.TimingChannelQuantifierNonLinear
+ 
+ symbolic.reliability.tmpDir=${jpf-security}/build/tmp
+-symbolic.reliability.omegaPath=${jpf-security}/tools/omega/oc
+-symbolic.reliability.lattePath=${jpf-security}/tools/latte-integrale-1.7.3/bin/count
++symbolic.reliability.omegaPath=oc
++symbolic.reliability.lattePath=count
+ 
+ symbolic.min_int=0
+ symbolic.max_int=9
++
++symbolic.counter=z3blocking
++#symbolic.counter=sharpsat
++#symbolic.counter=allsat
++symbolic.counter.sharpsat.path=/home/mateus/workspace/sharpSAT-fork-2/Release/sharpSAT
++symbolic.counter.allsat.path=/home/mateus/workspace/All_SAT/batch_all_sat
++symbolic.counter.bvlength=32
+diff -r 9c542949dc1c src/examples/sidechannel/Salsa20.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/examples/sidechannel/Salsa20.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,129 @@
++package sidechannel;
++
++import gov.nasa.jpf.symbc.Debug;
++
++// taken from the BouncyCastle implementation
++
++public class Salsa20 {
++
++	/**
++	 * Salsa20 function
++	 *
++	 * @param input
++	 *          input data
++	 */
++	public static boolean salsaCore(int rounds, int[] input, int[] x) {
++		if (input.length != 16) {
++			throw new IllegalArgumentException();
++		}
++		if (x.length != 16) {
++			throw new IllegalArgumentException();
++		}
++		if (rounds % 2 != 0) {
++			throw new IllegalArgumentException("Number of rounds must be even");
++		}
++
++		int x00 = input[0];
++		int x01 = input[1];
++		int x02 = input[2];
++		int x03 = input[3];
++		int x04 = input[4];
++		int x05 = input[5];
++		int x06 = input[6];
++		int x07 = input[7];
++		int x08 = input[8];
++		int x09 = input[9];
++		int x10 = input[10];
++		int x11 = input[11];
++		int x12 = input[12];
++		int x13 = input[13];
++		int x14 = input[14];
++		int x15 = input[15];
++
++		for (int i = rounds; i > 0; i -= 2) {
++			x04 ^= rotl(x00 + x12, 7);
++			x08 ^= rotl(x04 + x00, 9);
++			x12 ^= rotl(x08 + x04, 13);
++			x00 ^= rotl(x12 + x08, 18);
++			x09 ^= rotl(x05 + x01, 7);
++			x13 ^= rotl(x09 + x05, 9);
++			x01 ^= rotl(x13 + x09, 13);
++			x05 ^= rotl(x01 + x13, 18);
++			x14 ^= rotl(x10 + x06, 7);
++			x02 ^= rotl(x14 + x10, 9);
++			x06 ^= rotl(x02 + x14, 13);
++			x10 ^= rotl(x06 + x02, 18);
++			x03 ^= rotl(x15 + x11, 7);
++			x07 ^= rotl(x03 + x15, 9);
++			x11 ^= rotl(x07 + x03, 13);
++			x15 ^= rotl(x11 + x07, 18);
++
++			x01 ^= rotl(x00 + x03, 7);
++			x02 ^= rotl(x01 + x00, 9);
++			x03 ^= rotl(x02 + x01, 13);
++			x00 ^= rotl(x03 + x02, 18);
++			x06 ^= rotl(x05 + x04, 7);
++			x07 ^= rotl(x06 + x05, 9);
++			x04 ^= rotl(x07 + x06, 13);
++			x05 ^= rotl(x04 + x07, 18);
++			x11 ^= rotl(x10 + x09, 7);
++			x08 ^= rotl(x11 + x10, 9);
++			x09 ^= rotl(x08 + x11, 13);
++			x10 ^= rotl(x09 + x08, 18);
++			x12 ^= rotl(x15 + x14, 7);
++			x13 ^= rotl(x12 + x15, 9);
++			x14 ^= rotl(x13 + x12, 13);
++			x15 ^= rotl(x14 + x13, 18);
++		}
++
++		x[0] = x00 + input[0];
++		x[1] = x01 + input[1];
++		x[2] = x02 + input[2];
++		x[3] = x03 + input[3];
++		x[4] = x04 + input[4];
++		x[5] = x05 + input[5];
++		x[6] = x06 + input[6];
++		x[7] = x07 + input[7];
++		x[8] = x08 + input[8];
++		x[9] = x09 + input[9];
++		x[10] = x10 + input[10];
++		x[11] = x11 + input[11];
++		x[12] = x12 + input[12];
++		x[13] = x13 + input[13];
++		x[14] = x14 + input[14];
++		x[15] = x15 + input[15];
++		
++		
++		//MAB added a simple assertion here
++		if (x[6] > x[5]) {
++			return true;
++		} else {
++			return false;
++		}
++	}
++
++	/**
++	 * Rotate left
++	 *
++	 * @param x
++	 *          value to rotate
++	 * @param y
++	 *          amount to rotate x
++	 *
++	 * @return rotated x
++	 */
++	protected static int rotl(int x, int y) {
++		return (x << y) | (x >>> -y);
++	}
++	
++	public static void main(String[] args) {
++		int[] input = new int[16];
++		int[] output = new int[16];
++		
++		for (int i = 0; i < input.length; i++) {
++			input[i] = Debug.makeSymbolicInteger("PWD"+i);
++		}
++		
++		salsaCore(4, input, output);
++	}
++}
+diff -r 9c542949dc1c src/examples/sidechannel/Salsa20.jpf
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/examples/sidechannel/Salsa20.jpf	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,28 @@
++@using jpf-security
++@using jpf-symbc
++
++target=sidechannel.Salsa20
++symbolic.method=sidechannel.Salsa20.salsaCore(con#con#con)
++
++#sidechannel=timing
++
++classpath=${jpf-security}/build/examples;
++sourcepath=${jpf-security}/src/examples
++
++listener = sidechannel.TimingChannelQuantifierNonLinear
++
++symbolic.reliability.tmpDir=${jpf-security}/build/tmp
++symbolic.reliability.omegaPath=oc
++symbolic.reliability.lattePath=count
++
++symbolic.min_int=0
++symbolic.max_int=9
++
++symbolic.counter=z3blocking
++#symbolic.counter=sharpsat
++#symbolic.counter=allsat
++#symbolic.counter=allsat
++symbolic.counter.sharpsat.path=/home/mateus/workspace/sharpSAT-fork-2/Release/sharpSAT
++symbolic.counter.allsat.path=/home/mateus/workspace/All_SAT/batch_all_sat
++symbolic.counter.bvlength=32
++symbolic.dp=z3bitvector
+\ No newline at end of file
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/AllSatCounter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/AllSatCounter.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,72 @@
++package modelcounting.nonlinear;
++
++import java.io.BufferedInputStream;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.io.InputStream;
++import java.nio.file.Path;
++import java.util.Scanner;
++
++import com.google.common.io.ByteStreams;
++
++import gov.nasa.jpf.Config;
++import modelcounting.utils.BigRational;
++
++public class AllSatCounter extends CnfCounter {
++
++	private final String allsatPath;
++	private final static String outputFile = "stdout.txt";
++
++	public AllSatCounter(Config config) {
++		super(config);
++		this.allsatPath = config.getString("symbolic.counter.allsat.path", "batch_all_sat");
++	}
++
++	@Override
++	public BigRational runToolAndExtract(Path cnfFile, Problem problem) {
++		int nProjectionVars = this.bvLength * problem.getAllVars().size();
++		ProcessBuilder pb = new ProcessBuilder(
++				allsatPath, cnfFile.toAbsolutePath().toString(), "" + nProjectionVars);
++		try {
++			System.err.println("starting batch solver...");
++			Process process = pb.start();
++
++			//the tool generates a lot of output, so we store it in a file
++			InputStream stdout = new BufferedInputStream(process.getInputStream());
++			FileOutputStream stdoutFile = new FileOutputStream(outputFile);
++			ByteStreams.copy(stdout, stdoutFile);
++
++			while (process.isAlive()) {
++				try {
++					process.waitFor();
++				} catch (InterruptedException e) {
++				}
++			}
++
++			pb = new ProcessBuilder("tail", outputFile);
++			process = pb.start();
++
++			while (process.isAlive()) {
++				try {
++					process.waitFor();
++				} catch (InterruptedException e) {
++				}
++			}
++			
++			try (Scanner scanner = new Scanner(process.getInputStream())) {
++				while (scanner.hasNextLine()) {
++					String line = scanner.nextLine();
++//					System.out.println(line);
++					if (line.startsWith("Total Number of solutions found:")) {
++						String[] toks = line.trim().split(" ");
++						return BigRational.valueOf(toks[5]);
++					}
++				}
++			}
++
++		} catch (IOException e) {
++			throw new RuntimeException(e);
++		}
++		throw new RuntimeException("Solution line not found in the output of AllSat!");
++	}
++}
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/CnfCounter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/CnfCounter.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,60 @@
++package modelcounting.nonlinear;
++
++import java.io.IOException;
++import java.nio.file.Files;
++import java.nio.file.Path;
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++
++import com.google.common.collect.ImmutableList;
++import com.microsoft.z3.BitVecExpr;
++import com.microsoft.z3.BoolExpr;
++import com.microsoft.z3.Context;
++import com.microsoft.z3.Solver;
++
++import gov.nasa.jpf.Config;
++import modelcounting.utils.BigRational;
++
++public abstract class CnfCounter extends ModelCounter {
++
++	protected final int bvLength;
++
++	public CnfCounter(Config config) {
++		super(config);
++		this.bvLength = config.getInt("symbolic.counter.bvlength", 32);
++	}
++
++	@Override
++	public BigRational count(Problem problem) {
++		Path tmpFile = prepareCNF(problem);
++		return runToolAndExtract(tmpFile,problem);
++	}
++	
++	public Path prepareCNF(Problem problem) {
++		Context ctx = new Context();
++		Solver solver = ctx.mkSolver();
++		Map<Integer, BitVecExpr> idToZ3BV = new HashMap<>();
++		List<BoolExpr> domainExprs = ModelCounterUtils.toZ3Vars(problem.getAllVars(), ctx, idToZ3BV, bvLength);
++		List<BoolExpr> constraintExprs = ModelCounterUtils
++				.collectZ3Constraints(problem.getConstraints(), ctx, solver, idToZ3BV, bvLength);
++		List<BoolExpr> formula = new ArrayList<>();
++		formula.addAll(domainExprs);
++		formula.addAll(constraintExprs);
++		
++		// bitblast
++		Z3Bitblaster bitblaster = new Z3Bitblaster(ctx);
++		String dimacs = bitblaster.generateDimacs(formula);
++
++		try {
++			Path tmpFile = Files.createTempFile("sharp", ".cnf");
++			Files.write(tmpFile, ImmutableList.of(dimacs));
++			return tmpFile;
++		} catch (IOException e) {
++			throw new RuntimeException(e);
++		}
++	}
++	
++	public abstract BigRational runToolAndExtract(Path cnfFile, Problem problem);
++}
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/CompositionalModelCounter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/CompositionalModelCounter.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,101 @@
++package modelcounting.nonlinear;
++
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Optional;
++import java.util.Set;
++import java.util.concurrent.ExecutionException;
++
++import com.google.common.cache.CacheBuilder;
++import com.google.common.cache.CacheLoader;
++import com.google.common.cache.LoadingCache;
++import com.google.common.collect.HashMultimap;
++import com.google.common.collect.ImmutableList;
++import com.google.common.collect.Multimap;
++
++import edu.uci.ics.jung.algorithms.cluster.WeakComponentClusterer;
++import edu.uci.ics.jung.graph.UndirectedSparseGraph;
++import gov.nasa.jpf.Config;
++import gov.nasa.jpf.symbc.numeric.Constraint;
++import modelcounting.nonlinear.Problem.Var;
++import modelcounting.utils.BigRational;
++
++public class CompositionalModelCounter extends ModelCounter {
++
++	private final LoadingCache<Problem, BigRational> countingCache;
++	private final LoadingCache<Problem, List<Problem>> partitioningCache;
++
++	private static final int CACHE_SIZE = 100000;
++
++	public CompositionalModelCounter(Config config, ModelCounter counter) {
++		super(config);
++		long maxCacheSize = config.getLong("symbolic.counter.cache.size", CACHE_SIZE);
++		this.countingCache = CacheBuilder.newBuilder().maximumSize(maxCacheSize).recordStats().build(
++				new CacheLoader<Problem, BigRational>() {
++					@Override
++					public BigRational load(Problem problem) throws Exception {
++						return counter.count(problem);
++					}
++				});
++		
++		this.partitioningCache = CacheBuilder.newBuilder()
++				.maximumSize(maxCacheSize)
++				.recordStats()
++				.build(
++						new CacheLoader<Problem, List<Problem>>() {
++							@Override
++							public List<Problem> load(Problem problem) throws Exception {
++								List<Problem> subproblems = new ArrayList<>();
++								Set<Set<Var>> clusters = extractIndependentVarClusters(problem);
++								for (Set<Var> cluster : clusters) {
++									Optional<Problem> subproblem = problem.filterConstraints(cluster);
++									if (subproblem.isPresent()) {
++										subproblems.add(subproblem.get());
++										System.out.println(clusters + " >> " + subproblem);
++									} else {
++										throw new RuntimeException("no clauses in filtered constraint!");
++									}
++								}
++								return ImmutableList.copyOf(subproblems);
++							}
++						});
++	}
++
++	@Override
++	public BigRational count(Problem problem) {
++		try {
++			List<Problem> subproblems = partitioningCache.get(problem);
++			BigRational count = BigRational.ONE;
++			for (Problem subproblem : subproblems) {
++				System.err.println("[Compositional] current subproblem: " + subproblem);
++				count = count.mul(countingCache.get(subproblem));
++			}
++			return count;
++		} catch (ExecutionException e) {
++			throw new RuntimeException(e);
++		}
++	}
++
++	private Set<Set<Var>> extractIndependentVarClusters(Problem prob) {
++		Multimap<Var, Constraint> constraintsRelatedToAVar = HashMultimap.<Var, Constraint> create();
++		UndirectedSparseGraph<Var, Integer> dependencyGraph = new UndirectedSparseGraph<Var, Integer>();
++		int edgeCounter = 0;
++		Constraint cons = prob.getConstraints();
++		int cIndex = 0;
++		while (cons != null) {
++			List<Var> vars = ImmutableList.copyOf(prob.getVarSets().get(cIndex));
++			for (int i = 0; i < vars.size(); i++) {
++				constraintsRelatedToAVar.put(vars.get(i), cons);
++				// Notice j=i to add self-dependency
++				for (int j = i; j < vars.size(); j++) {
++					dependencyGraph.addEdge(edgeCounter++, vars.get(i), vars.get(j));
++				}
++			}
++			cIndex++;
++			cons = cons.and;
++		}
++		WeakComponentClusterer<Var, Integer> clusterer = new WeakComponentClusterer<Var, Integer>();
++		Set<Set<Var>> clusters = clusterer.transform(dependencyGraph);
++		return clusters;
++	}
++}
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/ModelCounter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/ModelCounter.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,75 @@
++package modelcounting.nonlinear;
++
++import java.util.Collection;
++import java.util.Set;
++
++import com.google.common.collect.Sets;
++
++import gov.nasa.jpf.Config;
++import modelcounting.nonlinear.Problem.Var;
++import modelcounting.utils.BigRational;
++
++/**
++ * Interface implemented by non-linear counters. As opposed to the linear
++ * counters from this package, we work directly with PathConstraints.
++ * 
++ * @author mateus
++ *
++ */
++
++public abstract class ModelCounter {
++
++	public ModelCounter(Config config) {
++
++	}
++
++	public static ModelCounter getModelCounter(Config config) {
++		String counter = config.getString("symbolic.counter", "z3blocking");
++		switch (counter) {
++		case "z3blocking":
++			return new Z3BlockingCounter(config);
++		case "sharpsat":
++			return new SharpSatCounter(config);
++		case "allsat":
++			return new AllSatCounter(config);
++		default:
++			throw new RuntimeException("Unknown counter: " + counter);
++		}
++	}
++
++	public static ModelCounter getCompositionalModelCounter(Config config) {
++		ModelCounter counter = getModelCounter(config);
++		return new CompositionalModelCounter(config, counter);
++	}
++
++	/**
++	 * Precondition: Problems should contain disjoint constraints
++	 */
++
++	public BigRational count(Collection<Problem> problems, Set<Var> allVars) {
++		BigRational total = BigRational.ZERO;
++
++		for (Problem problem : problems) {
++			BigRational count = count(problem);
++			Set<Var> ommitedVars = Sets.difference(allVars, problem.getAllVars());
++			if (ommitedVars.size() > 0) {
++				for (Var var : ommitedVars) {
++					long domainSize = var.domain.upperEndpoint() - var.domain.lowerEndpoint() + 1;
++					count = count.mul(domainSize);
++				}
++			}
++			total = total.plus(count);
++		}
++		return total;
++	}
++
++	/**
++	 * Returns the number of solutions of problem.
++	 * 
++	 * @param problem
++	 * @return
++	 */
++
++	public abstract BigRational count(Problem problem);
++
++}
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/ModelCounterUtils.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/ModelCounterUtils.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,134 @@
++package modelcounting.nonlinear;
++
++import java.util.ArrayList;
++import java.util.Deque;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.List;
++import java.util.Map;
++import java.util.Set;
++
++import com.google.common.collect.ImmutableSet;
++import com.google.common.hash.HashFunction;
++import com.google.common.hash.Hashing;
++import com.microsoft.z3.BitVecExpr;
++import com.microsoft.z3.BoolExpr;
++import com.microsoft.z3.Context;
++import com.microsoft.z3.Expr;
++import com.microsoft.z3.Solver;
++
++import gov.nasa.jpf.symbc.numeric.Constraint;
++import gov.nasa.jpf.symbc.numeric.Expression;
++import gov.nasa.jpf.symbc.numeric.LinearIntegerConstraint;
++import gov.nasa.jpf.symbc.numeric.LogicalORLinearIntegerConstraints;
++import gov.nasa.jpf.symbc.numeric.MixedConstraint;
++import gov.nasa.jpf.symbc.numeric.NonLinearIntegerConstraint;
++import gov.nasa.jpf.symbc.numeric.RealConstraint;
++import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
++import gov.nasa.jpf.symbc.numeric.visitors.CollectVariableVisitor;
++import modelcounting.nonlinear.Problem.Var;
++
++public class ModelCounterUtils {
++
++	public static List<Set<Var>> extractVars(Constraint constraint) {
++		List<Set<Var>> problemVars = new ArrayList<>();
++
++		while (constraint != null) {
++			Set<Var> vars = new HashSet<>();
++			CollectVariableVisitor cvv = new CollectVariableVisitor();
++			constraint.accept(cvv);
++			
++			for (Expression e : cvv.getVariables()) {
++				if (e instanceof SymbolicInteger) {
++					SymbolicInteger si = (SymbolicInteger) e;
++					// MAB: SymbolicInteger.hashCode() returns the id of the var.
++					// I would prefer to create and use a getter, but I'm not
++					// touching symbc code.
++					Var var = new Var(si.hashCode(), si._min, si._max);
++					vars.add(var);
++				} else {
++					throw new RuntimeException("Unimplemented var type: " + e);
++				}
++			}
++			problemVars.add(ImmutableSet.copyOf(vars));
++			constraint = constraint.and;
++		}
++		return problemVars;
++	}
++
++	public static HashFunction getHashFunction() {
++		return Hashing.goodFastHash(32);
++	}
++
++	public static Map<Integer, BitVecExpr> declareVars(Set<Var> vars, Context ctx, Solver solver, int bvLength) {
++		Map<Integer, BitVecExpr> idToZ3BV = new HashMap<>();
++		for (Var var : vars) {
++			BitVecExpr bv = ctx.mkBVConst("v" + var.id, bvLength);
++			idToZ3BV.put(var.id, bv);
++			solver.add(ctx.mkBVSGE(bv, ctx.mkBV(var.domain.lowerEndpoint(), bvLength)));
++			solver.add(ctx.mkBVSLE(bv, ctx.mkBV(var.domain.upperEndpoint(), bvLength)));
++		}
++		return idToZ3BV;
++	}
++
++	public static List<BoolExpr> toZ3Vars(Set<Var> vars, Context ctx, Map<Integer, BitVecExpr> idToZ3BV, int bvLength) {
++		List<BoolExpr> domainExprs = new ArrayList<>();
++		for (Var var : vars) {
++			BitVecExpr bv = ctx.mkBVConst("v" + var.id, bvLength);
++			BoolExpr lo = ctx.mkBVSGE(bv, ctx.mkBV(var.domain.lowerEndpoint(), bvLength));
++			BoolExpr hi = ctx.mkBVSLE(bv, ctx.mkBV(var.domain.upperEndpoint(), bvLength));
++			idToZ3BV.put(var.id, bv);
++			domainExprs.add(lo);
++			domainExprs.add(hi);
++		}
++		return domainExprs;
++	}
++	
++	public static Constraint makeCopy(Constraint cons) {
++		if (cons instanceof LinearIntegerConstraint) {
++			return new LinearIntegerConstraint((LinearIntegerConstraint) cons);
++		} else if (cons instanceof LogicalORLinearIntegerConstraints) {
++			throw new RuntimeException("Not implemented");
++		} else if (cons instanceof MixedConstraint) {
++			return new MixedConstraint((MixedConstraint) cons);
++		} else if (cons instanceof NonLinearIntegerConstraint) {
++			return new NonLinearIntegerConstraint((NonLinearIntegerConstraint)cons);
++		} else if (cons instanceof RealConstraint) {
++			return new RealConstraint((RealConstraint) cons);
++		} else {
++			throw new RuntimeException("Not implemented: " + cons.getClass());
++		}
++	}
++
++	public static void assertConstraints(Constraint constraint, Context ctx, Solver solver,
++			Map<Integer, BitVecExpr> idToZ3BV, int bvLength) {
++		while (constraint != null) {
++			Z3BitVecVisitor visitor = new Z3BitVecVisitor(ctx, idToZ3BV, bvLength);
++			constraint.accept(visitor);
++	
++			Deque<Expr> deque = visitor.getEvalStack();
++			if (deque.size() != 1) {
++				throw new RuntimeException("Error: there should be only one expression in the stack!");
++			}
++			solver.add((BoolExpr) deque.pop());
++			constraint = constraint.and;
++		}
++	}
++	
++	public static List<BoolExpr> collectZ3Constraints(Constraint constraint, Context ctx, Solver solver,
++			Map<Integer, BitVecExpr> idToZ3BV, int bvLength) {
++		List<BoolExpr> z3Exprs = new ArrayList<>();
++		while (constraint != null) {
++			Z3BitVecVisitor visitor = new Z3BitVecVisitor(ctx, idToZ3BV, bvLength);
++			constraint.accept(visitor);
++	
++			Deque<Expr> deque = visitor.getEvalStack();
++			if (deque.size() != 1) {
++				throw new RuntimeException("Error: there should be only one expression in the stack!");
++			}
++			z3Exprs.add((BoolExpr) deque.pop());
++			constraint = constraint.and;
++		}
++		return z3Exprs;
++	}
++}
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/Problem.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/Problem.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,194 @@
++package modelcounting.nonlinear;
++
++import java.util.ArrayList;
++import java.util.Collection;
++import java.util.HashSet;
++import java.util.List;
++import java.util.Optional;
++import java.util.Set;
++
++import com.google.common.collect.ImmutableList;
++import com.google.common.collect.ImmutableSet;
++import com.google.common.collect.Range;
++import com.google.common.hash.HashCode;
++
++import gov.nasa.jpf.symbc.numeric.Constraint;
++import gov.nasa.jpf.symbc.numeric.PathCondition;
++import modelcounting.utils.BigRational;
++
++public class Problem {
++
++	private final Constraint constraint;
++	private final List<Set<Var>> varSets;
++	private final Set<Var> allVars;
++	private HashCode hash;
++
++	public Problem(PathCondition pc) {
++		super();
++		this.constraint = pc.header;
++		this.varSets = ImmutableList.copyOf(ModelCounterUtils.extractVars(constraint));
++		
++		Set<Var> allVars = new HashSet<>();
++		for (Set<Var> varSet : varSets) {
++			allVars.addAll(varSet);
++		}
++		this.allVars = ImmutableSet.copyOf(allVars);
++	}
++
++	public Problem(Constraint constraint, List<Set<Var>> vars) {
++		this.constraint = constraint;
++		this.varSets = ImmutableList.copyOf(vars);
++		
++		Set<Var> allVars = new HashSet<>();
++		for (Set<Var> varSet : varSets) {
++			allVars.addAll(varSet);
++		}
++		this.allVars = ImmutableSet.copyOf(allVars);
++	}
++
++	public Constraint getConstraints() {
++		return constraint;
++	}
++
++	public List<Set<Var>> getVarSets() {
++		return varSets;
++	}
++	
++	public Set<Var> getAllVars() {
++		return allVars;
++	}
++	
++	public BigRational getDomainSize() {
++		BigRational size = BigRational.ONE;
++		for (Var var : allVars) {
++			size = size.mul(var.domain.upperEndpoint() - var.domain.lowerEndpoint());
++		}
++		return size;
++	}
++
++	public Optional<Problem> filterConstraints(Collection<Var> wantedVars) {
++		Constraint filteredCons = null;
++		Constraint tail = null;
++		List<Set<Var>> filteredVarSets = new ArrayList<>();
++		
++		Constraint cons = this.constraint;
++		int i = 0;
++		while (cons != null) {
++			Set<Var> vars = varSets.get(i);
++			for (Var wantedVar : wantedVars) {
++				if (vars.contains(wantedVar)) {
++					Constraint copy = ModelCounterUtils.makeCopy(cons); 
++					if (filteredCons == null) {
++						filteredCons = copy;
++					}
++					if (tail != null) {
++						tail.and = copy;
++					}
++					tail = copy;
++					filteredVarSets.add(vars);
++					break;
++				}
++			}
++			i++;
++			cons = cons.and;
++		}
++		if (filteredCons == null) {
++			return Optional.empty();
++		} else {
++			return Optional.of(new Problem(filteredCons, filteredVarSets));
++		}
++	}
++
++	@Override
++	public String toString() {
++		return "Problem [constraints=" + constraint + ", varSets=" + varSets + "]";
++	}
++
++	@Override
++	public int hashCode() {
++		if (hash == null) {
++			hash = ModelCounterUtils.getHashFunction()
++			.newHasher()
++			.putInt(constraint.hashCode())
++			.putInt(varSets.hashCode())
++			.hash();
++		}
++		return hash.asInt();
++	}
++
++	@Override
++	public boolean equals(Object obj) {
++		if (this == obj)
++			return true;
++		if (obj == null)
++			return false;
++		if (getClass() != obj.getClass())
++			return false;
++		Problem other = (Problem) obj;
++		if (constraint == null) {
++			if (other.constraint != null)
++				return false;
++		} else if (!constraint.equals(other.constraint))
++			return false;
++		if (varSets == null) {
++			if (other.varSets != null)
++				return false;
++		} else if (!varSets.equals(other.varSets))
++			return false;
++		return true;
++	}
++
++	public static class Var {
++		public final int id;
++		public final Range<Long> domain;
++		private HashCode hash = null;
++
++		public Var(int id, Range<Long> domain) {
++			super();
++			this.id = id;
++			this.domain = domain;
++		}
++
++		public Var(int id, long lo, long hi) {
++			super();
++			this.id = id;
++			this.domain = Range.closed(lo, hi);
++		}
++
++		@Override
++		public boolean equals(Object obj) {
++			if (this == obj)
++				return true;
++			if (obj == null)
++				return false;
++			if (getClass() != obj.getClass())
++				return false;
++			Var other = (Var) obj;
++			if (domain == null) {
++				if (other.domain != null)
++					return false;
++			} else if (!domain.equals(other.domain))
++				return false;
++			if (id != other.id)
++				return false;
++			return true;
++		}
++
++		public int hashCode() {
++			if (hash == null) {
++				hash = ModelCounterUtils.getHashFunction()
++						.newHasher()
++						.putInt(id)
++						.putLong(domain.lowerEndpoint())
++						.putLong(domain.upperEndpoint())
++						.hash();
++			}
++			return hash.asInt();
++		}
++
++		@Override
++		public String toString() {
++			return "Var [id=" + id + ", domain=" + domain + "]";
++		}
++	}
++}
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/SharpSatCounter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/SharpSatCounter.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,56 @@
++package modelcounting.nonlinear;
++
++import java.io.BufferedReader;
++import java.io.IOException;
++import java.io.InputStreamReader;
++import java.nio.file.Path;
++
++import gov.nasa.jpf.Config;
++import modelcounting.utils.BigRational;
++
++public class SharpSatCounter extends CnfCounter {
++
++	private final String sharpSatPath;
++	private final static int SIGFPE = 136;
++
++	public SharpSatCounter(Config config) {
++		super(config);
++		this.sharpSatPath = config.getString("symbolic.counter.sharpsat.path", "sharpSAT");
++	}
++
++	@Override
++	public BigRational runToolAndExtract(Path cnfFile, Problem problem) {
++		ProcessBuilder pb = new ProcessBuilder(sharpSatPath, cnfFile.toAbsolutePath().toString());
++		try {
++			Process process = pb.start();
++			BufferedReader reader = new BufferedReader(
++					new InputStreamReader(process.getInputStream()));
++			String line = null;
++
++			while (process.isAlive()) {
++				try {
++					process.waitFor();
++				} catch (InterruptedException e) {
++				}
++			}
++
++			// workaround for division by 0 in the projection patch
++			if (process.exitValue() == SIGFPE) {
++				return BigRational.ONE;
++			} else {
++				while ((line = reader.readLine()) != null) {
++					//uncomment this to see what sharpSAT is printing
++//					System.out.println(line);
++					if (line.startsWith("# solutions")) {
++						String solutionLine = reader.readLine();
++						System.out.println(solutionLine);
++						return BigRational.valueOf(solutionLine);
++					}
++				}
++			}
++		} catch (IOException e) {
++			throw new RuntimeException(e);
++		}
++		throw new RuntimeException("Solution line not found in the output of sharpSAT!");
++	}
++}
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/Z3BitVecVisitor.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/Z3BitVecVisitor.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,316 @@
++package modelcounting.nonlinear;
++
++import java.util.ArrayDeque;
++import java.util.Deque;
++import java.util.Map;
++
++import com.microsoft.z3.BitVecExpr;
++import com.microsoft.z3.BoolExpr;
++import com.microsoft.z3.Context;
++import com.microsoft.z3.Expr;
++import com.microsoft.z3.IntExpr;
++
++import gov.nasa.jpf.symbc.concolic.FunctionExpression;
++import gov.nasa.jpf.symbc.mixednumstrg.SpecialIntegerExpression;
++import gov.nasa.jpf.symbc.mixednumstrg.SpecialRealExpression;
++import gov.nasa.jpf.symbc.numeric.BinaryLinearIntegerExpression;
++import gov.nasa.jpf.symbc.numeric.BinaryNonLinearIntegerExpression;
++import gov.nasa.jpf.symbc.numeric.BinaryRealExpression;
++import gov.nasa.jpf.symbc.numeric.Comparator;
++import gov.nasa.jpf.symbc.numeric.Constraint;
++import gov.nasa.jpf.symbc.numeric.ConstraintExpressionVisitor;
++import gov.nasa.jpf.symbc.numeric.IntegerConstant;
++import gov.nasa.jpf.symbc.numeric.LinearIntegerConstraint;
++import gov.nasa.jpf.symbc.numeric.LogicalORLinearIntegerConstraints;
++import gov.nasa.jpf.symbc.numeric.MathRealExpression;
++import gov.nasa.jpf.symbc.numeric.MixedConstraint;
++import gov.nasa.jpf.symbc.numeric.NonLinearIntegerConstraint;
++import gov.nasa.jpf.symbc.numeric.Operator;
++import gov.nasa.jpf.symbc.numeric.RealConstant;
++import gov.nasa.jpf.symbc.numeric.RealConstraint;
++import gov.nasa.jpf.symbc.numeric.SymbolicInteger;
++import gov.nasa.jpf.symbc.numeric.SymbolicReal;
++import gov.nasa.jpf.symbc.string.DerivedStringExpression;
++import gov.nasa.jpf.symbc.string.StringConstant;
++import gov.nasa.jpf.symbc.string.StringConstraint;
++import gov.nasa.jpf.symbc.string.StringExpression;
++import gov.nasa.jpf.symbc.string.StringSymbolic;
++import gov.nasa.jpf.symbc.string.SymbolicStringBuilder;
++
++public class Z3BitVecVisitor extends ConstraintExpressionVisitor {
++
++	private final int bvLength;
++	
++	private final Context ctx;
++	private final Map<Integer, BitVecExpr> idToZ3Var;
++
++	private final Deque<Expr> evalStack;
++	
++	public Z3BitVecVisitor(Context ctx, Map<Integer, BitVecExpr> idToZ3Var, int bvLength) {
++		this.ctx = ctx;
++		this.evalStack = new ArrayDeque<>();
++		this.idToZ3Var = idToZ3Var;
++		this.bvLength = bvLength;
++	}
++
++	public Deque<Expr> getEvalStack() {
++		return evalStack;
++	}
++	
++	public void postVisit(Constraint cons) {
++		if (cons instanceof LinearIntegerConstraint) {
++			this.postVisit((LinearIntegerConstraint) cons);
++		} else if (cons instanceof LogicalORLinearIntegerConstraints) {
++			throw new RuntimeException("Not implemented");
++		} else if (cons instanceof MixedConstraint) {
++			this.postVisit((MixedConstraint) cons);
++		} else if (cons instanceof NonLinearIntegerConstraint) {
++			this.postVisit((NonLinearIntegerConstraint)cons);
++		} else if (cons instanceof RealConstraint) {
++			this.postVisit((RealConstraint) cons);
++		} else {
++			throw new RuntimeException("Not implemented: " + cons.getClass());
++		} 
++	}
++	
++	public void postVisit(LinearIntegerConstraint constraint) {
++		Expr b = evalStack.pop();
++		Expr a = evalStack.pop();
++		Comparator cmp = constraint.getComparator();
++		Expr result;
++
++		if (a instanceof BitVecExpr && b instanceof BitVecExpr) {
++			result = mkBitVecCmp((BitVecExpr) a, (BitVecExpr) b, cmp);
++		} else if (a instanceof IntExpr && b instanceof IntExpr) {
++			result = mkIntCmp((IntExpr) a, (IntExpr) b, cmp);
++		} else {
++			throw new RuntimeException("Unknown type: " + a + " " + b);
++		}
++		evalStack.push(result);
++	}
++
++	private BoolExpr mkIntCmp(IntExpr a, IntExpr b, Comparator cmp) {
++		switch (cmp) {
++		case EQ:
++			return ctx.mkEq(a, b);
++		case GE:
++			return ctx.mkGe(a, b);
++		case GT:
++			return ctx.mkGt(a, b);
++		case LE:
++			return ctx.mkLe(a, b);
++		case LT:
++			return ctx.mkLt(a, b);
++		case NE:
++			return ctx.mkNot(ctx.mkEq(a, b));
++		default:
++			throw new RuntimeException("Unhandled case: " + cmp);
++		}
++	}
++
++	private BoolExpr mkBitVecCmp(BitVecExpr a, BitVecExpr b, Comparator cmp) {
++		switch (cmp) {
++		case EQ:
++			return ctx.mkEq(a, b);
++		case GE:
++			return ctx.mkBVSGE(a, b);
++		case GT:
++			return ctx.mkBVSGT(a, b);
++		case LE:
++			return ctx.mkBVSLE(a, b);
++		case LT:
++			return ctx.mkBVSLT(a, b);
++		case NE:
++			return ctx.mkNot(ctx.mkEq(a, b));
++		default:
++			throw new RuntimeException("Unhandled case: " + cmp);
++		}
++	}
++
++	public void postVisit(LogicalORLinearIntegerConstraints constraint) {
++		throw new RuntimeException("Not implemented");
++	}
++
++	public void postVisit(MixedConstraint constraint) {
++		throw new RuntimeException("Not implemented");
++	}
++
++	public void postVisit(NonLinearIntegerConstraint constraint) {
++		Expr b = evalStack.pop();
++		Expr a = evalStack.pop();
++		Comparator cmp = constraint.getComparator();
++		Expr result;
++
++		if (a instanceof BitVecExpr && b instanceof BitVecExpr) {
++			result = mkBitVecCmp((BitVecExpr) a, (BitVecExpr) b, cmp);
++		} else if (a instanceof IntExpr && b instanceof IntExpr) {
++			result = mkIntCmp((IntExpr) a, (IntExpr) b, cmp);
++		} else {
++			throw new RuntimeException("Unknown type: " + a + " " + b);
++		}
++		evalStack.push(result);
++	}
++
++	public void postVisit(RealConstraint constraint) {
++		throw new RuntimeException("Not implemented");
++	}
++
++	public void postVisit(StringConstraint stringConstraint) {
++		throw new RuntimeException("Not implemented");
++	}
++
++	/*--- EXPRESSION VISITOR ROUTINES ---*/
++
++	public void postVisit(BinaryLinearIntegerExpression expr) {
++		Expr b = evalStack.pop();
++		Expr a = evalStack.pop();
++		Operator op = expr.getOp();
++		
++		Expr result;
++
++		if (a instanceof BitVecExpr && b instanceof BitVecExpr) {
++			result = mkBitVecArith((BitVecExpr) a, (BitVecExpr) b, op);
++		} else if (a instanceof IntExpr && b instanceof IntExpr) {
++			result = mkIntArith((IntExpr) a, (IntExpr) b, op);
++		} else {
++			throw new RuntimeException("Unknown type: " + a + " " + b);
++		}
++		evalStack.push(result);
++	}
++
++	private Expr mkIntArith(IntExpr a, IntExpr b, Operator op) {
++		switch (op) {
++		case AND:
++			throw new RuntimeException("Invalid operation!");
++		case CMP:
++			throw new RuntimeException("No idea what's the purpose of CMP!");
++		case DIV:
++			return ctx.mkDiv(a, b);
++		case MINUS:
++			return ctx.mkSub(a,b);
++		case MUL:
++			return ctx.mkMul(a,b);
++		case OR:
++			throw new RuntimeException("Invalid operation!");
++		case PLUS:
++			return ctx.mkAdd(a,b);
++		case REM:
++			return ctx.mkRem(a, b);
++		case SHIFTL:
++			throw new RuntimeException("Invalid operation!");
++		case SHIFTR:
++			throw new RuntimeException("Invalid operation!");
++		case SHIFTUR:
++			throw new RuntimeException("Invalid operation!");
++		case XOR:
++			throw new RuntimeException("Invalid operation!");
++		default:
++			throw new RuntimeException("Unknown operation! " + op);
++		}
++	}
++
++	private Expr mkBitVecArith(BitVecExpr a, BitVecExpr b, Operator op) {
++		switch (op) {
++		case AND:
++			return ctx.mkBVAND(a, b);
++		case CMP:
++			throw new RuntimeException("No idea what's the purpose of CMP!");
++		case DIV:
++			return ctx.mkBVSDiv(a, b);
++		case MINUS:
++			return ctx.mkBVSub(a,b);
++		case MUL:
++			return ctx.mkBVMul(a,b);
++		case OR:
++			return ctx.mkBVOR(a, b);
++		case PLUS:
++			return ctx.mkBVAdd(a,b);
++		case REM:
++			return ctx.mkBVSRem(a, b);
++		case SHIFTL:
++			return ctx.mkBVSHL(a, b);
++		case SHIFTR:
++			return ctx.mkBVASHR(a, b);
++		case SHIFTUR:
++			return ctx.mkBVLSHR(a, b);
++		case XOR:
++			return ctx.mkBVXOR(a, b);
++		default:
++			throw new RuntimeException("Unknown operation! " + op);
++		}
++	}
++
++	public void postVisit(IntegerConstant expr) {
++		evalStack.push(ctx.mkBV(expr.value, bvLength));
++	}
++
++	public void postVisit(SymbolicInteger expr) {
++		//expr.hashCode() returns the id of the var
++		evalStack.push(idToZ3Var.get(expr.hashCode()));
++	}
++
++	public void postVisit(BinaryNonLinearIntegerExpression expr) {
++		Expr b = evalStack.pop();
++		Expr a = evalStack.pop();
++		Operator op = expr.op;
++		
++		Expr result;
++
++		if (a instanceof BitVecExpr && b instanceof BitVecExpr) {
++			result = mkBitVecArith((BitVecExpr) a, (BitVecExpr) b, op);
++		} else if (a instanceof IntExpr && b instanceof IntExpr) {
++			result = mkIntArith((IntExpr) a, (IntExpr) b, op);
++		} else {
++			throw new RuntimeException("Unknown type: " + a + " " + b);
++		}
++		evalStack.push(result);
++	}
++
++	public void postVisit(SpecialIntegerExpression expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(BinaryRealExpression expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(FunctionExpression expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(MathRealExpression expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(RealConstant expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(SpecialRealExpression expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(SymbolicReal expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(StringExpression expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(DerivedStringExpression expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(StringConstant expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(StringSymbolic expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++
++	public void postVisit(SymbolicStringBuilder expr) {
++		throw new RuntimeException("Unsupported!");
++	}
++}
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/Z3Bitblaster.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/Z3Bitblaster.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,229 @@
++package modelcounting.nonlinear;
++
++import java.util.ArrayList;
++import java.util.Arrays;
++import java.util.Collections;
++import java.util.HashMap;
++import java.util.LinkedHashSet;
++import java.util.List;
++import java.util.Map;
++import java.util.Set;
++
++import com.microsoft.z3.ApplyResult;
++import com.microsoft.z3.BitVecExpr;
++import com.microsoft.z3.BitVecSort;
++import com.microsoft.z3.BoolExpr;
++import com.microsoft.z3.Context;
++import com.microsoft.z3.Expr;
++import com.microsoft.z3.Goal;
++import com.microsoft.z3.Tactic;
++
++public class Z3Bitblaster {
++
++	Context ctx;
++
++	public Z3Bitblaster(Context ctx) {
++		this.ctx = ctx;
++	}
++
++	public BoolExpr[] bitblast(List<BoolExpr> formula, Map<String, Integer> id_table) {
++		Set<Expr> vars = collectVars(formula);
++		MappingResult mr = mapBitvector(vars);
++
++		int id = 1;
++		for (Expr var : mr.vars) {
++			String name = var.getFuncDecl().getName().toString();
++			id_table.put(name, id);
++			id++;
++		}
++
++		Goal g = ctx.mkGoal(false, false, false);
++		g.add(mr.clauses.toArray(new BoolExpr[] {}));
++		g.add(formula.toArray(new BoolExpr[] {}));
++
++		Tactic t = ctx.then(ctx.mkTactic("simplify"), ctx.mkTactic("bit-blast"), ctx.mkTactic("tseitin-cnf"));
++		ApplyResult ar = t.apply(g);
++		return ar.getSubgoals()[0].getFormulas();
++	}
++
++	public String toDimacs(Iterable<BoolExpr> formula, Map<String, Integer> idTable) {
++		StringBuilder body = new StringBuilder();
++		int projectionScope = idTable.size();
++		int nclauses = 0;
++
++		List<List<Integer>> clauses = new ArrayList<>();
++		for (BoolExpr expr : formula) {
++			List<Integer> dimacsClause = dimacsVisitor(expr, idTable);
++			clauses.add(dimacsClause);
++			nclauses++;
++		}
++
++		// some tools require projection variables to be the last 
++		// variables in the cnf file
++
++		int nVars = idTable.size();
++		List<List<Integer>> renamedClauses = new ArrayList<>();
++		for (List<Integer> clause : clauses) {
++			List<Integer> renamedClause = new ArrayList<>();
++			for (Integer var : clause) {
++		        boolean isNeg = var < 0;
++		        int renamedVar;
++		        int abs_var = Math.abs(var);
++		        if (abs_var <= projectionScope) 
++		            renamedVar = abs_var - projectionScope + nVars;
++		        else
++		            renamedVar = abs_var - projectionScope;
++
++		        renamedVar = renamedVar * (isNeg ? -1 : 1);
++		        renamedClause.add(renamedVar);
++			}
++			renamedClauses.add(renamedClause);
++		}
++		
++		for (List<Integer> clause : renamedClauses) {
++			StringBuilder tmp = new StringBuilder();
++			for (Integer i : clause) {
++				tmp.append(i);
++				tmp.append(' ');
++			}
++			body.append(tmp.toString());
++			body.append("0\n");
++		}
++
++		StringBuilder header = new StringBuilder();
++		header.append("p cnf " + idTable.size() + " " + nclauses + "\n");
++		header.append("cr ");
++		for (int i = nVars - projectionScope + 1; i < nVars + 1; i++) {
++			header.append(" ");
++			header.append(i);
++		}
++		header.append("\n");
++
++		return header.toString() + body.toString();
++	}
++
++	static class MappingResult {
++		public final List<BoolExpr> clauses;
++		public final List<Expr> vars;
++
++		public MappingResult(List<BoolExpr> clauses, List<Expr> vars) {
++			this.clauses = clauses;
++			this.vars = vars;
++		}
++
++		public MappingResult() {
++			this.clauses = new ArrayList<>();
++			this.vars = new ArrayList<>();
++		}
++
++		@Override
++		public String toString() {
++			return "MappingResult [clauses=" + clauses + ", vars=" + vars + "]";
++		}
++
++	}
++
++	public MappingResult mapBitvector(Iterable<Expr> vars) {
++		MappingResult mr = new MappingResult();
++		for (Expr var : vars) {
++			String name = var.getFuncDecl().getName().toString();
++			int size = ((BitVecSort) var.getSort()).getSize();
++			for (int i = 0; i < size; i++) {
++				BoolExpr mapped = ctx.mkBoolConst(name + "!" + i);
++				BitVecExpr extracted = ctx.mkExtract(i, i, (BitVecExpr) var);
++				BoolExpr clause = ctx.mkEq(mapped, ctx.mkEq(extracted, ctx.mkBV(1, 1)));
++				mr.clauses.add(clause);
++				mr.vars.add(mapped);
++			}
++		}
++
++		return mr;
++	}
++
++	public List<Integer> dimacsVisitor(Expr formula, Map<String, Integer> idTable) {
++//		System.out.println(formula);
++		List<Integer> result;
++
++		if (formula.isApp() && formula.getArgs().length == 0) {
++			String name = formula.getFuncDecl().getName().toString();
++			int id;
++			if (idTable.containsKey(name)) {
++				id = idTable.get(name);
++			} else {
++				id = idTable.size() + 1;
++				idTable.put(name, id);
++			}
++
++			result = new ArrayList<>();
++			result.add(id);
++		} else if (formula.isNot()) {
++			result = new ArrayList<>();
++			List<Integer> varId = dimacsVisitor(formula.getArgs()[0], idTable);
++			assert varId.size() == 1;
++			result.add(varId.get(0) * -1);
++		} else if (formula.isOr()) {
++			result = new ArrayList<>();
++			for (Expr child : formula.getArgs()) {
++				List<Integer> childResult = dimacsVisitor(child, idTable);
++				assert childResult.size() == 1;
++				result.add(childResult.get(0));
++			}
++		} else {
++			throw new RuntimeException("Unhandled expr: " + formula.getASTKind());
++		}
++
++		return result;
++	}
++
++	public static Set<Expr> collectVars(Iterable<BoolExpr> formulas) {
++		Set<Expr> vars = new LinkedHashSet<>();
++		for (BoolExpr expr : formulas) {
++			vars.addAll(collectVars(expr));
++		}
++		return vars;
++	}
++
++	public static Set<Expr> collectVars(Expr formula) {
++		Set<Expr> vars = new LinkedHashSet<>();
++//		System.out.println(">> " + formula);
++
++		if (formula.isBV() && formula.isApp() && formula.getArgs().length == 0) {
++			vars.add(formula);
++			int size = ((BitVecSort) formula.getSort()).getSize();
++//			System.out.println(size);
++		} else if (formula.isQuantifier()) {
++			throw new RuntimeException("Found a quantifier!");
++		} else if (formula.isApp()) {
++			for (Expr arg : formula.getArgs()) {
++				vars.addAll(collectVars(arg));
++			}
++		} else {
++//			System.err.println("Unhandled case? " + formula.getASTKind() + " " + formula);
++			return Collections.emptySet();
++		}
++
++		return vars;
++	}
++
++	public String generateDimacs(List<BoolExpr> formula) {
++		Map<String, Integer> id_table = new HashMap<>();
++		BoolExpr[] bitblasted = bitblast(formula, id_table);
++		String dimacs = toDimacs(Arrays.asList(bitblasted), id_table);
++		return dimacs;
++	}
++
++	public static void main(String[] args) {
++		Context ctx = new Context();
++		BoolExpr expr = ctx.parseSMTLIB2File(args[0], null, null, null, null);
++		System.out.println(expr);
++		Set<Expr> vars = collectVars(expr);
++		System.out.println(vars);
++
++		Z3Bitblaster bt = new Z3Bitblaster(ctx);
++		System.out.println(bt.mapBitvector(vars));
++		List<BoolExpr> tmp = new ArrayList<>();
++		tmp.add(expr);
++		String dimacs = bt.generateDimacs(tmp);
++		System.out.println(dimacs);
++	}
++}
+\ No newline at end of file
+diff -r 9c542949dc1c src/main/modelcounting/nonlinear/Z3BlockingCounter.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/modelcounting/nonlinear/Z3BlockingCounter.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,50 @@
++package modelcounting.nonlinear;
++
++import java.util.Map;
++
++import com.microsoft.z3.BitVecExpr;
++import com.microsoft.z3.BoolExpr;
++import com.microsoft.z3.Context;
++import com.microsoft.z3.Expr;
++import com.microsoft.z3.Model;
++import com.microsoft.z3.Solver;
++import com.microsoft.z3.Status;
++
++import gov.nasa.jpf.Config;
++import modelcounting.utils.BigRational;
++
++public class Z3BlockingCounter extends ModelCounter {
++
++	private final int bvLength;
++
++	public Z3BlockingCounter(Config config) {
++		super(config);
++		this.bvLength = config.getInt("symbolic.counter.bvlength", 32);
++	}
++
++	@Override
++	public BigRational count(Problem problem) {
++		Context ctx = new Context();
++		Solver solver = ctx.mkSolver();
++		Map<Integer, BitVecExpr> idToZ3BV = ModelCounterUtils
++				.declareVars(problem.getAllVars(), ctx, solver, bvLength);
++		ModelCounterUtils.assertConstraints(problem.getConstraints(), ctx, solver, idToZ3BV, bvLength);
++
++		long nSolutions = 0;
++
++		while (solver.check() == Status.SATISFIABLE) {
++			nSolutions++;
++			Model m = solver.getModel();
++			BoolExpr[] blockingClause = new BoolExpr[idToZ3BV.size()];
++			int i = 0;
++			for (BitVecExpr bvVar : idToZ3BV.values()) {
++				Expr val = m.getConstInterp(bvVar);
++				blockingClause[i] = ctx.mkNot(ctx.mkEq(bvVar, val));
++				i++;
++			}
++			solver.add(blockingClause);
++		}
++
++		return BigRational.valueOf(nSolutions);
++	}
++}
+diff -r 9c542949dc1c src/main/sidechannel/SideChannelQuantifierNonLinear.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/sidechannel/SideChannelQuantifierNonLinear.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,287 @@
++package sidechannel;
++
++import gov.nasa.jpf.Config;
++import gov.nasa.jpf.JPF;
++import gov.nasa.jpf.PropertyListenerAdapter;
++import gov.nasa.jpf.jvm.bytecode.JVMReturnInstruction;
++import gov.nasa.jpf.search.Search;
++import gov.nasa.jpf.symbc.numeric.Constraint;
++import gov.nasa.jpf.symbc.numeric.PCChoiceGenerator;
++import gov.nasa.jpf.symbc.numeric.PathCondition;
++import gov.nasa.jpf.vm.ChoiceGenerator;
++import gov.nasa.jpf.vm.ClassInfo;
++import gov.nasa.jpf.vm.Instruction;
++import gov.nasa.jpf.vm.MethodInfo;
++import gov.nasa.jpf.vm.ThreadInfo;
++import gov.nasa.jpf.vm.VM;
++import modelcounting.nonlinear.ModelCounter;
++import modelcounting.nonlinear.Problem;
++import modelcounting.nonlinear.Problem.Var;
++
++import java.io.BufferedWriter;
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.io.OutputStreamWriter;
++import java.io.Serializable;
++import java.io.Writer;
++import java.util.Collection;
++import java.util.HashMap;
++import java.util.HashSet;
++import java.util.Iterator;
++import java.util.Map;
++import java.util.Set;
++import java.util.Stack;
++import java.util.stream.Collectors;
++
++import org.apache.commons.io.FileUtils;
++
++import com.google.common.collect.ImmutableSet;
++
++import sidechannel.util.PathConditionUtils;
++import sidechannel.util.SymbolicVariableCollector;
++
++/**
++ * Listener for quantify side-channel leaks
++ *
++ * @author Quoc-Sang Phan <sang.phan@sv.cmu.edu>
++ *
++ */
++public abstract class SideChannelQuantifierNonLinear extends PropertyListenerAdapter {
++
++	public boolean DEBUG = true;
++
++	protected Config conf;
++	protected long current;
++	Stack<Long> steps;
++	HashMap<Long, HashSet<PathCondition>> obsrv;
++	SymbolicVariableCollector collector;
++	int numberOfPCs;
++
++	public SideChannelQuantifierNonLinear(Config config, JPF jpf) {
++		conf = config;
++		boolean verbose = conf.getProperty("sidechannel.verbose","false").trim().equals("true");
++		if(!verbose){
++			jpf.getReporter().getPublishers().clear();
++		}
++		
++		current = 0;
++		steps = new Stack<Long>();
++		obsrv = new HashMap<Long, HashSet<PathCondition>>();
++
++		HashSet<String> setOfSymVar = new HashSet<String>();
++		collector = new SymbolicVariableCollector(setOfSymVar);
++		numberOfPCs = 0;
++	}
++
++	abstract void checkInstruction(ThreadInfo currentThread,
++			Instruction executedInstruction);
++
++	@Override
++	public void instructionExecuted(VM vm, ThreadInfo currentThread,
++			Instruction nextInstruction, Instruction executedInstruction) {
++
++		PathCondition pc;
++
++		if (!vm.getSystemState().isIgnored()) {
++
++			checkInstruction(currentThread, executedInstruction);
++
++			if (executedInstruction instanceof JVMReturnInstruction) {
++				MethodInfo mi = executedInstruction.getMethodInfo();
++				ClassInfo ci = mi.getClassInfo();
++				if (null != ci) {
++					// String className = ci.getName();
++					String methodName = mi.getName();
++					// if (className.equals(conf.getProperty("target")) &&
++					// methodName.equals("main")) {
++					if (methodName.equals("main")) {
++						// System.out.println(">>>>> Reach this point");
++
++						// get current PC
++						ChoiceGenerator<?> cg = vm
++								.getLastChoiceGeneratorOfType(PCChoiceGenerator.class);
++						if (cg != null) {
++							pc = ((PCChoiceGenerator) cg).getCurrentPC();
++							if (pc != null) {
++								numberOfPCs++;
++								pc.solve();
++								collector.collectVariables(pc);
++								// add PC to the list
++								HashSet<PathCondition> data = obsrv.get(current);
++								if (data == null) {
++									data = new HashSet<PathCondition>();
++									if(DEBUG){
++										// System.out.println(currentPC);
++										System.out.println("Path length is " + current);
++									}			
++									obsrv.put(current, data);
++								}
++								data.add(pc);
++							}
++						}
++					}
++				}
++			}
++		}
++	}
++
++	@Override
++	public void searchFinished(Search search) {
++
++		if(obsrv.size() == 0) {
++			// there is no symbolic path, no leaks
++			System.out.println("This program satisfies non-interference");
++			return;
++		}
++		
++		createUserProfile();
++
++		double leakage = //computeEntropiesOfObservables(); 
++				computeEntropyOfObservables();
++
++		System.out.println("Cardinality of the set : " + obsrv.size());
++		System.out.println("Shannon leakage is : " + leakage);
++		System.out.println("Channel capacity is : " + Math.log(obsrv.size()) / Math.log(2));
++	}
++
++	private void createUserProfile() {
++		StringBuilder sb = new StringBuilder();
++		sb.append("domain{\n");
++
++		int MIN = Integer.parseInt(conf.getProperty("symbolic.min_int", String.valueOf(Integer.MIN_VALUE)));
++		int MAX = Integer.parseInt(conf.getProperty("symbolic.max_int", String.valueOf(Integer.MAX_VALUE)));
++
++		Iterator<String> iter = collector.getListOfVariables().iterator();
++		while (iter.hasNext()) {
++			String var = iter.next();
++			sb.append("\t" + var + " : " + MIN + "," + MAX + ";\n");
++		}
++
++		sb.append("};\n\n");
++		sb.append("usageProfile{\n\t");
++
++		iter = collector.getListOfVariables().iterator();
++		int count = 0;
++		int size = collector.size();
++		while (iter.hasNext()){
++			String var = iter.next();
++			sb.append(var + "==" + var);
++			count++;
++			if (count < size)
++				sb.append(" && ");
++			
++		}
++		sb.append(" : 100/100;\n};");
++		
++		String tmpDir = conf.getProperty("symbolic.reliability.tmpDir");
++		String target = conf.getProperty("target");
++		String upFile = tmpDir + "/" + target + ".up";
++		Writer writer = null;
++
++		try {
++			writer = new BufferedWriter(new OutputStreamWriter(
++					new FileOutputStream(upFile), "utf-8"));
++			writer.write(sb.toString());
++			conf.setProperty("symbolic.reliability.problemSettings", upFile);
++		} catch (IOException ex) {
++			// report
++		} finally {
++			try {
++				writer.close();
++			} catch (Exception ex) {
++			}
++		}
++	}
++
++	public static class Observable {
++		public final long cost;
++		public final Set<Problem> paths; 
++
++		public Observable(long cost, Collection<PathCondition> paths) {
++			this.cost = cost;
++			this.paths = paths.stream()
++					.map(s -> new Problem(s))
++					.collect(Collectors.toSet());
++		}
++	}
++	
++	protected double computeEntropyOfObservables() {
++		System.out.println("===========computeEntropyOfObservables");
++		double leakage = 0;
++
++		int MIN = Integer.parseInt(conf.getProperty("symbolic.min_int", String.valueOf(Integer.MIN_VALUE)));
++		int MAX = Integer.parseInt(conf.getProperty("symbolic.max_int", String.valueOf(Integer.MAX_VALUE)));
++		
++		// if each variable has domain D, then n variables has domain D^n
++		double domain = Math.pow(MAX - MIN + 1, collector.getListOfVariables().size()); // domain of the input
++
++		Iterator<Map.Entry<Long, HashSet<PathCondition>>> it = obsrv.entrySet().iterator();
++		ModelCounter counter = ModelCounter.getCompositionalModelCounter(conf);
++		
++		int count = 0;
++		
++		//prepare problems + collect all variables of all path conditions
++		Set<Observable> observables = new HashSet<>();
++		Set<Var> allVars = new HashSet<>();
++		while (it.hasNext()) {
++			Map.Entry<Long, HashSet<PathCondition>> pair = (Map.Entry<Long, HashSet<PathCondition>>) it.next();
++			long cost = pair.getKey();
++			HashSet<PathCondition> paths = pair.getValue();
++			Observable observable = new Observable(cost, paths);
++			observables.add(observable);
++			observables.forEach(
++					obs -> obs.paths.forEach(
++							problem -> allVars.addAll(problem.getAllVars())));
++		}
++		
++		for (Observable obs : observables) {
++			long block = counter.count(obs.paths,allVars).longValue();
++			leakage += block * (Math.log(domain) - Math.log(block));
++			 
++			if(DEBUG){
++				System.out.println("\n=====");
++				for (Problem prob : obs.paths) {
++				    System.out.println("PC is: " + prob.getConstraints());
++				}
++				System.out.println("The cost of block " + count +" is " 
++						+ obs.cost);				
++				System.out.println("The size of block " + count +" is " + block);
++				System.out.println("The probability of block " + count +" is " + (block / domain));
++				System.out.println("=====\n");
++				count++;
++			}
++		}
++		
++		if(DEBUG){
++			System.out.println("The domain is " + domain);
++			System.out.println("The number of PCs is " + numberOfPCs);
++		}
++		
++		leakage = leakage / (Math.log(2) * domain);
++
++		cleanDirectory();
++		
++		return leakage;
++	}
++
++	private void cleanDirectory(){
++		// clean up the directory
++		String tmpDir = conf.getProperty("symbolic.reliability.tmpDir");
++		try {
++			FileUtils.cleanDirectory(new File(tmpDir));
++		} catch (IOException e) {
++			e.printStackTrace();
++		}
++	}
++	
++	@Override
++	public void choiceGeneratorAdvanced(VM vm, ChoiceGenerator<?> currentCG) {
++		steps.push(current);
++	}
++
++	@Override
++	public void stateBacktracked(Search search) {
++		current = steps.pop();
++	}
++}
+diff -r 9c542949dc1c src/main/sidechannel/TimingChannelQuantifierNonLinear.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ b/src/main/sidechannel/TimingChannelQuantifierNonLinear.java	Mon Aug 15 15:32:08 2016 -0700
+@@ -0,0 +1,25 @@
++package sidechannel;
++
++import gov.nasa.jpf.Config;
++import gov.nasa.jpf.JPF;
++import gov.nasa.jpf.vm.Instruction;
++import gov.nasa.jpf.vm.ThreadInfo;
++
++/**
++ * Listener for quantify timing-channel leaks
++ *
++ * @author Quoc-Sang Phan <sang.phan@sv.cmu.edu>
++ *
++ */
++public class TimingChannelQuantifierNonLinear extends SideChannelQuantifierNonLinear {
++
++    public TimingChannelQuantifierNonLinear(Config conf, JPF jpf) {
++        super(conf, jpf);
++    }
++
++	@Override
++	protected void checkInstruction (ThreadInfo currentThread,Instruction executedInstruction){
++		current++;
++	}
++
++}

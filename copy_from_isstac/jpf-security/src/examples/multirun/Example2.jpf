@@ -1,0 +1,20 @@
+target=multirun.Example2
+
+classpath=${jpf-security}/build/examples
+sourcepath=${jpf-security}/src/examples
+
+mutirun.secure_method=multirun.Example2.foo
+
+listener=sidechannel.multirun.DebugMultiRunListener
+
+greedy=true
+
+multirun.num_run = 2
+sidechannel.input_size = 1
+
+greedy.input = ${jpf-security}/build/tmp/input.txt
+greedy.output = ${jpf-security}/build/tmp/example2.smt2
+
+symbolic.debug = false
+
+sidechannel.verbose = false

@@ -1,0 +1,26 @@
+target=multirun.DataCompression
+
+mutirun.secure_method=multirun.DataCompression.compress
+
+classpath=${jpf-security}/build/main;${jpf-security}/build/examples
+sourcepath=${jpf-security}/src/examples
+
+listener=sidechannel.multirun.DebugMultiRunListener
+
+greedy=true
+
+multirun.num_run = 5
+sidechannel.input_size = 4
+
+symbolic.min_int = 1
+symbolic.max_int = 2
+
+sidechannel.min_high=1
+sidechannel.max_high=2
+
+greedy.input = ${jpf-security}/build/tmp/input.txt
+greedy.output = ${jpf-security}/build/tmp/dataCompression.smt2
+
+#symbolic.dp=z3bitvector
+
+sidechannel.verbose = false

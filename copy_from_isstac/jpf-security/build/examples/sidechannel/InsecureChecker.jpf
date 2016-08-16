@@ -1,0 +1,26 @@
+@using jpf-security
+@using jpf-symbc
+
+target=sidechannel.InsecurePasswordChecker
+symbolic.method=sidechannel.InsecurePasswordChecker.check(con)
+
+#sidechannel=timing
+
+classpath=${jpf-security}/build/examples;
+sourcepath=${jpf-security}/src/examples
+
+listener = sidechannel.TimingChannelQuantifierNonLinear
+
+symbolic.reliability.tmpDir=${jpf-security}/build/tmp
+symbolic.reliability.omegaPath=oc
+symbolic.reliability.lattePath=count
+
+symbolic.min_int=0
+symbolic.max_int=9
+
+symbolic.counter=z3blocking
+#symbolic.counter=sharpsat
+#symbolic.counter=allsat
+symbolic.counter.sharpsat.path=/home/mateus/workspace/sharpSAT-fork-2/Release/sharpSAT
+symbolic.counter.allsat.path=/home/mateus/workspace/All_SAT/batch_all_sat
+symbolic.counter.bvlength=32

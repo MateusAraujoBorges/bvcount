@@ -1,0 +1,14 @@
+target=multirun.adaptive.TestCRIME
+
+classpath=${jpf-security}/build/examples;${jpf-security}/build/classes
+sourcepath=${jpf-security}/src/examples
+
+listener=sidechannel.multirun.adaptive.backup.PathInspector
+
+sidechannel.input_size = 2
+
+symbolic.min_byte=0
+symbolic.max_byte=63
+
+symbolic.min_int=0
+symbolic.max_int=63

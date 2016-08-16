@@ -1,0 +1,29 @@
+target=multirun.adaptive.PinCheck
+target.args=1
+
+classpath=${jpf-security}/build/examples
+sourcepath=${jpf-security}/src/examples
+
+multirun.num_run = 1
+sidechannel.input_size = 1
+
+listener=sidechannel.multirun.adaptive.OldAdaptiveAttackListener
+
+symbolic.min_int=1
+symbolic.max_int=10
+
+sidechannel.min_high=1
+sidechannel.max_high=10
+
+adaptive=true
+
+greedy.tmpDir = ${jpf-security}/build/tmp
+symbolic.reliability.tmpDir = ${jpf-security}/build/tmp/mc
+symbolic.reliability.omegaPath=${jpf-security}/tools/omega/oc
+symbolic.reliability.lattePath=${jpf-security}/tools/latte-integrale-1.7.3/bin/count
+
+symbolic.debug = false
+
+sidechannel.verbose = false
+
+symbolic.dp=z3bitvector

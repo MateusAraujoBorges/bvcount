@@ -1,0 +1,37 @@
+target=multirun.adaptive.CRIMESimple
+
+classpath=${jpf-security}/build/examples;${jpf-security}/build/classes
+sourcepath=${jpf-security}/src/examples
+
+#listener=sidechannel.multirun.adaptive.backup.OptimizedAdaptiveAttackListener
+
+adaptive=true
+
+multirun.num_run = 1
+sidechannel.input_size = 2
+
+symbolic.min_byte=0
+symbolic.max_byte=2
+
+symbolic.min_int=0
+symbolic.max_int=2
+
+sidechannel.min_high=0
+sidechannel.max_high=2
+
+adaptive=normal
+#adaptive=optimize
+
+greedy.tmpDir = ${jpf-security}/build/tmp
+symbolic.reliability.tmpDir = ${jpf-security}/build/tmp/mc
+symbolic.reliability.omegaPath=${jpf-security}/tools/omega/oc
+symbolic.reliability.lattePath=${jpf-security}/tools/latte-integrale-1.7.3/bin/count
+
+symbolic.debug = false
+
+sidechannel.verbose = false
+
+#symbolic.dp=z3
+#symbolic.dp=z3bitvector
+#symbolic.dp=no_solver
+
