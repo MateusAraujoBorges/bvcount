@@ -114,4 +114,9 @@ RUN git clone https://MateusAraujoBorges@bitbucket.org/kuldeepmeel/smtapproxmc.g
 	make && \
 	cp /tools/ApproxMC/doalarm-0.1.7/doalarm /bin/
 
+#get satcomp benchmarks (application track)
+RUN wget http://baldur.iti.kit.edu/sat-competition-2016/downloads/app16.zip && \
+	mkdir benchmarks && \
+	unzip app16.zip -d benchmarks
+
 CMD ["bash"]
