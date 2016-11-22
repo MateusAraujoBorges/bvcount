@@ -119,4 +119,10 @@ RUN wget http://baldur.iti.kit.edu/sat-competition-2016/downloads/app16.zip && \
 	mkdir benchmarks && \
 	unzip app16.zip -d benchmarks
 
+ADD run_experiments.sh run_experiments.sh	
+
+RUN apt-get update && \
+	apt-get -y install time && \
+	chmod +x run_experiments.sh
+
 CMD ["bash"]
