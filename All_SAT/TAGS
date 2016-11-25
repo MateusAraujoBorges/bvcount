@@ -1,0 +1,611 @@
+
+asap_cpp_wrapper.cpp,1748
+#define SAT_Manager 43,2131
+SAT_Manager SAT_InitManager(51,2362
+char * SAT_Version(57,2469
+void SAT_SetNumVariables(63,2579
+void SAT_ReleaseManager(70,2725
+int SAT_AddVariable	76,2829
+void SAT_SetTimeLimit	82,2947
+void SAT_SetMemLimit	89,3095
+void SAT_AddClause	96,3240
+int SAT_Solve 103,3411
+void SAT_AddHookFun 110,3612
+void SAT_SetRandomness	118,3781
+void SAT_SetRandSeed	125,3913
+void SAT_MakeDecision	132,4048
+int SAT_GetVarAsgnment 145,4354
+int SAT_EstimateMemUsage(153,4566
+float SAT_GetElapsedCPUTime(159,4693
+float SAT_GetCurrentCPUTime(165,4822
+float SAT_GetCPUTime	171,4958
+float SAT_GetWorldTime	177,5077
+int SAT_NumLiterals	183,5200
+int SAT_NumClauses	189,5318
+int SAT_NumVariables	195,5434
+int SAT_InitNumLiterals(201,5554
+int SAT_InitNumClauses(207,5680
+int SAT_NumAddedLiterals(213,5804
+int SAT_NumAddedClauses	219,5932
+int SAT_NumDeletedClauses	225,6059
+int SAT_NumDeletedLiterals	231,6190
+int SAT_NumDecisions	237,6323
+int SAT_NumImplications	243,6443
+int SAT_MaxDLevel	249,6569
+int SAT_GetFirstClause(256,6684
+int SAT_GetFirstAddedClause 264,6880
+int SAT_GetNextClause	272,7108
+int SAT_GetClauseNumLits(280,7326
+void SAT_GetClauseLits(287,7499
+void SAT_EnableConfClsDeletion(295,7750
+void SAT_DisableConfClsDeletion(301,7882
+void SAT_SetClsDeletionInterval(307,8016
+void SAT_SetMaxUnrelevance(313,8154
+void SAT_SetMinClsLenForDelete(319,8286
+void SAT_SetMaxConfClsLenAllowed(325,8437
+void SAT_GenClsAnd2	337,8831
+void SAT_GenClsAndN	347,9011
+void SAT_GenClsOr2	358,9224
+void SAT_GenClsOrN	368,9403
+void SAT_GenClsNand2	378,9612
+void SAT_GenClsNandN	389,9795
+void SAT_GenClsNor2	400,10009
+void SAT_GenClsNorN	411,10190
+void SAT_GenClsXor	421,10401
+void SAT_GenClsNot	431,10580
+
+asap_c_wrapper.cpp,2322
+#define SAT_Manager 43,2131
+extern "C" SAT_Manager SAT_InitManager(51,2360
+extern "C" char * SAT_Version(57,2478
+extern "C" void SAT_SetNumVariables(63,2599
+extern "C" void SAT_ReleaseManager(70,2756
+extern "C" int SAT_AddVariable	76,2871
+extern "C" void SAT_SetTimeLimit	82,3000
+extern "C" void SAT_SetMemLimit	89,3159
+extern "C" void SAT_AddClause	96,3315
+extern "C" int SAT_Solve 104,3503
+extern "C" void SAT_AddHookFun 113,3729
+extern "C" void SAT_SetRandomness	121,3909
+extern "C" void SAT_SetRandSeed	128,4052
+extern "C" void SAT_MakeDecision	135,4198
+extern "C" int SAT_GetVarAsgnment	147,4550
+extern "C" int SAT_EstimateMemUsage(155,4772
+extern "C" float SAT_GetElapsedCPUTime(161,4910
+extern "C" float SAT_GetCurrentCPUTime(167,5050
+extern "C" float SAT_GetCPUTime	173,5197
+extern "C" float SAT_GetWorldTime	179,5327
+extern "C" int SAT_NumLiterals	185,5461
+extern "C" int SAT_NumClauses	191,5590
+extern "C" int SAT_NumVariables	197,5717
+extern "C" int SAT_InitNumLiterals(203,5848
+extern "C" int SAT_InitNumClauses(209,5985
+extern "C" int SAT_NumAddedLiterals(215,6120
+extern "C" int SAT_NumAddedClauses	221,6259
+extern "C" int SAT_NumDeletedClauses	227,6397
+extern "C" int SAT_NumDeletedLiterals	233,6539
+extern "C" int SAT_NumDecisions	239,6683
+extern "C" int SAT_NumImplications	245,6814
+extern "C" int SAT_MaxDLevel	251,6951
+extern "C" int SAT_GetFirstClause(258,7077
+extern "C" int SAT_GetFirstAddedClause 266,7284
+extern "C" int SAT_GetNextClause	274,7523
+extern "C" int SAT_GetClauseNumLits(282,7752
+extern "C" void SAT_GetClauseLits(288,7910
+extern "C" void SAT_EnableConfClsDeletion(295,8146
+extern "C" void SAT_DisableConfClsDeletion(301,8289
+extern "C" void SAT_SetClsDeletionInterval(307,8434
+extern "C" void SAT_SetMaxUnrelevance(313,8583
+extern "C" void SAT_SetMinClsLenForDelete(319,8726
+extern "C" void SAT_SetMaxConfClsLenAllowed(325,8888
+extern "C" void SAT_GenClsAnd2	339,9339
+extern "C" void SAT_GenClsAndN	349,9530
+extern "C" void SAT_GenClsOr2	360,9754
+extern "C" void SAT_GenClsOrN	370,9944
+extern "C" void SAT_GenClsNand2	380,10164
+extern "C" void SAT_GenClsNandN	391,10358
+extern "C" void SAT_GenClsNor2	402,10583
+extern "C" void SAT_GenClsNorN	413,10775
+extern "C" void SAT_GenClsXor	423,10997
+extern "C" void SAT_GenClsNot	433,11187
+
+asap_dbase.cpp,278
+CDatabase::CDatabase(40,2084
+void CDatabase::compact_lit_pool(62,2812
+bool CDatabase::enlarge_lit_pool(100,4029
+ClauseIdx CDatabase::add_clause(166,6074
+void CDatabase::output_lit_pool_state 271,9389
+void CDatabase::detail_dump_cl(280,9769
+void CDatabase::dump(301,10378
+
+asap_solver.cpp,1340
+CSolver::CSolver(43,2183
+CSolver::~CSolver(110,4209
+void CSolver::run_periodic_functions(116,4310
+void CSolver::init(152,5654
+void CSolver::set_var_value(175,6365
+void CSolver::set_var_value_with_current_dl(193,6860
+void CSolver::set_var_value_not_current_dl(243,8190
+void CSolver::unset_var_value(309,9907
+int CSolver::find_max_clause_dlevel(320,10231
+int CSolver::find_min_clause_dlevel(337,10737
+void CSolver::dump_assignment_stack(353,11228
+bool CDatabase::is_conflict(373,11828
+bool CDatabase::is_satisfied(382,12051
+int CDatabase::find_unit_literal(391,12279
+void CSolver::delete_unrelevant_clauses(411,12900
+bool CSolver::time_out(484,15968
+inline bool compare_var_stat(491,16119
+void CSolver::update_var_stats(498,16293
+bool CSolver::decide_next_branch(514,16932
+void CSolver::real_solve(575,18761
+int CSolver::solve(579,18855
+void CSolver::back_track(584,18956
+int CSolver::deduce(607,19626
+void CSolver::verify_integrity(652,21075
+int CSolver::getFirstClause(685,22153
+int CSolver::getFirstAddedClause 691,22283
+int CSolver::getNextClause 697,22437
+bool CSolver::varRightToj(707,22643
+void CSolver::mark_vars_at_level(724,23048
+int CSolver::analyze_conflicts(748,23839
+int CSolver::findFirstRootIndex(752,23918
+int CSolver::conflict_analysis_zchaff 767,24394
+void CSolver::markUniPhased(771,24456
+
+asap_utils.cpp,42
+void Abort(43,2122
+void Warning(49,2219
+
+batch_solver.cpp,276
+#define BATCH_SIZE 13,204
+#define MAX_LINE_LENGTH 14,230
+#define MAX_WORD_LENGTH 15,260
+void createInterfaceSolver(29,615
+int main(49,1172
+unsigned int* createSolutionsBuffer(170,4562
+int loadClauses(196,5689
+bool verify_solution(284,8239
+void handle_result(313,9114
+
+dstruct.cpp,1326
+Assignment::Assignment(14,423
+Assignment::Assignment(22,715
+Assignment::Assignment(32,1022
+Assignment::~Assignment(48,1473
+int Assignment::numOfVars(66,1927
+int Assignment::size(73,2058
+void Assignment::print(79,2146
+void Assignment::print(90,2323
+int Assignment::valueOfVar(108,2713
+int Assignment::setVarValue(122,3111
+unsigned int* Assignment::getData(158,4082
+void Assignment::setData(163,4195
+int Assignment::compare(170,4412
+AssignmentStack::AssignmentStack(194,5192
+AssignmentStack::AssignmentStack(217,5907
+AssignmentStack::~AssignmentStack(233,6267
+int AssignmentStack::numOfLevels(248,6645
+int AssignmentStack::sizeOfLevel(255,6753
+int AssignmentStack::numOfLits(262,6945
+unsigned int AssignmentStack::getLit_l_i(266,7005
+int AssignmentStack::setLit_l_i(277,7306
+unsigned int* AssignmentStack::getData(290,7659
+void AssignmentStack::setData(297,7861
+void AssignmentStack::print(308,8082
+int AssignmentStack::size(321,8478
+Solution::Solution 334,8898
+Solution::~Solution(343,9125
+Assignment* Solution::nullify(350,9264
+void Solution::setData(358,9425
+void Solution::setPrev(366,9618
+int Solution::addPointings(372,9764
+Solution* Solution::getPrevSolution(382,9992
+Assignment* Solution::getBody(386,10062
+Assignment* Solution::getInterface(390,10120
+bool Solution::compare(397,10299
+
+InterfaceCSolver.cpp,2036
+int solverRuns 5,74
+InterfaceCSolver::InterfaceCSolver(8,96
+void InterfaceCSolver::init(12,162
+int InterfaceCSolver::preprocess(37,922
+SAT_StatusT InterfaceCSolver::solve(101,2840
+void InterfaceCSolver::real_solve(129,3734
+int InterfaceCSolver::analyzeConflict 217,5935
+int InterfaceCSolver::handleConflict(297,8534
+int InterfaceCSolver::synch_back_track(401,11398
+void InterfaceCSolver::joinClauses(431,12091
+bool InterfaceCSolver::decide_next_branch(483,13448
+int InterfaceCSolver::makeInterfaceDecision(508,14271
+int InterfaceCSolver::makeVSIDSdecision(527,14799
+void InterfaceCSolver::updateMaxMemory(559,15786
+int  InterfaceCSolver::flipDecisionVar(576,16121
+void InterfaceCSolver::addUserConflictClause(582,16277
+int InterfaceCSolver::addConflictClause(592,16676
+void InterfaceCSolver::clearConflictLits(604,17078
+void InterfaceCSolver::setStartingPoint 612,17282
+void InterfaceCSolver::setInitialAssignment 618,17439
+void InterfaceCSolver::setSolutionsNum 622,17555
+void InterfaceCSolver::grabDecisionStack(631,17825
+int InterfaceCSolver::implicateConflict(654,18500
+int InterfaceCSolver::activateStartingPoint(678,19239
+bool InterfaceCSolver::setConflictClauses(751,21370
+void InterfaceCSolver::setInterfaceSize(769,21936
+bool InterfaceCSolver::inInitAssginment(801,22836
+void InterfaceCSolver::verifyCurrentSolution(810,23071
+void InterfaceCSolver::recycle(832,23782
+void InterfaceCSolver::restoreInitValues(851,24284
+void InterfaceCSolver::getClauseLits(977,27951
+void InterfaceCSolver::setLostSolution(982,28156
+SAT_Manager SAT_InterfaceCSolver_InitManager(988,28247
+SAT_StatusT SAT_InterfaceCSolver_Solve(993,28381
+void SAT_InterfaceCSolver_ReleaseManager(999,28633
+void SAT_InterfaceCSolver_SetLostSolution(1004,28771
+void SAT_InterfaceCSolver_Recycle(1010,28946
+bool SAT_InterfaceCSolver_SetConflictClauses(1015,29079
+void SAT_InterfaceCSolver_RequiredSolutions(1023,29335
+void SAT_InterfaceCSolver_SetInterfaceSize(1028,29493
+void SAT_InterfaceCSolver_SetStartingPoint(1034,29724
+
+Timers.cpp,173
+Timers::Timers(4,35
+Timers::~Timers(17,332
+void Timers::reset(21,373
+void Timers::updateTimer(26,460
+time_t Timers::valOfTimer(38,806
+time_t Timers::totalTime(48,1020
+
+utils.cpp,114
+AssignmentStack* readStack(18,538
+void printClause(62,1515
+void printVector(69,1680
+void printClauses(74,1779
+
+asap_base.h,3291
+#define __BASIC_CLASSES__40,2086
+#define UNKNOWN 44,2139
+#define NULL_CLAUSE 45,2161
+#define FLIPPED	46,2186
+typedef int ClauseIdx;48,2207
+class CLitPoolElement75,3499
+    int _val;CLitPoolElement::_val78,3534
+    CLitPoolElement(CLitPoolElement::CLitPoolElement81,3613
+    CLitPoolElement(CLitPoolElement::CLitPoolElement84,3656
+    int & val(CLitPoolElement::val86,3744
+    int s_var(CLitPoolElement::s_var89,3788
+    int var_index(CLitPoolElement::var_index92,3885
+    bool var_sign(CLitPoolElement::var_sign95,3935
+    void set CLitPoolElement::set98,3997
+    void set(CLitPoolElement::set101,4052
+    int direction CLitPoolElement::direction105,4195
+    bool is_ht(CLitPoolElement::is_ht108,4255
+    void unset_ht(CLitPoolElement::unset_ht111,4303
+    void set_ht(CLitPoolElement::set_ht114,4365
+    bool is_literal(CLitPoolElement::is_literal119,4489
+    void set_clause_index(CLitPoolElement::set_clause_index122,4541
+    int get_clause_index(CLitPoolElement::get_clause_index125,4605
+    int find_clause_idx(CLitPoolElement::find_clause_idx129,4681
+    void dump(CLitPoolElement::dump135,4824
+    friend ostream & operator << CLitPoolElement::operator <<139,4938
+class CClause159,5719
+    CLitPoolElement * _first_lit;CClause::_first_lit162,5746
+    int _num_lits;CClause::_num_lits163,5827
+    bool _in_use;CClause::_in_use164,5869
+    CClause(CClause::CClause167,5976
+    ~CClause(CClause::~CClause169,5997
+    void init(CClause::init171,6043
+    CLitPoolElement * literals(CClause::literals177,6219
+    CLitPoolElement * & first_lit(CClause::first_lit180,6329
+    int & num_lits(CClause::num_lits183,6445
+    bool & in_use(CClause::in_use186,6499
+    CLitPoolElement & literal(CClause::literal189,6550
+    void dump(CClause::dump193,6669
+    friend ostream & operator << CClause::operator <<201,6912
+class CVariable 218,7408
+    bool _is_marked	CVariable::_is_marked221,7438
+    int _in_new_cl	CVariable::_in_new_cl223,7494
+    ClauseIdx _antecedence	CVariable::_antecedence230,7970
+    short _value;CVariable::_value232,8034
+    short _dlevel;CVariable::_dlevel234,8080
+    vector<CLitPoolElement *> _ht_ptrs[CVariable::_ht_ptrs236,8149
+    int _lits_count[CVariable::_lits_count239,8259
+    int _scores[CVariable::_scores240,8283
+    int _var_score_pos;CVariable::_var_score_pos241,8305
+    int & score(CVariable::score243,8337
+    int score(CVariable::score244,8383
+    int & var_score_pos(CVariable::var_score_pos245,8451
+    CVariable(CVariable::CVariable248,8545
+    short & value(CVariable::value258,8770
+    short & dlevel(CVariable::dlevel261,8819
+    int in_new_cl(CVariable::in_new_cl264,8870
+    void set_in_new_cl(CVariable::set_in_new_cl267,8925
+    int & lits_count(CVariable::lits_count270,8990
+    bool is_marked(CVariable::is_marked274,9051
+    void set_marked(CVariable::set_marked277,9110
+    void clear_marked(CVariable::clear_marked280,9166
+    ClauseIdx get_antecedence(CVariable::get_antecedence284,9226
+    void set_antecedence(CVariable::set_antecedence287,9294
+    vector<CLitPoolElement *> & ht_ptr(CVariable::ht_ptr291,9368
+    void  dump(CVariable::dump294,9456
+    friend ostream & operator << CVariable::operator <<307,9892
+
+asap_clsgen.h,565
+#define __CLAUSE_GENERATOR__40,2089
+class CClause_Gen 43,2161
+    int pos(CClause_Gen::pos45,2190
+    int neg(CClause_Gen::neg49,2232
+    void and2 CClause_Gen::and254,2285
+    void and_n CClause_Gen::and_n76,2851
+    void or2 CClause_Gen::or293,3312
+    void or_n CClause_Gen::or_n115,3879
+    void nand2 CClause_Gen::nand2132,4339
+    void nand_n(CClause_Gen::nand_n154,4915
+    void nor2 CClause_Gen::nor2171,5376
+    void nor_n CClause_Gen::nor_n193,5954
+    void xor2 CClause_Gen::xor2210,6415
+    void not1 CClause_Gen::not1243,7311
+
+asap_common.h,187
+#define __COMMON_HEADER__40,2086
+using namespace std;54,2308
+#undef RAND_MAX58,2363
+#define RAND_MAX 59,2379
+#define STATS(62,2431
+#define CHECK(63,2449
+#define CHECK_FULL(64,2468
+
+asap_dbase.h,3029
+#define __DATABASE__40,2081
+#define STARTUP_LIT_POOL_SIZE 46,2169
+struct pair_int_equal 48,2207
+    bool operator 49,2231
+struct pair_int_hash_fun 54,2351
+    size_t operator 55,2378
+struct CDatabaseStats 70,2754
+    int mem_used_up_counts;71,2778
+    bool mem_used_up;72,2806
+    int init_num_clauses;73,2828
+    int init_num_literals;74,2854
+    int num_added_clauses;75,2881
+    int num_added_literals;76,2908
+    int num_deleted_clauses;77,2936
+    int num_deleted_literals;78,2965
+class CDatabase91,3380
+    CDatabaseStats _stats;CDatabase::_stats94,3409
+    CLitPoolElement * _lit_pool_start;CDatabase::_lit_pool_start97,3516
+    CLitPoolElement * _lit_pool_finish;CDatabase::_lit_pool_finish98,3586
+    CLitPoolElement * _lit_pool_end_storage;CDatabase::_lit_pool_end_storage99,3661
+    vector<CVariable> _variables;CDatabase::_variables101,3742
+    vector<CClause> _clauses;CDatabase::_clauses102,3810
+    queue<ClauseIdx> _unused_clause_idx_queue;CDatabase::_unused_clause_idx_queue103,3840
+    int _num_var_in_new_cl;CDatabase::_num_var_in_new_cl105,3888
+    unsigned  int _mem_limit;CDatabase::_mem_limit106,3916
+    ~CDatabase(CDatabase::~CDatabase110,4001
+    void init(CDatabase::init113,4056
+    vector<CVariable>& variables(CDatabase::variables118,4192
+    vector<CClause>& clauses(CDatabase::clauses121,4261
+    CVariable & variable(CDatabase::variable124,4324
+    CClause & clause(CDatabase::clause127,4393
+    CDatabaseStats & stats(CDatabase::stats130,4462
+    void set_mem_limit(CDatabase::set_mem_limit133,4519
+    int & init_num_clauses(CDatabase::init_num_clauses137,4596
+    int & init_num_literals CDatabase::init_num_literals138,4661
+    int & num_added_clauses CDatabase::num_added_clauses139,4729
+    int & num_added_literals(CDatabase::num_added_literals140,4797
+    int & num_deleted_clauses(CDatabase::num_deleted_clauses141,4866
+    int & num_deleted_literals(CDatabase::num_deleted_literals142,4937
+    CLitPoolElement * lit_pool_begin(CDatabase::lit_pool_begin145,5064
+    CLitPoolElement * lit_pool_end(CDatabase::lit_pool_end148,5142
+    void lit_pool_push_back(CDatabase::lit_pool_push_back151,5219
+    unsigned int lit_pool_size(CDatabase::lit_pool_size156,5383
+    unsigned int lit_pool_free_space(CDatabase::lit_pool_free_space159,5474
+    CLitPoolElement & lit_pool(CDatabase::lit_pool162,5577
+    unsigned int estimate_mem_usage CDatabase::estimate_mem_usage173,5795
+    unsigned int mem_usage(CDatabase::mem_usage189,6502
+    void set_variable_number(CDatabase::set_variable_number204,7224
+    int add_variable(CDatabase::add_variable207,7299
+    int num_variables(CDatabase::num_variables211,7412
+    int num_clauses(CDatabase::num_clauses217,7533
+    int num_literals(CDatabase::num_literals220,7628
+    void mark_clause_deleted(CDatabase::mark_clause_deleted224,7731
+    void mark_var_in_new_cl(CDatabase::mark_var_in_new_cl234,8042
+    int literal_value CDatabase::literal_value242,8374
+
+asap_solver.h,5611
+#define __SAT_SOLVER__39,2082
+using namespace std;54,2288
+#define __SAT_STATUS__58,2334
+enum SAT_StatusT 59,2357
+    UNDETERMINED,60,2376
+    UNSATISFIABLE,61,2394
+    SATISFIABLE,62,2413
+    TIME_OUT,63,2430
+    MEM_OUT,64,2444
+    ABORTED,65,2457
+    EXHAUSTED66,2470
+#define  SOLVER_WAIT 71,2496
+#define  SOLVER_SOLVE 72,2519
+#define  SOLVER_PREPROCESS 73,2543
+#define  SOLVER_STACKLOAD 74,2572
+enum SAT_DeductionT 78,2604
+    CONFLICT,79,2626
+    NO_CONFLICT80,2640
+typedef void(*HookFunPtrT)HookFunPtrT83,2660
+struct CSolverParameters 94,2935
+  float time_limit;95,2962
+  int 	decision_strategy;97,2985
+  int 	preprocess_strategy;98,3011
+  bool 	allow_clause_deletion;100,3042
+  int	clause_deletion_interval;101,3073
+  int 	max_unrelevance;102,3105
+  int 	min_num_clause_lits_for_delete;103,3129
+  int 	max_conflict_clause_length;104,3168
+  int	bubble_init_step;105,3203
+  int	verbosity;107,3230
+  int 	randomness;108,3247
+  bool	allow_restart;110,3269
+  float	next_restart_time;111,3291
+  float	restart_time_increment;112,3318
+  float	restart_time_incr_incr;113,3350
+  int 	next_restart_backtrack;114,3382
+  int 	restart_backtrack_incr;115,3413
+  int   restart_backtrack_incr_incr;116,3446
+  int	restart_randomness;117,3483
+  int	base_randomness;118,3510
+  bool	back_track_complete;120,3536
+  int	conflict_analysis_method;121,3564
+  bool 	allow_multiple_conflict;122,3596
+  bool 	allow_multiple_conflict_clause;123,3629
+  bool  startingPointRequired;125,3670
+  AssignmentStack* startingPointStack;126,3701
+  Assignment* initialAssignment;127,3740
+  Assignments* results;128,3773
+  int solutionsRequired;129,3797
+  int interfaceSize;130,3822
+  int leftInterfaceSize;131,3843
+  int bodySize;132,3868
+  int interfaceL;133,3884
+  int interfaceR;134,3902
+  int interfaceDecisionLevel;135,3920
+  bool fullBody;136,3950
+  bool firstRun;137,3968
+  Timers* timer;138,3985
+struct CSolverStats 149,4242
+  bool 	is_solver_started;150,4264
+  int 	outcome;151,4292
+  bool	is_mem_out;153,4311
+  long 	start_cpu_time;155,4372
+  long	last_cpu_time;156,4401
+  long 	finish_cpu_time;157,4423
+  long 	start_world_time;158,4448
+  long 	finish_world_time;159,4474
+  long long 	total_bubble_move;161,4504
+  int 	num_decisions;163,4539
+  int		num_backtracks;164,4561
+  int 	max_dlevel;165,4584
+  int 	num_implications;166,4603
+  int 	num_free_variables;167,4628
+class CSolver:CSolver181,4977
+    unsigned long int _maxMemory;CSolver::_maxMemory184,5021
+    int 			_dlevel;CSolver::_dlevel185,5055
+    vector<vector<int> *> 	_assignment_stack;CSolver::_assignment_stack186,5101
+    queue<CSolver::queue187,5147
+    queue<pair<int,ClauseIdx> >	_implication_queue;CSolver::_implication_queue187,5147
+    CSolverParameters 		_params;CSolver::_params188,5199
+    vector<CSolver::vector191,5238
+    vector<pair<int,pair< HookFunPtrT, int> > > _hooks;CSolver::_hooks191,5238
+    int				_max_score_pos;CSolver::_max_score_pos194,5326
+    vector<int>			_last_var_lits_count[CSolver::_last_var_lits_count195,5353
+    vector<CSolver::vector196,5396
+    vector<pair<CVariable*,int> >_var_order;CSolver::_var_order196,5396
+    int 		_num_marked;CSolver::_num_marked199,5477
+    vector<ClauseIdx> 	_conflicts;CSolver::_conflicts200,5542
+    vector<int> 	_conflict_lits;CSolver::_conflict_lits201,5609
+    vector<vector<int> >*_usrConflictClauses;CSolver::_usrConflictClauses202,5684
+    int _maxUsrConflictSize;CSolver::_maxUsrConflictSize203,5730
+    int max_dlevel(CSolver::max_dlevel257,7117
+    CSolverStats     _stats;CSolver::_stats258,7169
+    void set_time_limit(CSolver::set_time_limit265,7288
+    void set_mem_limit(CSolver::set_mem_limit267,7351
+    void set_decision_strategy(CSolver::set_decision_strategy270,7421
+    void set_preprocess_strategy(CSolver::set_preprocess_strategy272,7496
+    void enable_cls_deletion(CSolver::enable_cls_deletion274,7575
+    void set_cls_del_interval(CSolver::set_cls_del_interval276,7661
+    void set_max_unrelevance(CSolver::set_max_unrelevance278,7741
+    void set_min_num_clause_lits_for_delete(CSolver::set_min_num_clause_lits_for_delete280,7813
+    void set_max_conflict_clause_length(CSolver::set_max_conflict_clause_length282,7914
+    void set_allow_multiple_conflict(CSolver::set_allow_multiple_conflict284,8007
+    bool set_allow_multiple_conflict_clause(CSolver::set_allow_multiple_conflict_clause287,8108
+    void set_randomness(CSolver::set_randomness290,8223
+    void set_random_seed(CSolver::set_random_seed293,8292
+    int outcome CSolver::outcome299,8413
+    int num_decisions(CSolver::num_decisions300,8460
+    int & num_free_variables(CSolver::num_free_variables301,8517
+    int num_implications(CSolver::num_implications305,8596
+    long long total_bubble_move(CSolver::total_bubble_move306,8659
+    char * version(CSolver::version308,8735
+    int current_cpu_time(CSolver::current_cpu_time312,8792
+    int current_world_time(CSolver::current_world_time321,9006
+    float elapsed_cpu_time(CSolver::elapsed_cpu_time328,9165
+    float cpu_run_time(CSolver::cpu_run_time335,9336
+    float world_run_time(CSolver::world_run_time340,9440
+    int estimate_mem_usage(CSolver::estimate_mem_usage345,9552
+    int mem_usage(CSolver::mem_usage348,9630
+    int & dlevel(CSolver::dlevel356,9943
+    void add_hook(CSolver::add_hook359,10004
+    void queue_implication CSolver::queue_implication364,10167
+    void restart(CSolver::restart373,10558
+    void dump(CSolver::dump395,11158
+string vec_tostring(411,11449
+
+dstruct.h,1422
+#define _DATA_STRUCTURES_3,39
+using __gnu_cxx::hash_set;9,148
+using __gnu_cxx::hash;10,175
+class Assignment 19,439
+  struct hashAssAssignment::hashAss22,488
+    unsigned int operator()(Assignment::hashAss::operator()24,509
+  struct eqAssAssignment::eqAss36,835
+    bool operator()(Assignment::eqAss::operator()38,854
+  static int dataSize(Assignment::dataSize58,1462
+  unsigned int* _data;Assignment::_data67,1817
+  bool _localMemoryAllocation;Assignment::_localMemoryAllocation68,1840
+  bool _deleteAllowed;Assignment::_deleteAllowed69,1871
+  int _offset;Assignment::_offset70,1894
+class AssignmentStack 83,2199
+  unsigned int* _data;AssignmentStack::_data85,2235
+  int _lits;AssignmentStack::_lits86,2258
+  bool localMemoryAllocation;AssignmentStack::localMemoryAllocation87,2271
+class Solution 108,2975
+ struct hashSolutionSolution::hashSolution111,3020
+    unsigned int operator()(Solution::hashSolution::operator()113,3045
+  struct eqSolutionSolution::eqSolution120,3199
+    bool operator()(Solution::eqSolution::operator()122,3223
+  Solution* _prevSol;Solution::_prevSol130,3395
+  int _numOfPointings;Solution::_numOfPointings131,3469
+  Assignment* _body;Solution::_body132,3539
+  Assignment* _interface;Solution::_interface133,3560
+struct Assignments 152,4049
+  unsigned int *body;Assignments::body153,4070
+  unsigned int *interface;Assignments::interface154,4092
+
+InterfaceCSolver.h,450
+#define _INTERFACE_CSOLVER_H_3,52
+using __gnu_cxx::hash_map;10,189
+using __gnu_cxx::hash;11,216
+class InterfaceCSolver:InterfaceCSolver14,241
+  unsigned int* _resultsBuffer;InterfaceCSolver::_resultsBuffer16,293
+  int* _lostSolution;InterfaceCSolver::_lostSolution17,325
+  vector<ClauseIdx> _generatedClauses;InterfaceCSolver::_generatedClauses19,370
+  ClauseIdx _lastConflictClauseFound;InterfaceCSolver::_lastConflictClauseFound20,409
+
+SAT.h,306
+#define __SAT_HEADER__40,2106
+#define	SAT_Manager 47,2190
+#define __SAT_STATUS__50,2243
+enum SAT_StatusT 51,2266
+    UNDETERMINED,52,2285
+    UNSATISFIABLE,53,2303
+    SATISFIABLE,54,2322
+    TIME_OUT,55,2339
+    MEM_OUT,56,2353
+    ABORTED,57,2366
+    EXHAUSTED58,2379
+#define UNKNOWN 63,2420
+
+Timers.h,266
+#define _TIMERS_H_3,31
+using namespace std;9,129
+class Timers 12,152
+  int _numOfTimers;Timers::_numOfTimers14,179
+  time_t* _timers;Timers::_timers15,199
+  time_t _lastCheckPoint;Timers::_lastCheckPoint16,218
+  time_t _startTime;Timers::_startTime17,244
+
+utils.h,167
+#define _UTILS_H_10,413
+#define ASSIGNMENT_STACK 16,497
+#define PRINT_CLAUSES24,627
+typedef vector<int> CLAUSE;25,649
+typedef vector<vector<int> > CLAUSES;26,677
