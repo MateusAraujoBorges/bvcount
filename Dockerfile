@@ -115,14 +115,52 @@ RUN git clone https://MateusAraujoBorges@bitbucket.org/kuldeepmeel/smtapproxmc.g
 	cp /tools/ApproxMC/doalarm-0.1.7/doalarm /bin/
 
 #get satcomp benchmarks (application track)
-RUN wget http://baldur.iti.kit.edu/sat-competition-2016/downloads/app16.zip && \
-	mkdir benchmarks && \
-	unzip app16.zip -d benchmarks
+#RUN wget http://baldur.iti.kit.edu/sat-competition-2016/downloads/app16.zip && \
+#	mkdir benchmarks && \
+#	unzip app16.zip -d benchmarks
 
-ADD run_experiments.sh run_experiments.sh	
+# install sharpcdcl
+
+RUN wget http://tools.computational-logic.org/content/sharpCDCL/sharpCDCL.tar.gz && \
+	mkdir sharpCDCL && \
+	cd sharpCDCL && \
+	tar -xf ../sharpCDCL.tar.gz && \
+	make config && \
+	make install
+
+ENV LD_LIBRARY_PATH="/tools/sharpCDCL/build/dynamic/lib/"
+
+RUN wget https://github.com/Z3Prover/z3/archive/z3-4.5.0.tar.gz && \
+	tar -xf z3-4.5.0.tar.gz && \
+	mv z3-z3-4.5.0 z3 && \
+	cd z3 && \
+	python scripts/mk_make.py --python && \
+	cd build && \
+	make -j4 && \
+	make install
+
+#install allsat
+RUN apt-get update && apt-get -y install gcc-multilib g++-multilib
+ADD All_SAT allsat
+
+RUN cd allsat && make
 
 RUN apt-get update && \
-	apt-get -y install time && \
-	chmod +x run_experiments.sh
+	apt-get -y install time 
+
+ENV PYTHONPATH="/tools/z3/build/python/"
+
+ADD benchmarks/ benchmarks/
+ADD blockCounter.py blockCounter.py
+ADD mappedBitblaster.py mappedBitblaster.py
+ADD renamer.py renamer.py
+RUN pip3 install tqdm
+
+ADD run_experiments.sh run_experiments.sh	
+RUN	chmod +x run_experiments.sh
+RUN rm *.tar.gz *.zip *.tgz
+
+RUN ln -s $PWD/cryptominisat4/build/cryptominisat5 /usr/bin/cryptominisat4
+
 
 CMD ["bash"]

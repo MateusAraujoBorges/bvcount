@@ -12,7 +12,7 @@ def main():
 
     while s.check() == sat:
         m = s.model()
-        print(m)
+        #print(m)
         total_solutions += 1
         block = []
         for d in m:

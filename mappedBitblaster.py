@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 # remember to install z3 (or put the 'build' dir in the PYTHONPATH
 # var)
 
 from z3 import *
 from tqdm import tqdm
-import pyeda.boolalg.bdd as bdd
-import pyeda.boolalg.expr as bexpr
+#import pyeda.boolalg.bdd as bdd
+#import pyeda.boolalg.expr as bexpr
 import sys
 
 
@@ -42,24 +44,24 @@ def is_ite(e):
 def is_iff(e):
     return e.decl().kind() == Z3_OP_IFF
 
-def to_bdd(cnf,id_table):
-    table = {}
-    for key, val in id_table.items():
-        name = key.replace('!',"X")
-        table[name] = bexpr.exprvar(name)
-    projected_vars = set(table.values())
-    cnf_clauses = []
-    cache = {}
-    for clause in tqdm(cnf,desc="Converting Z3 expr to PyEDA format..."):
-#        print(cache)
-        bdd_clause = list(bexpr_visitor(clause,table,cache))
-#        print(bdd_clause)
-        assert len(bdd_clause) == 1
-        cnf_clauses.append(bdd_clause[0])
-    print("Generating BDD...", file=sys.stderr)
-    conjunction = bexpr.And(*cnf_clauses,simplify=False)
-    out_bdd = bdd.expr2bdd(conjunction)
-    return out_bdd
+# def to_bdd(cnf,id_table):
+#     table = {}
+#     for key, val in id_table.items():
+#         name = key.replace('!',"X")
+#         table[name] = bexpr.exprvar(name)
+#     projected_vars = set(table.values())
+#     cnf_clauses = []
+#     cache = {}
+#     for clause in tqdm(cnf,desc="Converting Z3 expr to PyEDA format..."):
+# #        print(cache)
+#         bdd_clause = list(bexpr_visitor(clause,table,cache))
+# #        print(bdd_clause)
+#         assert len(bdd_clause) == 1
+#         cnf_clauses.append(bdd_clause[0])
+#     print("Generating BDD...", file=sys.stderr)
+#     conjunction = bexpr.And(*cnf_clauses,simplify=False)
+#     out_bdd = bdd.expr2bdd(conjunction)
+#     return out_bdd
 
 def proj_id_last(var,n_proj_vars,n_vars):
     assert var != 0
