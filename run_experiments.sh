@@ -57,7 +57,7 @@ function call_mathsat {
 
 function call_dsharp {
 	INPUT_FILE=$(readlink -f $1)
-	/usr/bin/time timeout -k 10s 1h ./dsharp --noIBCP $INPUT_FILE
+	/usr/bin/time timeout -k 10s 1h ./dsharp/dsharp --noIBCP $INPUT_FILE
 }
 
 mkdir -p results
