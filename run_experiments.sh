@@ -55,6 +55,11 @@ function call_mathsat {
 	/usr/bin/time timeout -k 10s 1h mathsat $INPUT_FILE
 }
 
+function call_dsharp {
+	INPUT_FILE=$(readlink -f $1)
+	/usr/bin/time timeout -k 10s 1h ./dsharp --noIBCP $INPUT_FILE
+}
+
 mkdir -p results
 shopt -s globstar
 shopt -s nullglob
@@ -69,45 +74,54 @@ do
 	RESULT_FILE="$RESULTS_FOLDER/${NO_SLASHES}"
 	BITBLASTED=current.cnf
 	
-	/usr/bin/time -o "${RESULT_FILE}.bitblast" ./mappedBitblaster.py "$file" true > $BITBLASTED
+	 /usr/bin/time -o "${RESULT_FILE}.bitblast" ./mappedBitblaster.py "$file" true > $BITBLASTED
 
-	echo "  ===> approxmc_py"
-	date
-	call_approxmc_py $BITBLASTED 2>&1 | tee "${RESULT_FILE}.apcpy"
-	cd $SCRIPT_DIR
+	# echo "  ===> approxmc_py"
+	# date
+	# call_approxmc_py $BITBLASTED 2>&1 | tee "${RESULT_FILE}.apcpy"
+	# cd $SCRIPT_DIR
 	
-	echo "  ===> sharpsat"
+	#echo "  ===> sharpsat"
+	#date
+	#call_sharpsat $BITBLASTED 2>&1 | tee "${RESULT_FILE}.sharpsat"
+	#cd $SCRIPT_DIR
+
+	# echo "  ===> z3 - tail: ${RESULT_FILE}.z3"
+	# date
+	# call_z3bc $file &>  "${RESULT_FILE}.z3"
+	# tail ${RESULT_FILE}.z3
+	# cd $SCRIPT_DIR
+
+	#echo "  ===> allsat"
+	#date
+	#call_allsat $BITBLASTED 2>&1 | tee "${RESULT_FILE}.allsat"
+	#cd $SCRIPT_DIR
+
+	# echo "  ===> sharpcdcl: tail ${RESULT_FILE}.sharpcdcl"
+	# date
+	# call_sharpcdcl $BITBLASTED &> "${RESULT_FILE}.sharpcdcl"
+	# tail "${RESULT_FILE}.sharpcdcl"
+	# cd $SCRIPT_DIR
+
+	# echo "  ===> smt-approx: tail smtout"
+	# date
+	# call_smtapproxmc $file  
+	# cat smtlog smtout  > "${RESULT_FILE}.smtap"
+	# cd $SCRIPT_DIR
+
+	# echo "  ===> mathsat"
+	# date
+	# rm mathsat_tmp
+	# ./prepareForMathSAT.py $file > mathsat_input
+	# call_mathsat mathsat_input &> mathsat_tmp
+	# grep ") )" mathsat_tmp -c > "${RESULT_FILE}.mathsat"
+	# grep "elapsed" mathsat_tmp >> "${RESULT_FILE}.mathsat"
+	# cd $SCRIPT_DIR
+
+	echo "  ===> dsharp: tail ${RESULT_FILE}.dsharp"
 	date
-	call_sharpsat $BITBLASTED 2>&1 | tee "${RESULT_FILE}.sharpsat"
+	call_dsharp $BITBLASTED &> "${RESULT_FILE}.dsharp"
 	cd $SCRIPT_DIR
 
-	echo "  ===> z3 - tail: ${RESULT_FILE}.z3"
-	date
-	call_z3bc $file &>  "${RESULT_FILE}.z3"
-	tail ${RESULT_FILE}.z3
-	cd $SCRIPT_DIR
-
-	echo "  ===> allsat"
-	date
-	call_allsat $BITBLASTED 2>&1 | tee "${RESULT_FILE}.allsat"
-	cd $SCRIPT_DIR
-
-	echo "  ===> sharpcdcl: tail ${RESULT_FILE}.sharpcdcl"
-	date
-	call_sharpcdcl $BITBLASTED &> "${RESULT_FILE}.sharpcdcl"
-	tail "${RESULT_FILE}.sharpcdcl"
-	cd $SCRIPT_DIR
-
-	echo "  ===> smt-approx: tail smtout"
-	date
-	call_smtapproxmc $file  
-	cat smtlog smtout  > "${RESULT_FILE}.smtap"
-	cd $SCRIPT_DIR
-
-	echo "  ===> mathsat"
-	date
-	./prepareForMathSAT.py $file > mathsat_input
-	call_mathsat mathsat_input | grep ") )" -c
-	cd $SCRIPT_DIR
 #done
 done < $1
