@@ -5,7 +5,7 @@
 #include <cmath>
 
 #include <iostream>
-#include "cudd-3.0.0/cplusplus/cuddObj.hh"
+#include "cuddObj.hh"
 using namespace std;
 
 
@@ -40,6 +40,8 @@ vector<int> parseVars(vector<string> &toks) {
   return varIds;
 }
 
+#define BATCH_SIZE 100
+
 int main(int argc, char* argv[]) {
 
   Cudd mgr(0,0);
@@ -52,7 +54,7 @@ int main(int argc, char* argv[]) {
 
   BDD conjunction = mgr.bddZero();
   vector<BDD> vars(10,conjunction);
-
+  vector<BDD> intermediateBDDs;
   
   //read dimacs csv
   ifstream infile(argv[1]);
@@ -103,8 +105,20 @@ int main(int argc, char* argv[]) {
 		conjunction = conjunction * disjunction;
 	  }
 	}
+
+	if (i % BATCH_SIZE == 0) {
+	  intermediateBDDs.push_back(conjunction);
+	  conjunction = mgr.bddZero();
+	}
   }
 
+  cout << "Finished intermediate bdd processing" << endl;
+
+  BDD result = mgr.bddOne();
+  for (auto const& bddTmp : intermediateBDDs) {
+	result = result * bddTmp;
+  }
+  
   mgr.info();
   cout << conjunction;
   return 0;
