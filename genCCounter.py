@@ -7,6 +7,18 @@ from collections import defaultdict
 TEMPLATE="""
 #include <stdio.h>
 
+
+int mod (int a, int b)
+{{
+   if(b < 0) //you can check for b == 0 separately and do what you want
+     return mod(a, -b);   
+   int ret = a % b;
+   if(ret < 0)
+     ret+=b;
+   return ret;
+}}
+
+
 int main() {{
 
 unsigned long long SOLUTION_COUNT = 0;
@@ -108,7 +120,9 @@ def compile_to_c(formula):
 
     filters = []
     n_ops = 0
-    for clause in to_process:
+#    print(formula, file=sys.stderr)
+#    print(formula.children(), file=sys.stderr)
+    for clause in formula.children():
         for boolean_expr in c_visitor(clause):
             line = "if (!({})) {{\n continue;\n }} \n".format(boolean_expr)
             filters.append(line)
@@ -218,7 +232,7 @@ def c_visitor(e):
         for ch in e.children():
             for expr in c_visitor(ch):
                 clauses.append(expr)
-        yield "(" + " % ".join(clauses) + ")"
+        yield "(mod(" + ",".join(clauses) + "))"
         return
     elif is_bor(e):
         clauses = []
