@@ -5,11 +5,20 @@
 
 from z3 import *
 from tqdm import tqdm
+from typing import Any
+from dataclasses import dataclass
 import sys
 import argparse
+import subprocess
+import itertools
+import tempfile
 
 
-INPUT_FORMAT = "unigen"  # unigen, sharpsat
+@dataclass(frozen=True)
+class VarData:
+    id: int
+    lit: Any
+
 
 # the "0" at the end of the header is required
 # -------------------------
@@ -18,19 +27,21 @@ INPUT_FORMAT = "unigen"  # unigen, sharpsat
 def bitblast(formula):
     input_vars = [x for x in collect_vars(formula)]
     # map bits in the bv input vars
-    print(f"input vars: {input_vars}",file=sys.stderr)
+    print(f"input vars: {input_vars}", file=sys.stderr)
 
     map_clauses, map_vars = map_bitvector(input_vars)
-    assert map_clauses # should not be empty
+    assert (
+        map_clauses
+    ), "there should be at least one variable mapped for bitblasting!"  # should not be empty
     id_table = {}  # {varname: id}
 
     curr_id = 1
 
-    for var,weight in map_vars:
+    for var, weight in map_vars:
         name = var.decl().name()
-        id_table[name] = curr_id
+        id_table[name] = VarData(curr_id, var)
         curr_id = curr_id + 1
-        print(f"{name} -> ${id_table[name]}",file=sys.stderr)
+        print(f"{name} -> ${id_table[name]}", file=sys.stderr)
     projection_scope = curr_id - 1
 
     # bitblast
@@ -38,16 +49,18 @@ def bitblast(formula):
     g.add(map_clauses)
     g.add(formula)
     t = Then(
-        Tactic("simplify"),
-        Tactic("fpa2bv"),
+        # Tactic("simplify"),
+        # Tactic("fpa2bv"),
         Tactic("simplify"),
         Tactic("propagate-values"),
-        Tactic("ctx-solver-simplify"),
+        Tactic("ctx-solver-simplify"),  # makes z3 die if int2bv is used
         Tactic("bit-blast"),
         Tactic("tseitin-cnf"),
     )
-    # t = Then(Tactic('simplify'),Tactic('bit-blast'))
+
+    # print(f"starting to bitblast, {g}", file=sys.stderr)
     bitblasted = t(g)[0]
+    # print(f"done bitblasting: {bitblasted.sexpr()}", file=sys.stderr)
 
     return bitblasted, id_table
 
@@ -101,6 +114,10 @@ def map_bitvector(input_vars):
         if is_bool(var):
             mapped_vars.append((var, 1))
             continue
+
+        assert not is_int(
+            var
+        ), "bitblasting integer variables doesn't work well - replace all ints with bvs"
 
         name = var.decl().name()
         size = var.size()
@@ -201,10 +218,10 @@ def dimacs_visitor(e, table):
     if is_literal(e):
         name = e.decl().name()
         if name in table:
-            id_var = table[name]
+            id_var = table[name].id
         else:
             id_var = len(table) + 1
-            table[name] = id_var
+            table[name] = VarData(id_var, e)
         yield str(id_var)
         return
     elif is_not(e):
@@ -228,8 +245,8 @@ def collect_vars(e, seen=None):
     if e in seen:
         return
     seen[e] = True
-    # check if 'e' is a bitvector input variable or boolean
-    if is_literal(e) and (is_bv(e) or is_bool(e)):
+    # check if 'e' is a bitvector, int, or bool input variable
+    if is_literal(e) and (is_bv(e) or is_bool(e) or is_int(e)):
         yield e
     elif is_app(e):
         for ch in e.children():
@@ -247,12 +264,87 @@ def collect_vars(e, seen=None):
         yield None
 
 
+def rebuild_model(line, id_to_var):
+    model = {}
+    for tok in line.strip().split(" ")[:-1]:  # remove last 0
+        if tok.startswith("-"):
+            val = False
+            id = int(tok[1:])
+        else:
+            val = True
+            id = int(tok)
+        lit = id_to_var[id].lit
+        name = lit.decl().name()
+
+        if "!" in name and val:  # bit from bitvector, no need to toggle 0 bits
+            var_name, bit_pos = name.split("!")
+            current = model.get(var_name, 0)
+            current = current | (1 << int(bit_pos))
+            model[var_name] = current
+        elif "!" not in name:  # boolean
+            model[name] = val
+
+    return model
+
+
+def run_unigen(dimacs, var_to_id, formula, options):
+    id_to_var = {v.id: v for k, v in var_to_id.items()}
+    with tempfile.NamedTemporaryFile(
+        prefix="unigen", delete=False, mode="w+t"
+    ) as input_file:
+        input_file.write(dimacs)
+        input_file.flush()
+        unigen = subprocess.Popen(
+            [
+                "unigen",
+                f"--samples={options.samples}",
+                f"--seed={options.seed}",
+                f"--epsilon={options.epsilon}",
+                f"--delta={options.delta}",
+                input_file.name,
+            ],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+        )
+
+        while not unigen.poll():
+            line = unigen.stdout.readline()
+            if not line.strip():
+                continue
+
+            print(line, file=sys.stderr, end="")
+            if line.startswith("c [unig] Samples generated"):
+                break
+            if line.startswith("c"):
+                continue
+
+            print(f"sample: {line.strip()}", file=sys.stderr)
+            sample = rebuild_model(line, id_to_var)
+            print(f">> {sample}")
+            if options.validate_samples:
+                solver = Solver()
+                solver.add(formula)
+                for k, v in sample.items():
+                    lit = Bool(k) if type(v) is bool else Int(k)
+                    solver.add(lit == v)
+
+                assert (
+                    solver.check() == sat
+                ), f"previous sample failed to satisfy input formula: \n {solver}"
+
 
 def main():
     parser = argparse.ArgumentParser(description="sample bitblasted smt input formula")
-    parser.add_argument("input_file")
     parser.add_argument(
-        "--seed", type=int, default=1000, help="seed to be passed to unigen"
+        "input_file",
+        help="formula in smt2 format to be counted. BVs/Bools only for now.",
+    )
+    parser.add_argument(
+        "--seed", type=int, default=12345678, help="seed to be passed to unigen"
+    )
+    parser.add_argument(
+        "--samples", type=int, default=1000, help="number of samples to be taken"
     )
     parser.add_argument(
         "--epsilon",
@@ -266,6 +358,16 @@ def main():
         default=0.2,
         help="unigen/approxmc 'δ' parameter -> Pr[#sol/(1+ε) ≤ c ≤ (1+ε)*#sol] ≥ 1−δ",
     )
+    parser.add_argument(
+        "--bitblast-only",
+        action="store_true",
+        help="print bitblasted formula in DIMACS format and stop",
+    )
+    parser.add_argument(
+        "--validate-samples",
+        action="store_true",
+        help="check with z3 if samples satisfy the original formula",
+    )
 
     args = parser.parse_args()
 
@@ -276,8 +378,14 @@ def main():
     print("Generating DIMACS with projection...", file=sys.stderr)
     bitblasted, id_table = bitblast(formula)
     header, clauses = to_dimacs(bitblasted, id_table)
-    print("\n".join(header))
-    print("\n".join(clauses))
+    dimacs = "\n".join(itertools.chain(header, clauses, ["\n"]))
+
+    if args.bitblast_only:
+        print(dimacs)
+        return
+
+    print("Running UNIGEN", file=sys.stderr)
+    run_unigen(dimacs, id_table, formula, args)
 
 
 if __name__ == "__main__":
